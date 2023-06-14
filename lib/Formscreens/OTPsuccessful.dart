@@ -11,32 +11,37 @@ class _OTPsuccessfulState extends State<OTPsuccessful> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 250),
-            child: Center(
-              child: Container(
-                width: 150,
-                child: Image.asset("Images/Successful.png"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 250),
+              child: Center(
+                child: Container(
+                  width: 150,
+                  child: Image.asset("Images/Successful.png"),
+                ),
               ),
             ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 10)),
-          Text(
-            "Successful",
-            style: TextStyle(fontSize: 22),
-          ),
-          Padding(padding: EdgeInsets.all(5)),
-          Text(
-            "Your mobile number has been",
-            style: TextStyle(fontSize: 16),
-          ),
-          Text(
-            "Successfully Verified",
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
+            Padding(padding: EdgeInsets.only(top: 10)),
+            Text(
+              "Successful",
+              style: TextStyle(fontSize: 22),
+            ),
+            Padding(padding: EdgeInsets.all(5)),
+            Text(
+              "Your mobile number has been",
+              style: TextStyle(fontSize: 16),
+            ),
+            Text(
+              "Successfully Verified",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(
+              height: 50,
+            )
+          ],
+        ),
       ),
     );
   }

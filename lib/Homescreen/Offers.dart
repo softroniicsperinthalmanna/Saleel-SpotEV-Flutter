@@ -11,91 +11,104 @@ class _OffersState extends State<Offers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 120,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30)),
-              color: Color.fromARGB(255, 141, 25, 145),
-            ),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        right: 310,
-                      ),
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      "Offers",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 25, left: 10, right: 10),
-            child: Container(
-              width: 350,
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.blue,
-              ),
-            ),
-          ),
-          Row(
+      appBar: AppBar(
+        // leading: Icon(Icons.arrow_back),
+        title: Center(child: Text('Offers')),
+        toolbarHeight: 80,
+        backgroundColor: Color(0xff5A5AD2),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        )),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 21, top: 10),
-                child: Container(
-                  height: 150,
-                  width: 170,
-                  color: Colors.green,
-                ),
+              // Container(
+              //   height: 150,
+              //   width: MediaQuery.of(context).size.width,
+              //   decoration: BoxDecoration(
+              //       color: Color(0xff5A5AD2),
+              //       borderRadius: BorderRadius.only(
+              //           bottomLeft: Radius.circular(30),
+              //           bottomRight: Radius.circular(30)
+              //       )
+              //   ),
+              //   child: Center(child: Text('Offers',style: booking,textAlign: TextAlign.center,)),
+              // ),
+              SizedBox(
+                height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, top: 10),
-                child: Container(
-                  height: 150,
-                  width: 170,
-                  color: Color.fromARGB(255, 175, 99, 76),
-                ),
-              )
+              Container(
+                height: 120,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15)),
+                    color: Colors.amber,
+                    image: DecorationImage(
+                        image: AssetImage('Images/offer5.png'),
+                        fit: BoxFit.cover)),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 130,
+                    width: 165,
+                    decoration: BoxDecoration(
+                        color: Colors.amber,
+                        image: DecorationImage(
+                            image: AssetImage('Images/offer1.png'),
+                            fit: BoxFit.cover)),
+                  ),
+                  Container(
+                    height: 130,
+                    width: 165,
+                    decoration: BoxDecoration(
+                        color: Colors.amber,
+                        image: DecorationImage(
+                            image: AssetImage('Images/offer2.png'),
+                            fit: BoxFit.cover)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 7,
+              ),
+              Container(
+                height: 280,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: Colors.amber,
+                    image: DecorationImage(
+                        image: AssetImage('Images/offer3.png'),
+                        fit: BoxFit.cover),
+                    border: Border.all(color: Colors.black)),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 80,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.amber,
+                    image: DecorationImage(
+                        image: AssetImage('Images/offer4.png'),
+                        fit: BoxFit.cover)),
+              ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: Container(
-              width: 350,
-              height: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.blue,
-              ),
-            ),
-          ),
-          Container(
-            width: 350,
-            height: 100,
-            color: const Color.fromARGB(255, 243, 33, 33),
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Verify.dart';
+
 class Recovery extends StatefulWidget {
   const Recovery({super.key});
 
@@ -12,7 +14,7 @@ class _RecoveryState extends State<Recovery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        //leading: Icon(Icons.arrow_back),
         centerTitle: true,
         elevation: 3,
         backgroundColor: Color.fromARGB(255, 99, 49, 216),
@@ -40,11 +42,11 @@ class _RecoveryState extends State<Recovery> {
           ),
           Text(
             "Please Enter Your Email Address",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
           Text(
             "To Recieve a Verification Code",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 50),
@@ -89,7 +91,10 @@ class _RecoveryState extends State<Recovery> {
                     ),
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Verify()));
+                },
                 child: Text("Recover Password"),
               ),
             ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:spotev/Formscreens/ForgetPassword/NewPassword.dart';
 
 class Verify extends StatefulWidget {
   const Verify({super.key});
@@ -12,7 +14,7 @@ class _RecoveryState extends State<Verify> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        //leading: Icon(Icons.arrow_back),
         centerTitle: true,
         elevation: 3,
         backgroundColor: Color.fromARGB(255, 99, 49, 216),
@@ -63,24 +65,17 @@ class _RecoveryState extends State<Verify> {
                     child: Container(
                       height: 55,
                       width: 55,
-                      color: Color.fromARGB(255, 236, 233, 233),
-                    ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    child: Container(
-                      child: Container(
-                        height: 55,
-                        width: 55,
-                        color: Color.fromARGB(255, 236, 233, 233),
+                      child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        decoration: InputDecoration(border: InputBorder.none),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [LengthLimitingTextInputFormatter(1)],
+                        textAlign: TextAlign.center,
                       ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    child: Container(
-                      height: 55,
-                      width: 55,
                       color: Color.fromARGB(255, 236, 233, 233),
                     ),
                   ),
@@ -89,6 +84,55 @@ class _RecoveryState extends State<Verify> {
                     child: Container(
                       height: 55,
                       width: 55,
+                      child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        decoration: InputDecoration(border: InputBorder.none),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [LengthLimitingTextInputFormatter(1)],
+                        textAlign: TextAlign.center,
+                      ),
+                      color: Color.fromARGB(255, 236, 233, 233),
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Container(
+                      height: 55,
+                      width: 55,
+                      child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        decoration: InputDecoration(border: InputBorder.none),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [LengthLimitingTextInputFormatter(1)],
+                        textAlign: TextAlign.center,
+                      ),
+                      color: Color.fromARGB(255, 236, 233, 233),
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Container(
+                      height: 55,
+                      width: 55,
+                      child: TextField(
+                        onChanged: (value) {
+                          if (value.length == 1) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+                        decoration: InputDecoration(border: InputBorder.none),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [LengthLimitingTextInputFormatter(1)],
+                        textAlign: TextAlign.center,
+                      ),
                       color: Color.fromARGB(255, 236, 233, 233),
                     ),
                   ),
@@ -119,14 +163,17 @@ class _RecoveryState extends State<Verify> {
               child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(
-                      Color.fromARGB(255, 129, 6, 160),
+                      Color.fromARGB(255, 99, 49, 216),
                     ),
                     textStyle: MaterialStatePropertyAll(
                       TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => NewPassword())));
+                },
                 child: Text("Verify and Proceed"),
               ),
             ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Formscreens/Loginscreen.dart';
+import 'package:spotev/Formscreens/OTPverification.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -11,181 +13,247 @@ class _RegistrationState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50, top: 80),
-            child: Center(
-              child: Container(
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    fontSize: 35,
-                    color: Color.fromARGB(255, 129, 6, 160),
-                  ),
-                ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        // width: double.infinity,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
+            child: Column(children: [
+              SizedBox(
+                height: 20,
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 100, left: 10, right: 10),
-            child: Column(
-              children: [
-                Container(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(30),
+              Column(
+                children: [
+                  Container(
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontSize: 33,
+                        color: Color.fromARGB(255, 99, 49, 216),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5.0),
+                        child: Text(
+                          'User Name',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 99, 49, 216),
                           ),
                         ),
-                        labelText: "Email",
-                        prefixIcon: Icon(Icons.password),
-                        labelStyle: TextStyle(color: Colors.blue),
-                        filled: true,
-                        fillColor: Colors.grey[300],
-                        hintText: "Enter Your Email"),
-                  ),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(30),
-                              ),
-                            ),
-                            labelText: "Password",
-                            prefixIcon: Icon(Icons.password),
-                            labelStyle: TextStyle(color: Colors.blue),
+                      ),
+                      Card(
+                        elevation: 10,
+                        color: Colors.black,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder:
+                                OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
-                            fillColor: Colors.grey[300],
-                            hintText: "Enter Your Password"),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(30),
-                              ),
+                            fillColor: Colors.grey[350],
+                            hintText: 'ENTER YOUR NAME',
+                            prefixIcon: Icon(
+                              Icons.person_outline,
                             ),
-                            labelText: "Password",
-                            prefixIcon: Icon(Icons.password),
-                            labelStyle: TextStyle(color: Colors.blue),
-                            filled: true,
-                            fillColor: Colors.grey[300],
-                            hintText: "Enter Your Password"),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(30),
-                              ),
-                            ),
-                            labelText: "Password",
-                            prefixIcon: Icon(Icons.password),
-                            labelStyle: TextStyle(color: Colors.blue),
-                            filled: true,
-                            fillColor: Colors.grey[300],
-                            hintText: "Enter Your Password"),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(30),
-                              ),
-                            ),
-                            labelText: "Password",
-                            prefixIcon: Icon(Icons.password),
-                            labelStyle: TextStyle(color: Colors.blue),
-                            filled: true,
-                            fillColor: Colors.grey[300],
-                            hintText: "Enter Your Password"),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Container(
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(255, 129, 6, 160),
-                            ),
-                            minimumSize: MaterialStatePropertyAll(
-                              Size(400, 60),
-                            ),
-                            textStyle: MaterialStatePropertyAll(
-                              TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                            shape: MaterialStatePropertyAll(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(40)))),
-                        onPressed: () {},
-                        child: Text("REGISTER"),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0, left: 90),
-                      child: Container(
-                        child: Row(
-                          children: [
-                            Text(
-                              "Have an account?",
-                              style: TextStyle(
-                                  fontSize: 22, color: Colors.blueGrey),
-                            ),
-                            TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "Sign In",
-                                  style: TextStyle(fontSize: 20),
-                                ))
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5.0, bottom: 3),
+                        child: Text(
+                          'Mobile Number',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        elevation: 10,
+                        color: Colors.black,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder:
+                                OutlineInputBorder(borderSide: BorderSide.none),
+                            filled: true,
+                            fillColor: Colors.grey[350],
+                            hintText: 'ENTER YOUR NUMBER',
+                            prefixIcon: Icon(
+                              Icons.call,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5.0, top: 3),
+                        child: Text(
+                          'Email',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        elevation: 10,
+                        color: Colors.black,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder:
+                                OutlineInputBorder(borderSide: BorderSide.none),
+                            filled: true,
+                            fillColor: Colors.grey[350],
+                            hintText: 'ENTER YOUR EMAIL',
+                            prefixIcon: Icon(
+                              Icons.mail,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5.0, top: 3),
+                        child: Text(
+                          'Password',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        elevation: 10,
+                        color: Colors.black,
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            enabledBorder:
+                                OutlineInputBorder(borderSide: BorderSide.none),
+                            filled: true,
+                            fillColor: Colors.grey[350],
+                            hintText: 'ENTER YOUR PASSWORD',
+                            prefixIcon: Icon(
+                              Icons.lock,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 5.0, bottom: 3),
+                            child: Text(
+                              'Confirm Password',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color.fromARGB(255, 99, 49, 216),
+                              ),
+                            ),
+                          ),
+                          Card(
+                            elevation: 10,
+                            color: Colors.black,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                filled: true,
+                                fillColor: Colors.grey[350],
+                                hintText: 'CONFIRM PASSWORD',
+                                prefixIcon: Icon(
+                                  (Icons.lock),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 45,
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                      backgroundColor: MaterialStatePropertyAll(
+                                        Color.fromARGB(255, 99, 49, 216),
+                                      ),
+                                      textStyle: MaterialStatePropertyAll(
+                                        TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      shape: MaterialStatePropertyAll(
+                                          RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10)))),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                OTPverification()));
+                                  },
+                                  child: Text("Register"),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Have an account?",
+                                      style: TextStyle(
+                                          fontSize: 14, color: Colors.blueGrey),
+                                    ),
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Login()));
+                                        },
+                                        child: Text(
+                                          "Sign In",
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            color: Color.fromARGB(
+                                                255, 99, 49, 216),
+                                          ),
+                                        ))
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ]),
           ),
-        ],
+        ),
       ),
     );
   }

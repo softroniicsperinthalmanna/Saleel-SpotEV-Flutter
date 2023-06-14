@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Formscreens/Registrationscreen.dart';
+
+import 'ForgetPassword/Recovery.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -18,7 +21,7 @@ class _LoginState extends State<Login> {
         child: SingleChildScrollView(
           child: Column(children: [
             Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50, top: 55),
+              padding: const EdgeInsets.only(left: 50, right: 50, top: 40),
               child: Center(
                 child: Container(
                   //color: Colors.amber,
@@ -39,7 +42,7 @@ class _LoginState extends State<Login> {
                   child: Text(
                     "Sign In",
                     style: TextStyle(
-                      fontSize: 32,
+                      fontSize: 33,
                       color: Color.fromARGB(255, 99, 49, 216),
                     ),
                   ),
@@ -51,7 +54,9 @@ class _LoginState extends State<Login> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 5.0, bottom: 3),
+                        padding: const EdgeInsets.only(
+                          left: 5.0,
+                        ),
                         child: Text(
                           'Email',
                           style: TextStyle(
@@ -71,13 +76,13 @@ class _LoginState extends State<Login> {
                             fillColor: Colors.grey[350],
                             hintText: 'ENTER YOUR EMAIL',
                             prefixIcon: Icon(
-                              Icons.person_outline,
+                              Icons.mail,
                             ),
                           ),
                         ),
                       ),
                       SizedBox(
-                        height: 25,
+                        height: 10,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -110,9 +115,6 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
                           Column(
                             children: [
                               Container(
@@ -121,12 +123,21 @@ class _LoginState extends State<Login> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(5.0),
-                                      child: Text(
-                                        "Forget Password?",
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                          color:
-                                              Color.fromARGB(255, 99, 49, 216),
+                                      child: TextButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const Recovery()));
+                                        },
+                                        child: Text(
+                                          "Forget Password?",
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            color: Color.fromARGB(
+                                                255, 99, 49, 216),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -237,7 +248,13 @@ class _LoginState extends State<Login> {
                                           fontSize: 14, color: Colors.blueGrey),
                                     ),
                                     TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Registration()));
+                                        },
                                         child: Text(
                                           "Sign Up",
                                           style: TextStyle(

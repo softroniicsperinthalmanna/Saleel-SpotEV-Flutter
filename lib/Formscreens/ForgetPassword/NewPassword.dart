@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Formscreens/Loginscreen.dart';
 
 class NewPassword extends StatefulWidget {
   const NewPassword({super.key});
@@ -11,121 +12,123 @@ class _NewPasswordState extends State<NewPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [
-        Container(
-          width: double.infinity,
-          height: 120,
-          decoration: BoxDecoration(
+      appBar: AppBar(
+        //leading: Icon(Icons.arrow_back),
+        centerTitle: true,
+        elevation: 3,
+        backgroundColor: Color.fromARGB(255, 99, 49, 216),
+        shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(30),
-                bottomRight: Radius.circular(30)),
-            color: Color.fromARGB(255, 141, 25, 145),
-          ),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: 310,
-                    ),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    "Forget Password",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 150.0),
-          child: Text(
-            "Enter New Password",
-            style: TextStyle(
-                fontSize: 23, fontWeight: FontWeight.bold, color: Colors.blue),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Text(
-            "Your new password must be different",
-            style: TextStyle(fontSize: 18),
-          ),
-        ),
-        Text(
-          "from previously used password",
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        )),
+        toolbarHeight: 70,
+        title: Text(
+          "Forget Password",
           style: TextStyle(fontSize: 18),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 50),
-          child: Container(
-            width: 320,
-            child: TextFormField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(children: [
+            SizedBox(
+              height: 150,
+            ),
+            Text(
+              "Enter New Password",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 99, 49, 216),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Your new password must be different",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            ),
+            Text(
+              "from previously used password",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Card(
+                  elevation: 10,
+                  color: Colors.black,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      enabledBorder:
+                          OutlineInputBorder(borderSide: BorderSide.none),
+                      filled: true,
+                      fillColor: Colors.grey[350],
+                      hintText: 'New Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                      ),
                     ),
                   ),
-                  labelText: "Email",
-                  prefixIcon: Icon(Icons.password),
-                  labelStyle: TextStyle(color: Colors.blue),
-                  filled: true,
-                  fillColor: Colors.grey[300],
-                  hintText: "Enter Your Email"),
+                ),
+              ),
             ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 30),
-          child: Container(
-            width: 320,
-            child: TextFormField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Card(
+                  elevation: 10,
+                  color: Colors.black,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      enabledBorder:
+                          OutlineInputBorder(borderSide: BorderSide.none),
+                      filled: true,
+                      fillColor: Colors.grey[350],
+                      hintText: 'Confirm Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                      ),
                     ),
                   ),
-                  labelText: "Email",
-                  prefixIcon: Icon(Icons.password),
-                  labelStyle: TextStyle(color: Colors.blue),
-                  filled: true,
-                  fillColor: Colors.grey[300],
-                  hintText: "Enter Your Email"),
+                ),
+              ),
             ),
-          ),
+            SizedBox(
+              height: 45,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 45,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 99, 49, 216),
+                      ),
+                      textStyle: MaterialStatePropertyAll(
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)))),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: Text("Continue"),
+                ),
+              ),
+            )
+          ]),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 50.0),
-          child: ElevatedButton(
-            style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                  Color.fromARGB(255, 129, 6, 160),
-                ),
-                minimumSize: MaterialStatePropertyAll(
-                  Size(300, 50),
-                ),
-                textStyle: MaterialStatePropertyAll(
-                  TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                ),
-                shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)))),
-            onPressed: () {},
-            child: Text("Continue"),
-          ),
-        ),
-      ]),
+      ),
     );
   }
 }
