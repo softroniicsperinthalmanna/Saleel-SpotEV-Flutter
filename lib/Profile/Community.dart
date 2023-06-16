@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Community2.dart';
+
 class Community extends StatefulWidget {
   const Community({super.key});
 
@@ -27,7 +29,7 @@ class _CommunityState extends State<Community> {
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 140,
+                      top: 200,
                       child: Container(
                         height: 300,
                         width: 200,
@@ -50,27 +52,7 @@ class _CommunityState extends State<Community> {
                                 bottomLeft: Radius.circular(10))),
                       ),
                     ),
-                    ListView.builder(
-                      itemCount: 54,
-                      itemBuilder: (BuildContext context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.fromLTRB(5, 5, 15, 5),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Today"),
-                              Center(
-                                child: Card(
-                                  child: ListTile(
-                                    leading: CircleAvatar(),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
+                    Community1(),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Row(

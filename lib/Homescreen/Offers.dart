@@ -106,6 +106,9 @@ class _OffersState extends State<Offers> {
                         image: AssetImage('Images/offer4.png'),
                         fit: BoxFit.cover)),
               ),
+              SizedBox(
+                height: 70,
+              )
             ],
           ),
         ),

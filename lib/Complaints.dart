@@ -8,30 +8,25 @@ class Complaints extends StatefulWidget {
 }
 
 class _ComplaintsState extends State<Complaints> {
-  String? _Selected;
-
+  String? _selectedStation;
+  String? _selectedComplaintType;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: Icon(Icons.arrow_back),
+        //leading: Icon(Icons.arrow_back),
         centerTitle: true,
-        elevation: 0,
-        toolbarHeight: 120,
-        flexibleSpace: Container(
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 141, 25, 145),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                ))),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Text(
-            "Complaints",
-            style: TextStyle(fontSize: 22),
-          ),
+        elevation: 3,
+        backgroundColor: Color.fromARGB(255, 99, 49, 216),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        )),
+        toolbarHeight: 70,
+        title: Text(
+          "Complaints",
+          style: TextStyle(fontSize: 18),
         ),
       ),
       body: Padding(
@@ -41,45 +36,51 @@ class _ComplaintsState extends State<Complaints> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 15.0),
-                child: Text("Station Name", style: TextStyle(fontSize: 23)),
+                padding: const EdgeInsets.only(bottom: 10.0, top: 15),
+                child: Text("Station Name", style: TextStyle(fontSize: 20)),
               ),
               Container(
-                decoration: BoxDecoration(border: Border.all()),
-                child: DropdownButtonFormField<String>(
-                  value: _Selected,
-                  //elevation: 2,
-                  style: TextStyle(color: Colors.black, fontSize: 18),
-                  items: <String>[
-                    'YXVestby',
-                    'Chargeby',
-                    'Voltby',
-                    'ELEctro',
-                    'EV charge',
-                    'VRmall kottayam',
-                    'Zeon international',
-                  ].map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  hint: Text(
-                    "Please Select a Station",
-                    style: TextStyle(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  border: Border.all(color: Colors.blue, width: 1.5),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: DropdownButtonFormField<String>(
+                    value: _selectedStation,
+                    decoration: InputDecoration(border: InputBorder.none),
+                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    items: <String>[
+                      'YXVestby',
+                      'Chargeby', // Ensure there's only one item with this value
+                      'Voltby',
+                      'ELEctro',
+                      'EV charge',
+                      'VRmall kottayam',
+                      'Zeon international',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    hint: Text(
+                      "Please Select a Station",
+                      style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
-                        fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    onChanged: (Newvalue) {
+                      setState(() {
+                        _selectedStation = Newvalue;
+                      });
+                    },
                   ),
-                  onChanged: (value) {
-                    setState(() {
-                      _Selected = value;
-                    });
-                  },
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 18.0, bottom: 15),
+                padding: const EdgeInsets.only(top: 30.0, bottom: 5),
                 child: Text("Complaint Type", style: TextStyle(fontSize: 18)),
               ),
               Row(
@@ -88,7 +89,7 @@ class _ComplaintsState extends State<Complaints> {
                     onPressed: () {},
                     child: Text("Charger faulty"),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black54,
+                      backgroundColor: Color.fromARGB(255, 99, 49, 216),
                       shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(10),
                       ),
@@ -99,9 +100,14 @@ class _ComplaintsState extends State<Complaints> {
                     padding: const EdgeInsets.only(left: 18.0),
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Slow Charging"),
+                      child: Text(
+                        "Slow Charging",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 99, 49, 216),
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black54,
+                        backgroundColor: Colors.white,
                         shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10),
                         ),
@@ -115,9 +121,14 @@ class _ComplaintsState extends State<Complaints> {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text("Network Issue"),
+                    child: Text(
+                      "Network Issue",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 99, 49, 216),
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black54,
+                      backgroundColor: Colors.white,
                       shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(10),
                       ),
@@ -128,9 +139,14 @@ class _ComplaintsState extends State<Complaints> {
                     padding: const EdgeInsets.only(left: 18.0),
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Voltage fluctuations"),
+                      child: Text(
+                        "Voltage fluctuations",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 99, 49, 216),
+                        ),
+                      ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black54,
+                        backgroundColor: Colors.white,
                         shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10),
                         ),
@@ -140,67 +156,89 @@ class _ComplaintsState extends State<Complaints> {
                   ),
                 ],
               ),
-              Container(
-                decoration: BoxDecoration(border: Border.all()),
-                child: DropdownButtonFormField<String>(
-                  value: _Selected,
-                  //elevation: 2,
-                  style: TextStyle(color: Colors.black, fontSize: 18),
-                  items: <String>[
-                    'Charger Faulty',
-                    'Slow Charging',
-                    'Network Issue',
-                    'Voltage Flactuations',
-                    'Slow Charging1',
-                    'Slow Charging2',
-                    'Slow Charging3',
-                  ].map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  hint: Text(
-                    "More Complaints",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(color: Colors.blue, width: 1.5),
                   ),
-                  onChanged: (value1) {
-                    setState(() {
-                      _Selected = value1;
-                    });
-                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: DropdownButtonFormField<String>(
+                      value: _selectedComplaintType,
+                      decoration: InputDecoration(border: InputBorder.none),
+                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      items: <String>[
+                        'Inconvenient locations',
+                        'Lack of compatibility',
+                        'Limited parking space',
+                        'High charging costs',
+                        'Inaccurate charging information',
+                        'Limited charging plugs',
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      hint: Text(
+                        "More Complaints",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                      onChanged: (Newvalue) {
+                        setState(() {
+                          _selectedComplaintType = Newvalue;
+                        });
+                      },
+                    ),
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: UnderlineInputBorder(),
-                      hintText: "Write Short Discription "),
+                child: Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.blue, width: 1.5),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          hintMaxLines: 2,
+                          border: InputBorder.none,
+                          hintText:
+                              "Write Short Discription \nEnter your concern here...",
+                          hintStyle: TextStyle(fontSize: 12)),
+                    ),
+                  ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 58.0),
+              SizedBox(
+                height: 70,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 45,
                 child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color.fromARGB(255, 129, 6, 160),
-                      ),
-                      minimumSize: MaterialStatePropertyAll(
-                        Size(400, 60),
+                        Color.fromARGB(255, 99, 49, 216),
                       ),
                       textStyle: MaterialStatePropertyAll(
-                        TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)))),
                   onPressed: () {},
                   child: Text("Raise a Complaint"),
                 ),
-              ),
+              )
             ],
           ),
         ),

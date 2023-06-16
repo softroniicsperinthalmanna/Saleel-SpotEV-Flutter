@@ -20,7 +20,7 @@ class _WAlletState extends State<WAllet> {
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30)),
-              color: Color.fromARGB(255, 141, 25, 145),
+              color: Color.fromARGB(255, 99, 49, 216),
             ),
             child: Center(
               child: Padding(
@@ -48,6 +48,9 @@ class _WAlletState extends State<WAllet> {
               ),
             ),
           ),
+          SizedBox(
+            height: 50,
+          ),
           Padding(
             padding: const EdgeInsets.all(15),
             child: Column(
@@ -70,7 +73,7 @@ class _WAlletState extends State<WAllet> {
                           padding: const EdgeInsets.only(left: 30, top: 20),
                           child: Text(
                             "Balance",
-                            style: TextStyle(fontSize: 28, color: Colors.white),
+                            style: TextStyle(fontSize: 25, color: Colors.white),
                           ),
                         ),
                         Row(
@@ -79,9 +82,9 @@ class _WAlletState extends State<WAllet> {
                             Padding(
                               padding: const EdgeInsets.only(left: 30),
                               child: Text(
-                                "?0",
+                                "₹ 0",
                                 style: TextStyle(
-                                    fontSize: 25, color: Colors.white),
+                                    fontSize: 24, color: Colors.white),
                               ),
                             ),
                             Padding(
@@ -133,7 +136,7 @@ class _WAlletState extends State<WAllet> {
                                                       Text(
                                                         'Credits',
                                                         style: TextStyle(
-                                                            fontSize: 18),
+                                                            fontSize: 19),
                                                       ),
                                                       SizedBox(
                                                         width: 10,

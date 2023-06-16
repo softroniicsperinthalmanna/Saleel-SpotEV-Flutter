@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -11,95 +12,136 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 115),
+        child: Drawer(
+          shadowColor: Colors.blueAccent,
+          width: 230,
+          child: Column(
+            children: [
+              ListTile(
+                leading: FaIcon(
+                  FontAwesomeIcons.book,
+                  color: Color.fromARGB(255, 99, 49, 216),
+                ),
+                title: Text(
+                  "Complaints",
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Color.fromARGB(255, 99, 49, 216),
+                  ),
+                ),
+                trailing: Icon(
+                  Icons.navigate_next_sharp,
+                  color: Color.fromARGB(255, 99, 49, 216),
+                  size: 30,
+                ),
+              ),
+              Divider(
+                thickness: 1.5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.people_sharp,
+                  size: 25,
+                  color: Color.fromARGB(255, 99, 49, 216),
+                ),
+                title: Text(
+                  "Community",
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Color.fromARGB(255, 99, 49, 216),
+                  ),
+                ),
+                trailing: Icon(
+                  Icons.navigate_next_sharp,
+                  size: 30,
+                  color: Color.fromARGB(255, 99, 49, 216),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
         elevation: 0,
-        toolbarHeight: 150,
+        toolbarHeight: 140,
         flexibleSpace: Container(
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 141, 25, 145),
+                color: Color.fromARGB(255, 99, 49, 216),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30),
                 ))),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Column(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Column(
+                  children: [
+                    Image(image: AssetImage("Images/ProfiePic.png")),
+                    Text(
+                      "Saleel Mhd",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    Column(
+                      children: [],
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image(image: AssetImage("Images/ProfiePic.png")),
                       Text(
-                        "Saleel Mhd",
+                        "apple@gmail.com",
                         style: TextStyle(fontSize: 15),
                       ),
-                      Column(
-                        children: [],
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3.0, bottom: 3),
+                        child: Text(
+                          "987654321",
+                          style: TextStyle(fontSize: 15),
+                        ),
                       ),
+                      ElevatedButton.icon(
+                          icon: Icon(
+                            Icons.edit,
+                            color: Colors.green,
+                            size: 15.0,
+                          ),
+                          label: Text(
+                            'Edit Profile',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(0),
+                            ),
+                            backgroundColor: Colors.white,
+                          )),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "apple@gmail.com",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 3.0, bottom: 3),
-                          child: Text(
-                            "987654321",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                        ),
-                        ElevatedButton.icon(
-                            icon: Icon(
-                              Icons.edit,
-                              color: Colors.green,
-                              size: 15.0,
-                            ),
-                            label: Text(
-                              'Edit Profile',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(0),
-                              ),
-                              backgroundColor: Colors.white,
-                            )),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Icon(Icons.menu),
-                ],
-              ))
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       body: ListView(
         padding: EdgeInsets.all(20),
         children: [
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -117,17 +159,20 @@ class _ProfileState extends State<Profile> {
                       child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 18.0),
-                        child: Icon(
-                          Icons.car_crash,
-                          size: 35,
-                        ),
-                      ),
+                          padding: const EdgeInsets.only(left: 18.0),
+                          child: FaIcon(
+                            FontAwesomeIcons.carRear,
+                            size: 25,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          )),
                       Padding(
                         padding: const EdgeInsets.only(left: 48.0),
                         child: Text(
                           "ManageEV",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
                         ),
                       ),
                     ],
@@ -139,7 +184,7 @@ class _ProfileState extends State<Profile> {
             height: 20,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -157,17 +202,20 @@ class _ProfileState extends State<Profile> {
                     child: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
-                          child: Icon(
-                            Icons.car_crash,
-                            size: 35,
-                          ),
-                        ),
+                            padding: const EdgeInsets.only(left: 18.0),
+                            child: FaIcon(
+                              FontAwesomeIcons.calendarCheck,
+                              size: 25,
+                              color: Color.fromARGB(255, 99, 49, 216),
+                            )),
                         Padding(
                           padding: const EdgeInsets.only(left: 48.0),
                           child: Text(
                             "My Bookings",
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 99, 49, 216),
+                            ),
                           ),
                         ),
                       ],
@@ -180,7 +228,7 @@ class _ProfileState extends State<Profile> {
             height: 20,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -199,15 +247,19 @@ class _ProfileState extends State<Profile> {
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
                         child: Icon(
-                          Icons.car_crash,
+                          Icons.history,
                           size: 35,
+                          color: Color.fromARGB(255, 99, 49, 216),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 48.0),
                         child: Text(
                           "History",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
                         ),
                       ),
                     ],
@@ -218,7 +270,7 @@ class _ProfileState extends State<Profile> {
             height: 20,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -237,15 +289,19 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: const EdgeInsets.only(left: 18.0),
                       child: Icon(
-                        Icons.car_crash,
+                        Icons.wallet,
                         size: 35,
+                        color: Color.fromARGB(255, 99, 49, 216),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 48.0),
                       child: Text(
                         "Wallet",
-                        style: TextStyle(fontSize: 22),
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Color.fromARGB(255, 99, 49, 216),
+                        ),
                       ),
                     ),
                   ],
@@ -258,7 +314,7 @@ class _ProfileState extends State<Profile> {
             height: 20,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -277,15 +333,19 @@ class _ProfileState extends State<Profile> {
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
                         child: Icon(
-                          Icons.car_crash,
+                          Icons.trip_origin,
                           size: 35,
+                          color: Color.fromARGB(255, 99, 49, 216),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 48.0),
                         child: Text(
                           "Trips",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
                         ),
                       ),
                     ],
@@ -297,7 +357,7 @@ class _ProfileState extends State<Profile> {
             height: 20,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -316,15 +376,19 @@ class _ProfileState extends State<Profile> {
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
                         child: Icon(
-                          Icons.car_crash,
+                          Icons.favorite_border_outlined,
                           size: 35,
+                          color: Color.fromARGB(255, 99, 49, 216),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 48.0),
                         child: Text(
                           "Favorites",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 99, 49, 216),
+                          ),
                         ),
                       ),
                     ],
@@ -336,7 +400,7 @@ class _ProfileState extends State<Profile> {
             height: 20,
           ),
           Container(
-              height: 80,
+              height: 70,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
@@ -355,7 +419,8 @@ class _ProfileState extends State<Profile> {
                       Padding(
                         padding: const EdgeInsets.only(left: 18.0),
                         child: Icon(
-                          Icons.car_crash,
+                          Icons.logout,
+                          color: Colors.red,
                           size: 35,
                         ),
                       ),
@@ -363,7 +428,10 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.only(left: 48.0),
                         child: Text(
                           "Logout",
-                          style: TextStyle(fontSize: 22),
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                     ],
@@ -371,6 +439,9 @@ class _ProfileState extends State<Profile> {
                   width: 100,
                   height: 50) // child widget, replace with your own
               ),
+          SizedBox(
+            height: 70,
+          )
         ],
       ),
     );
