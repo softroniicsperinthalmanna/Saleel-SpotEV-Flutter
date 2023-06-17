@@ -1,15 +1,17 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/StationList.dart';
 
 //import 'ChargingHistory.dart';
-import 'Complaints.dart';
+// import 'Complaints.dart';
 //import 'Favorites.dart';
 //import 'MyBookings.dart';
-import 'Community2.dart';
+// import 'Community2.dart';
 
-import 'Profile/Community.dart';
-import 'Profile/Profile.dart';
-import 'Profile/Wallet.dart';
+// import 'HomeNav.dart';
+// import 'Profile/Community.dart';
+// import 'Profile/Profile.dart';
+// import 'Profile/Wallet.dart';
 //import 'StationsShow.dart';
 //import 'Tabbar_mybookings.dart';
 //import 'package:spotev/Formscreens/ForgetPassword/Recovery.dart';
@@ -24,7 +26,14 @@ import 'Profile/Wallet.dart';
 //import 'Payment.dart';
 
 //import 'Formscreens/OTPsuccessful.dart';
-import 'Homescreen/Homepage.dart';
+// import 'Homescreen/Homepage.dart';
+// import 'Select_Vehicle.dart';
+import 'Station/Add slots.dart';
+import 'Station/Bookings.dart';
+import 'Station/Homepage.dart';
+import 'Station/Login.dart';
+import 'Station/SignUp.dart';
+import 'Station/Slots.dart';
 //import 'Formscreens/OTPverification.dart';
 //import 'package:spotev/Formscreens/Modulescreen.dart';
 
@@ -48,7 +57,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "SpotEV", debugShowCheckedModeBanner: false, home: Homepage()
+        title: "SpotEV",
+        debugShowCheckedModeBanner: false,
+        home: StationBookings()
         // AnimatedSplashScreen(
         //   splash: Image.asset(
         //     "Images/logo.png",

@@ -47,11 +47,15 @@ class _HomeState extends State<Home> {
                 child: GestureDetector(
                   onTap: () {
                     showModalBottomSheet(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25))),
+                        isScrollControlled: true,
                         context: context,
                         builder: (context) {
                           return Container(
-                            width: double.infinity,
-                            color: Colors.white,
+                            height: 620,
+                            width: MediaQuery.of(context).size.width,
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -59,410 +63,440 @@ class _HomeState extends State<Home> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      left: 20,
-                                      top: 10,
-                                    ),
+                                        left: 20.0, top: 18),
                                     child: Text(
                                       'Station Status',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height: 30,
-                                        width: 80,
-                                        child: OutlinedButton(
-                                            style: OutlinedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                foregroundColor: Colors.black,
-                                                side: BorderSide(
-                                                  color: Color(0xff0000FF),
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20))),
-                                            onPressed: () {},
-                                            child: Text(
-                                              'All',
-                                            )),
-                                      ),
-                                      Container(
-                                        height: 30,
-                                        width: 80,
-                                        child: OutlinedButton(
-                                            style: OutlinedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                foregroundColor: Colors.black,
-                                                side: BorderSide(
-                                                  color: Color(0xff0000FF),
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20))),
-                                            onPressed: () {},
-                                            child: Text(
-                                              'Available',
-                                            )),
-                                      ),
-                                      Container(
-                                        height: 30,
-                                        width: 87,
-                                        child: OutlinedButton(
-                                            style: OutlinedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                foregroundColor: Colors.black,
-                                                side: BorderSide(
-                                                  color: Color(0xff0000FF),
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20))),
-                                            onPressed: () {},
-                                            child: Text(
-                                              'Unavailable',
-                                            )),
-                                      ),
-                                    ],
+                                  Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          height: 35,
+                                          width: 90,
+                                          child: OutlinedButton(
+                                              style: OutlinedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Color.fromARGB(
+                                                          255, 99, 49, 216),
+                                                  foregroundColor: Colors.black,
+                                                  side: BorderSide(
+                                                    color: Color(0xff0000FF),
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10))),
+                                              onPressed: () {},
+                                              child: Text(
+                                                'All',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              )),
+                                        ),
+                                        Container(
+                                          height: 35,
+                                          width: 90,
+                                          child: OutlinedButton(
+                                              style: OutlinedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  foregroundColor: Colors.black,
+                                                  side: BorderSide(
+                                                    color: Color(0xff0000FF),
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10))),
+                                              onPressed: () {},
+                                              child: Text(
+                                                'Available',
+                                              )),
+                                        ),
+                                        Container(
+                                          height: 35,
+                                          width: 105,
+                                          child: OutlinedButton(
+                                              style: OutlinedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  foregroundColor: Colors.black,
+                                                  side: BorderSide(
+                                                    color: Color(0xff0000FF),
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10))),
+                                              onPressed: () {},
+                                              child: Text(
+                                                'Unavailable',
+                                              )),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      left: 20,
-                                      top: 10,
+                                      left: 20.0,
                                     ),
                                     child: Text(
                                       'Charger Type',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        height: 30,
-                                        width: 80,
-                                        child: OutlinedButton(
-                                            style: OutlinedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                foregroundColor: Colors.black,
-                                                side: BorderSide(
-                                                  color: Color(0xff0000FF),
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20))),
-                                            onPressed: () {},
-                                            child: Text(
-                                              'AC',
-                                            )),
-                                      ),
-                                      Container(
-                                        height: 30,
-                                        width: 80,
-                                        child: OutlinedButton(
-                                            style: OutlinedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                foregroundColor: Colors.black,
-                                                side: BorderSide(
-                                                  color: Color(0xff0000FF),
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20))),
-                                            onPressed: () {},
-                                            child: Text(
-                                              'DC',
-                                            )),
-                                      ),
-                                      Container(
-                                        height: 30,
-                                        width: 80,
-                                        child: OutlinedButton(
-                                            style: OutlinedButton.styleFrom(
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                side: BorderSide(
-                                                  color: Colors.white,
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20))),
-                                            onPressed: () {},
-                                            child: Text(
-                                              '',
-                                            )),
-                                      ),
-                                    ],
+                                  Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          height: 35,
+                                          width: 90,
+                                          child: OutlinedButton(
+                                              style: OutlinedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Color.fromARGB(
+                                                          255, 99, 49, 216),
+                                                  foregroundColor: Colors.black,
+                                                  side: BorderSide(
+                                                    color: Color(0xff0000FF),
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10))),
+                                              onPressed: () {},
+                                              child: Text(
+                                                'AC',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              )),
+                                        ),
+                                        Container(
+                                          height: 35,
+                                          width: 90,
+                                          child: OutlinedButton(
+                                              style: OutlinedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  foregroundColor: Colors.black,
+                                                  side: BorderSide(
+                                                    color: Color(0xff0000FF),
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10))),
+                                              onPressed: () {},
+                                              child: Text(
+                                                'DC',
+                                              )),
+                                        ),
+                                        Container(
+                                          height: 30,
+                                          width: 98,
+                                          child: OutlinedButton(
+                                              style: OutlinedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  side: BorderSide(
+                                                    color: Colors.white,
+                                                  ),
+                                                  shape: RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10))),
+                                              onPressed: () {},
+                                              child: Text(
+                                                '',
+                                              )),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      left: 20,
-                                      top: 10,
+                                      left: 20.0,
                                     ),
                                     child: Text(
                                       'Connector Type',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'All',
-                                                )),
-                                          ),
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'CCS2',
-                                                )),
-                                          ),
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'CCS',
-                                                )),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 7,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'GB/T',
-                                                )),
-                                          ),
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'IEC 60309',
-                                                )),
-                                          ),
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'CHAdeMo',
-                                                )),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 7,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  '15 AMP SWITCH',
-                                                )),
-                                          ),
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor: Colors
-                                                        .transparent,
-                                                    foregroundColor:
-                                                        Colors.black,
-                                                    side: BorderSide(
-                                                      color: Color(0xff0000FF),
-                                                    ),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'Type-2',
-                                                )),
-                                          ),
-                                          Container(
-                                            height: 30,
-                                            width: 80,
-                                            child: OutlinedButton(
-                                                style: OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                    side: BorderSide(
-                                                        color: Colors.white),
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20))),
-                                                onPressed: () {},
-                                                child: Text(
-                                                  '',
-                                                )),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 20,
-                                      top: 10,
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              height: 35,
+                                              width: 90,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'All',
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              width: 90,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'CCS2',
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              width: 98,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'CCS',
+                                                  )),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 7,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              height: 35,
+                                              width: 90,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'GB/T',
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              width: 90,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'IEC 60309',
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              width: 98,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'CHAdeMo',
+                                                  )),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 7,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              height: 35,
+                                              width: 90,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    '15 AMP SWITCH',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                    ),
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              width: 90,
+                                              child: OutlinedButton(
+                                                  style:
+                                                      OutlinedButton.styleFrom(
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          side: BorderSide(
+                                                            color: Color(
+                                                                0xff0000FF),
+                                                          ),
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    'Type-2',
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 35,
+                                              width: 98,
+                                              child: OutlinedButton(
+                                                  style: OutlinedButton.styleFrom(
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      side: BorderSide(
+                                                          color: Colors.white),
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10))),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    '',
+                                                  )),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 25.0),
                                     child: Text(
-                                      'Charger Type',
+                                      'Distance',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
                                   Row(
@@ -482,6 +516,15 @@ class _HomeState extends State<Home> {
                                     ],
                                   ),
                                   Center(child: Text('50 km')),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 25.0),
+                                    child: Text(
+                                      'Price',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -509,7 +552,7 @@ class _HomeState extends State<Home> {
                                             Icons.currency_rupee_sharp,
                                             size: 17,
                                           ),
-                                          Text('1000'),
+                                          Text('200'),
                                         ],
                                       )
                                     ],
@@ -521,7 +564,7 @@ class _HomeState extends State<Home> {
                                         Icons.currency_rupee,
                                         size: 17,
                                       ),
-                                      Text('50 Price/Unit'),
+                                      Text('100 Price/Unit'),
                                     ],
                                   ),
                                   SizedBox(
@@ -536,6 +579,8 @@ class _HomeState extends State<Home> {
                                             width: 140,
                                             child: ElevatedButton(
                                                 style: ElevatedButton.styleFrom(
+                                                    elevation: 3,
+                                                    shadowColor: Colors.blue,
                                                     backgroundColor: Colors
                                                         .white,
                                                     foregroundColor:
@@ -560,8 +605,11 @@ class _HomeState extends State<Home> {
                                           width: 140,
                                           child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
+                                                  elevation: 5,
+                                                  shadowColor: Colors.blue,
                                                   backgroundColor:
-                                                      Color(0xff5A5AD2),
+                                                      Color.fromARGB(
+                                                          255, 99, 49, 216),
                                                   foregroundColor: Colors.white,
                                                   side: BorderSide(
                                                     color: Color(0xff0000FF),
@@ -573,6 +621,9 @@ class _HomeState extends State<Home> {
                                               onPressed: () {},
                                               child: Text('Apply Filters')))
                                     ],
+                                  ),
+                                  SizedBox(
+                                    height: 5,
                                   )
                                 ],
                               ),
@@ -591,17 +642,18 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          Positioned(
-            top: 130,
-            right: 10,
-            child: CircleAvatar(
-                radius: 22.5,
-                backgroundColor: Colors.white,
-                child: Icon(
-                  Icons.filter_none_sharp,
-                  color: Colors.black,
-                )),
-          ),
+
+          // Positioned(
+          //   top: 130,
+          //   left: 15,
+          //   child: Container(
+          //       height: 100,
+          //       width: 180,
+          //       color: Colors.red,
+          //       child:
+          //       ),
+          // ), insert dropdown add vehicle
+
           Align(
               alignment: Alignment.center,
               child: Icon(
