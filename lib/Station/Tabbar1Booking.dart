@@ -34,7 +34,9 @@ class _Tabbar1State extends State<Tabbar1> {
           //   ),
           // ),
           Padding(
-            padding: const EdgeInsets.only(left: 15, top: 10),
+            padding: const EdgeInsets.only(
+              left: 15,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,9 +58,9 @@ class _Tabbar1State extends State<Tabbar1> {
                           builder: (context, child) => Theme(
                               data: ThemeData.light().copyWith(
                                 colorScheme: ColorScheme.fromSwatch(
-                                  primarySwatch: Colors.teal,
-                                  primaryColorDark: Colors.teal,
-                                  accentColor: Colors.teal,
+                                  primarySwatch: Colors.indigo,
+                                  // primaryColorDark: Colors.green,
+                                  // accentColor: Color(0xff5A5AD2),
                                 ),
                                 dialogBackgroundColor: Colors.white,
                               ),
@@ -81,7 +83,7 @@ class _Tabbar1State extends State<Tabbar1> {
           ),
 
           Padding(
-            padding: const EdgeInsets.only(top: 5, left: 14, right: 30),
+            padding: const EdgeInsets.only(bottom: 7, left: 14, right: 30),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -177,21 +179,6 @@ class _Tabbar1State extends State<Tabbar1> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("02 May 2021"),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.white,
-                                      side: BorderSide(
-                                          width: 0,
-                                          color: const Color.fromARGB(
-                                              255, 255, 59, 59))),
-                                  onPressed: () {
-                                    // Add your button's onPress functionality here
-                                  },
-                                  child: Text(
-                                    'Cancel',
-                                    style: TextStyle(color: Colors.red),
-                                  ),
-                                ),
                               ],
                             ),
                           ),
@@ -218,7 +205,10 @@ class _Tabbar1State extends State<Tabbar1> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Icon(Icons.map_outlined),
+                                      Icon(
+                                        Icons.person,
+                                        color: Colors.blueAccent,
+                                      ),
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(left: 8.0),
@@ -226,48 +216,12 @@ class _Tabbar1State extends State<Tabbar1> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              "YX Vestby Charging Station",
-                                              style: TextStyle(fontSize: 12),
-                                            ),
-                                            Text(
-                                              "TML Plant,Malappuram",
-                                              style: TextStyle(fontSize: 12),
-                                            ),
-                                            Text(
-                                              "Charger A | Charging Point 1",
-                                              style: TextStyle(fontSize: 12),
-                                            ),
                                             Padding(
                                               padding: const EdgeInsets.only(
-                                                  top: 10.0),
-                                              child: ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.white,
-                                                    side: BorderSide(
-                                                        width: 0,
-                                                        color: Color.fromARGB(
-                                                            255,
-                                                            128,
-                                                            59,
-                                                            255))),
-                                                onPressed: () {
-                                                  // Add your button's onPress functionality here
-                                                },
-                                                child: Row(
-                                                  children: [
-                                                    Icon(
-                                                      Icons.navigate_next,
-                                                      color: Colors.black,
-                                                    ),
-                                                    Text(
-                                                      'Navigate',
-                                                      style: TextStyle(
-                                                          color: Colors.blue),
-                                                    ),
-                                                  ],
-                                                ),
+                                                  top: 4.0),
+                                              child: Text(
+                                                "Soloman",
+                                                style: TextStyle(fontSize: 17),
                                               ),
                                             ),
                                           ],
@@ -279,97 +233,44 @@ class _Tabbar1State extends State<Tabbar1> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      ElevatedButton(
-                                        style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.white,
-                                            side: BorderSide(
-                                                width: 0,
-                                                color: Color.fromARGB(
-                                                    255, 59, 255, 101))),
-                                        onPressed: () {
-                                          showDialog(
-                                              context: context,
-                                              builder: (context) {
-                                                return AlertDialog(
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15.0),
-                                                    ),
-                                                    buttonPadding:
-                                                        EdgeInsets.only(
-                                                            right: 100),
-                                                    title: Column(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Text("Are You Sure?"),
-                                                      ],
-                                                    ),
-                                                    actions: [
-                                                      ElevatedButton(
-                                                        onPressed: () {
-                                                          Navigator.pop(
-                                                              context);
-                                                        },
-                                                        child: Text("Back"),
-                                                        style: ElevatedButton
-                                                            .styleFrom(
-                                                          backgroundColor:
-                                                              Colors.black54,
-                                                          shape:
-                                                              new RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                new BorderRadius
-                                                                    .circular(20),
-                                                          ),
-                                                          side: BorderSide(
-                                                              width: 1,
-                                                              color:
-                                                                  Colors.blue),
-                                                        ),
-                                                      ),
-                                                      ElevatedButton(
-                                                        onPressed: () {},
-                                                        child: Text("Ok"),
-                                                        style: ElevatedButton
-                                                            .styleFrom(
-                                                          backgroundColor:
-                                                              Colors.black54,
-                                                          shape:
-                                                              new RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                new BorderRadius
-                                                                    .circular(20),
-                                                          ),
-                                                          side: BorderSide(
-                                                              width: 1,
-                                                              color:
-                                                                  Colors.blue),
-                                                        ),
-                                                      )
-                                                    ]);
-                                              });
-                                        }, // Add your button's onPress functionality here
-
-                                        child: Text(
-                                          'Completed',
-                                          style: TextStyle(color: Colors.green),
-                                        ),
-                                      ),
+                                      Column(
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 21,
+                                            child: CircleAvatar(
+                                              backgroundColor: Colors.white,
+                                              radius: 20,
+                                              child: Icon(
+                                                Icons.call,
+                                                size: 25,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            "Call",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.blueAccent),
+                                          )
+                                        ],
+                                      )
                                     ],
                                   ),
                                 ],
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(
-                                  top: 10,
+                                  top: 0,
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.map_outlined),
+                                    Icon(
+                                      Icons.trip_origin_rounded,
+                                      color: Colors.blueAccent,
+                                    ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8.0),
                                       child: Text("DC Type 1"),
@@ -442,7 +343,7 @@ class _Tabbar1State extends State<Tabbar1> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.end,
                                           children: [
-                                            Text('1:15PM'),
+                                            Text('2:00PM'),
                                             Text('12 May 2023')
                                           ],
                                         ),
@@ -474,7 +375,7 @@ class _Tabbar1State extends State<Tabbar1> {
                                     fontSize: 20, color: Colors.white),
                               ),
                               Text(
-                                "?250",
+                                "₹250",
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.white),
                               ),

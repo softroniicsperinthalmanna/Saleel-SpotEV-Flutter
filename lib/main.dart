@@ -1,51 +1,60 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
+//import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:spotev/Station/StationList.dart';
-
-//import 'ChargingHistory.dart';
-// import 'Complaints.dart';
-//import 'Favorites.dart';
-//import 'MyBookings.dart';
-// import 'Community2.dart';
-
-// import 'HomeNav.dart';
-// import 'Profile/Community.dart';
-// import 'Profile/Profile.dart';
-// import 'Profile/Wallet.dart';
-//import 'StationsShow.dart';
-//import 'Tabbar_mybookings.dart';
-//import 'package:spotev/Formscreens/ForgetPassword/Recovery.dart';
-
-//import 'package:spotev/Confirmbooking.dart';
-
-//import 'Formscreens/ForgetPassword/NewPassword.dart';
-//import 'Formscreens/ForgetPassword/Recovery.dart';
-//import 'Formscreens/ForgetPassword/Verify.dart';
-
-//import 'Homescreen/Offers.dart';
-//import 'Payment.dart';
-
-//import 'Formscreens/OTPsuccessful.dart';
-// import 'Homescreen/Homepage.dart';
-// import 'Select_Vehicle.dart';
-import 'Station/Add slots.dart';
-import 'Station/Bookings.dart';
-import 'Station/Homepage.dart';
-import 'Station/Login.dart';
-import 'Station/SignUp.dart';
-import 'Station/Slots.dart';
-//import 'Formscreens/OTPverification.dart';
-//import 'package:spotev/Formscreens/Modulescreen.dart';
-
-//import 'Formscreens/Loginscreen.dart';
-//import 'ManageEV.dart';
-
-//import 'EditProfile.dart';
-
-//import 'TripPlanner.dart';
-//import 'Formscreens/Registrationscreen.dart';
-//import 'ChargingSessionSummary.dart';
-//import 'PaymentHistory.dart';
+//  import 'package:spotev/Station/StationList.dart';
+//  import 'User/Formscreens/Homescreen/Profile/Manage Ev/Select_Vehicle.dart';
+//  import 'Station/Add slots.dart';
+//  import 'Station/Bookings.dart';
+// import 'Station/Homepage.dart';
+// import 'User/Formscreens/ForgetPassword/NewPassword.dart';
+// import 'User/Formscreens/ForgetPassword/Recovery.dart';
+// import 'User/Formscreens/ForgetPassword/Verify.dart';
+// import 'User/Formscreens/Homescreen/Home/Homepage.dart';
+// import 'User/Formscreens/Homescreen/Offers/Offers.dart';
+import 'User/Formscreens/Homescreen/Profile.dart';
+// import 'User/Formscreens/Homescreen/Profile/Community/Community.dart';
+// import 'User/Formscreens/Homescreen/Profile/Community/Community2.dart';
+//import 'User/Formscreens/Homescreen/Profile/Complaints/Complaints.dart';
+//import 'User/Formscreens/Homescreen/Profile/Editprofile/EditProfile.dart';
+import 'User/Formscreens/Homescreen/Profile/Favorites/Favorites.dart';
+// import 'User/Formscreens/Homescreen/Profile/History/ChargingHistory.dart';
+// import 'User/Formscreens/Homescreen/Profile/History/Payment.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/ManageEV.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/2-Whealer.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/3-Whealer.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/All.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Audi.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/BMW.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/BYD.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Citroen.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Hyundai.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/JBM.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Jaguar.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Kia.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/MG.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Mahindra.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Marcedes.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/MiniCooper.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Tata.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Tesla.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/BrandView/Volvo.dart';
+import 'User/Formscreens/Homescreen/Profile/Manage Ev/Select_Vehicle.dart';
+// import 'User/Formscreens/Homescreen/Profile/MyBookings/MyBookings.dart';
+// import 'User/Formscreens/Homescreen/Profile/MyBookings/Tabbar_mybookings.dart';
+// import 'User/Formscreens/Homescreen/Profile/Wallet/Wallet.dart';
+// import 'User/Formscreens/Homescreen/Stations/Confirmbooking.dart';
+// import 'User/Formscreens/Homescreen/Stations/StationsShow.dart';
+//import 'User/Formscreens/OTPsuccessful.dart';
+// import 'Station/Login.dart';
+// import 'Station/SignUp.dart';
+// import 'Station/Slots.dart';
+import 'User/Formscreens/Homescreen/Profile/History/onboarding_screen.dart';
+// import 'User/Formscreens/Homescreen/Profile/History/ChargingSessionSummary.dart';
+// import 'User/Formscreens/Homescreen/Profile/History/PaymentHistory.dart';
+// import 'User/Formscreens/Homescreen/Profile/Trips/TripPlanner.dart';
+// import 'User/Formscreens/Loginscreen.dart';
+// import 'User/Formscreens/Modulescreen.dart';
+// import 'User/Formscreens/OTPverification.dart';
+// import 'User/Formscreens/Registrationscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,9 +66,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "SpotEV",
-        debugShowCheckedModeBanner: false,
-        home: StationBookings()
+        title: "SpotEV", debugShowCheckedModeBanner: false, home: Profile()
         // AnimatedSplashScreen(
         //   splash: Image.asset(
         //     "Images/logo.png",
