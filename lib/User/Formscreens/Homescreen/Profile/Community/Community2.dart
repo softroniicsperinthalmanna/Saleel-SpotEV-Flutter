@@ -14,6 +14,7 @@ class _Community1State extends State<Community1> {
       backgroundColor: Colors.transparent,
       body: CustomScrollView(slivers: [
         SliverAppBar(
+            automaticallyImplyLeading: false,
             pinned: true,
             floating: true,
             expandedHeight: 150,
@@ -95,8 +96,18 @@ class _Community1State extends State<Community1> {
                                               right: 8,
                                               top: 8,
                                             ),
-                                            child:
-                                                Image.asset("Images/Avtr1.png"),
+                                            child: Stack(children: [
+                                              Image.asset("Images/Avtr1.png"),
+                                              Positioned(
+                                                bottom: 0,
+                                                right: 0,
+                                                child: Icon(
+                                                  Icons.circle,
+                                                  color: Colors.green,
+                                                  size: 8,
+                                                ),
+                                              )
+                                            ]),
                                           ),
                                           Text("Anil")
                                         ],

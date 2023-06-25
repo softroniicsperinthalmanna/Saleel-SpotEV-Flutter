@@ -43,10 +43,10 @@ class _SelectVehicleState extends State<SelectVehicle> {
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
-          leading: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
+          // leading: const Icon(
+          //   Icons.arrow_back,
+          //   color: Colors.black,
+          // ),
         ),
         body: SingleChildScrollView(
           child: Container(

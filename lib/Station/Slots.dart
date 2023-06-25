@@ -13,10 +13,10 @@ class _SlotsState extends State<Slots> {
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
           elevation: 0,
-          backgroundColor: Color(0xff5A5AD2),
-          icon: Icon(Icons.add),
+          backgroundColor: const Color(0xff5A5AD2),
+          icon: const Icon(Icons.add),
           onPressed: () {},
-          label: Text("Add Slots")),
+          label: const Text("Add Slots")),
       appBar: AppBar(
         // leading: Icon(Icons.arrow_back),
         title: Center(
@@ -25,8 +25,8 @@ class _SlotsState extends State<Slots> {
           style: TextStyle(fontWeight: FontWeight.bold),
         )),
         toolbarHeight: 80,
-        backgroundColor: Color(0xff5A5AD2),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff5A5AD2),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),

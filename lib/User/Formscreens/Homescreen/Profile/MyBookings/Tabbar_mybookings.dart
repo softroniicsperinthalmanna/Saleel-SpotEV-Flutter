@@ -21,7 +21,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                   decoration: BoxDecoration(
                     border: (Border.all(
                       width: 0.3,
-                      color: Colors.blueAccent,
+                      color: Colors.indigo,
                     )),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
@@ -76,7 +76,10 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(Icons.map_outlined),
+                                Icon(
+                                  Icons.location_on,
+                                  color: Colors.indigoAccent,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Column(
@@ -111,8 +114,8 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                           child: Row(
                                             children: [
                                               Icon(
-                                                Icons.navigate_next,
-                                                color: Colors.black,
+                                                Icons.near_me,
+                                                color: Colors.blueAccent,
                                               ),
                                               Text(
                                                 'Navigate',
@@ -146,7 +149,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                           return AlertDialog(
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius.circular(15.0),
+                                                    BorderRadius.circular(10.0),
                                               ),
                                               buttonPadding:
                                                   EdgeInsets.only(right: 100),
@@ -166,12 +169,12 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor:
-                                                        Colors.black54,
+                                                        Colors.indigo,
                                                     shape:
                                                         new RoundedRectangleBorder(
                                                       borderRadius:
                                                           new BorderRadius
-                                                              .circular(20),
+                                                              .circular(10),
                                                     ),
                                                     side: BorderSide(
                                                         width: 1,
@@ -184,12 +187,12 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor:
-                                                        Colors.black54,
+                                                        Colors.indigo,
                                                     shape:
                                                         new RoundedRectangleBorder(
                                                       borderRadius:
                                                           new BorderRadius
-                                                              .circular(20),
+                                                              .circular(10),
                                                     ),
                                                     side: BorderSide(
                                                         width: 1,
@@ -215,7 +218,10 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                           ),
                           child: Row(
                             children: [
-                              Icon(Icons.map_outlined),
+                              Icon(
+                                Icons.trip_origin_outlined,
+                                color: Colors.indigoAccent,
+                              ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text("DC Type 1"),

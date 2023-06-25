@@ -12,81 +12,63 @@ class _PaymentHistoryState extends State<PaymentHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: Icon(Icons.arrow_back),
         centerTitle: true,
-        elevation: 0,
-        toolbarHeight: 120,
-        flexibleSpace: Container(
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 141, 25, 145),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                ))),
-        title: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Text(
-            "Payment History",
-            style: TextStyle(fontSize: 22),
-          ),
-        ),
+        title: Text('Payment History'),
+        toolbarHeight: 80,
+        backgroundColor: Color(0xff5A5AD2),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        )),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 80),
-                child: Text(
-                  "? 560",
-                  style: TextStyle(fontSize: 50),
-                ),
-              ),
+            SizedBox(
+              height: 100,
             ),
-            Container(
+            Text(
+              " ₹ 560.00",
+              style: TextStyle(fontSize: 40),
+            ),
+            SizedBox(height: 10),
+            Center(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 110),
-                      child: Image(
-                        height: 70,
-                        image: AssetImage(
-                          "Images/Checkmark.png",
-                        ),
-                      ),
+                  Image(
+                    height: 40,
+                    image: AssetImage(
+                      "Images/Checkmark.png",
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(),
-                    child: Text(
-                      "Completed",
-                      style: TextStyle(fontSize: 22),
-                    ),
-                  )
+                  Text(
+                    "  Completed",
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 0),
-              child: Divider(
-                indent: 110,
-                endIndent: 110,
-              ),
+            Divider(
+              thickness: 1.5,
+              indent: 110,
+              endIndent: 110,
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
-              "May 3,2023 7:22 PM",
-              style: TextStyle(fontSize: 18),
+              "May 3,2023 07:22 PM",
+              style: TextStyle(fontSize: 15),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 70),
+              padding: const EdgeInsets.fromLTRB(20, 70, 20, 10),
               child: Container(
-                width: 300,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(20)),
+                    border: Border.all(color: Colors.indigo, width: 2),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Column(
@@ -94,7 +76,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                     children: [
                       Text(
                         "Payment ID",
-                        style: TextStyle(fontSize: 23),
+                        style: TextStyle(fontSize: 21),
                       ),
                       Text(
                         "#689214",
@@ -104,28 +86,28 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "To:YXVestby",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 8),
                         child: Text(
                           "Vestby@gmail.com",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 8, top: 10),
                         child: Text(
                           "From:YXVestby",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Text(
                           "Vestby@gmail.com",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18),
                         ),
                       ),
                     ],

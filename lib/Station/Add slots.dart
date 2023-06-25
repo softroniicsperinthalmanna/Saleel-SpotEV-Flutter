@@ -37,14 +37,14 @@ class _AddSlotsState extends State<AddSlots> {
     return Scaffold(
       appBar: AppBar(
         // leading: Icon(Icons.arrow_back),
-        title: Center(
+        title: const Center(
             child: Text(
           'Add Slots',
           style: TextStyle(fontWeight: FontWeight.bold),
         )),
         toolbarHeight: 80,
-        backgroundColor: Color(0xff5A5AD2),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff5A5AD2),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
@@ -52,7 +52,7 @@ class _AddSlotsState extends State<AddSlots> {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 120,
           ),
           Row(
@@ -61,8 +61,8 @@ class _AddSlotsState extends State<AddSlots> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 5.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 5.0),
                     child: Text("Voltage"),
                   ),
                   Card(
@@ -76,10 +76,11 @@ class _AddSlotsState extends State<AddSlots> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: DropdownButton(
-                            style: TextStyle(fontSize: 16, color: Colors.black),
+                            style: const TextStyle(
+                                fontSize: 16, color: Colors.black),
                             underline: Container(),
                             isExpanded: true,
-                            hint: Text(' Voltage'),
+                            hint: const Text(' Voltage'),
                             value: selected_item1,
                             items: voltage
                                 .map((e) => DropdownMenuItem(
@@ -100,8 +101,8 @@ class _AddSlotsState extends State<AddSlots> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 5.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 5.0),
                     child: Text("Charger Type"),
                   ),
                   Card(
@@ -115,7 +116,8 @@ class _AddSlotsState extends State<AddSlots> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: DropdownButton(
-                            style: TextStyle(fontSize: 16, color: Colors.black),
+                            style: const TextStyle(
+                                fontSize: 16, color: Colors.black),
                             underline: Container(),
                             isExpanded: true,
                             hint: Text(' Charger type'),
@@ -138,14 +140,14 @@ class _AddSlotsState extends State<AddSlots> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5.0),
+              const Padding(
+                padding: EdgeInsets.only(left: 5.0),
                 child: Text("Price"),
               ),
               Card(
@@ -159,7 +161,7 @@ class _AddSlotsState extends State<AddSlots> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: DropdownButton(
-                        hint: Text(' Price'),
+                        hint: const Text(' Price'),
                         underline: Container(),
                         isExpanded: true,
                         style: TextStyle(fontSize: 16, color: Colors.black),
@@ -180,14 +182,14 @@ class _AddSlotsState extends State<AddSlots> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Disable slot'),
-              SizedBox(
+              const Text('Disable slot'),
+              const SizedBox(
                 width: 20,
               ),
               Switch(
@@ -199,7 +201,7 @@ class _AddSlotsState extends State<AddSlots> {
                   })
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Padding(
@@ -209,13 +211,13 @@ class _AddSlotsState extends State<AddSlots> {
               width: double.infinity,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff5A5AD2),
+                      backgroundColor: const Color(0xff5A5AD2),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       )),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Submit',
                     style: TextStyle(fontSize: 18),
                   )),

@@ -17,25 +17,16 @@ class _MyBookingsState extends State<MyBookings> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          leading: Icon(Icons.arrow_back),
           centerTitle: true,
-          elevation: 0,
-          toolbarHeight: 120,
-          flexibleSpace: Container(
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 141, 25, 145),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
-                  ))),
-          title: Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Text(
-              "My Bookings",
-              style: TextStyle(fontSize: 22),
-            ),
-          ),
+          // leading: Icon(Icons.arrow_back),
+          title: Text('My Bookings'),
+          toolbarHeight: 80,
+          backgroundColor: Color(0xff5A5AD2),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          )),
         ),
         body: Column(
           children: [
@@ -50,7 +41,7 @@ class _MyBookingsState extends State<MyBookings> {
                     text: 'Cancelled Bookings',
                   ),
                 ],
-                indicatorColor: Colors.red,
+                indicatorColor: Colors.indigo,
                 indicatorWeight: 4,
                 indicatorSize: TabBarIndicatorSize.tab,
               ),

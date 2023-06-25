@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/Homepage.dart';
+import 'package:spotev/User/Formscreens/Homescreen/Home/HomeNav.dart';
+import 'package:spotev/User/Formscreens/Homescreen/Home/Homepage.dart';
 import 'package:spotev/User/Formscreens/Registrationscreen.dart';
 
 import 'ForgetPassword/Recovery.dart';
@@ -164,7 +167,12 @@ class _LoginState extends State<Login> {
                                           RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10)))),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) => HomePageUser(),
+                                    ));
+                                  },
                                   child: Text("LOGIN"),
                                 ),
                               ),

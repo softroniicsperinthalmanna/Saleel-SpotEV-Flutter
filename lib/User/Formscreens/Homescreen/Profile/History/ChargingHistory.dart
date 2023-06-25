@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/User/Formscreens/Homescreen/Profile/History/PaymentHistory.dart';
 
 import 'ChargingHistoryList.dart';
 
@@ -9,8 +10,8 @@ class ChargingHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
-        title: Center(child: Text('Charging History')),
+        centerTitle: true,
+        title: Text('Charging History'),
         toolbarHeight: 80,
         backgroundColor: Color(0xff5A5AD2),
         shape: RoundedRectangleBorder(
@@ -26,61 +27,79 @@ class ChargingHistory extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('   Sort by'),
+              child: Text(
+                '   Sort by',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 30,
-                  width: 90,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.grey[400],
-                          foregroundColor: Color(0xff0000FF),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          )),
-                      onPressed: () {},
-                      child: Text('Bydate')),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 30,
-                  width: 90,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          foregroundColor: Color(0xff000000),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 7, left: 16, right: 30),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 40,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xff5A5AD2),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(
+                            Icons.check,
+                            color: Colors.white,
                           ),
-                          side: BorderSide(color: Colors.black)),
-                      onPressed: () {},
-                      child: Text('Newest')),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  height: 30,
-                  width: 90,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          foregroundColor: Color(0xff000000),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                        ),
+                        Text(
+                          "Bydate",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
-                          side: BorderSide(color: Colors.black)),
-                      onPressed: () {},
-                      child: Text('Oldest')),
-                ),
-              ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Container(
+                      height: 40,
+                      width: 75,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                      child: Center(
+                          child: Text(
+                        "Newest",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    width: 75,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                        child: Text(
+                      "Oldest",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 15,
@@ -98,7 +117,11 @@ class ChargingHistory extends StatelessWidget {
                       ),
                       elevation: 10,
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => PaymentHistory(),
+                          ));
+                        },
                         child: Container(
                           alignment: Alignment.center,
                           height: 110,
@@ -127,17 +150,26 @@ class ChargingHistory extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Text(' ${charging[index]['date']}'),
+                                    Text(
+                                      ' ${charging[index]['date']}',
+                                      style: TextStyle(color: Colors.red),
+                                    ),
                                     SizedBox(
                                       width: 20,
                                     ),
-                                    Text('${charging[index]['time']}'),
+                                    Text(
+                                      '${charging[index]['time']}',
+                                      style: TextStyle(color: Colors.indigo),
+                                    ),
                                   ],
                                 ),
                                 // SizedBox(height: 10,),
                                 Row(
                                   children: [
-                                    Icon(Icons.ev_station_outlined),
+                                    Icon(
+                                      Icons.ev_station_outlined,
+                                      color: Colors.blue,
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -145,18 +177,25 @@ class ChargingHistory extends StatelessWidget {
                                     Expanded(
                                       child: ListTile(
                                         trailing: Text(
-                                            'Rs.${charging[index]['rate']}'),
+                                          'Rs.${charging[index]['rate']}',
+                                          style: TextStyle(color: Colors.green),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                                 Row(
                                   children: [
-                                    Icon(Icons.radio_button_checked_sharp),
+                                    Icon(
+                                      Icons.radio_button_checked_sharp,
+                                      color: Colors.blue,
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
-                                    Text('${charging[index]['type']}'),
+                                    Text(
+                                      '${charging[index]['type']}',
+                                    ),
                                   ],
                                 ),
                               ],

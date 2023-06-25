@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/User/Formscreens/Homescreen/Profile/Manage%20Ev/Select_Vehicle.dart';
 
 class ManageEV extends StatefulWidget {
   const ManageEV({super.key});
@@ -36,23 +37,30 @@ class _ManageEVState extends State<ManageEV> {
           ),
           Padding(
             padding: const EdgeInsets.all(10),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18.0),
-                border: Border.all(
-                  color: Colors.blueAccent,
-                  width: 3,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => SelectVehicle(),
+                ));
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18.0),
+                  border: Border.all(
+                    color: Colors.blueAccent,
+                    width: 3,
+                  ),
                 ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.0),
-                  child: Image(
-                    image: AssetImage("Images/addcar.webp"),
-                    fit: BoxFit.fill,
-                    height: 180,
+                child: Padding(
+                  padding: const EdgeInsets.all(0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: Image(
+                      image: AssetImage("Images/addcar.webp"),
+                      fit: BoxFit.cover,
+                      height: 150,
+                    ),
                   ),
                 ),
               ),

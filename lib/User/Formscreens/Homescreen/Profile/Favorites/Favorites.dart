@@ -12,8 +12,9 @@ class _FavoritesState extends State<Favorites> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           // leading: Icon(Icons.arrow_back),
-          title: Center(child: Text('FAVORITES')),
+          title: Text('FAVORITES'),
           toolbarHeight: 80,
           backgroundColor: Color(0xff5A5AD2),
           shape: RoundedRectangleBorder(
@@ -111,7 +112,7 @@ class _FavoritesState extends State<Favorites> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
-                            BorderRadius.circular(30), //border corner radius
+                            BorderRadius.circular(10), //border corner radius
                         boxShadow: [
                           BoxShadow(
                             color:

@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
 
-class Offers extends StatefulWidget {
-  const Offers({super.key});
+class ManageOffer extends StatefulWidget {
+  const ManageOffer({super.key});
 
   @override
-  State<Offers> createState() => _OffersState();
+  State<ManageOffer> createState() => _ManageOfferState();
 }
 
-class _OffersState extends State<Offers> {
+class _ManageOfferState extends State<ManageOffer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         // leading: Icon(Icons.arrow_back),
-        centerTitle: true,
-        title: Text('Offers'),
+        title: const Center(child: Text('Offers')),
         toolbarHeight: 80,
-        backgroundColor: Color(0xff5A5AD2),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff5A5AD2),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
         )),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+          elevation: 0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
+          backgroundColor: const Color(0xff5A5AD2),
+          icon: const Icon(Icons.add),
+          onPressed: () {},
+          label: const Text(
+            "Add Offers",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
+          )),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
@@ -40,22 +50,22 @@ class _OffersState extends State<Offers> {
               //   ),
               //   child: Center(child: Text('Offers',style: booking,textAlign: TextAlign.center,)),
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 height: 120,
-                width: double.infinity,
-                decoration: BoxDecoration(
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
                         topRight: Radius.circular(15)),
-                    //color: Colors.amber,
+                    color: Colors.amber,
                     image: DecorationImage(
                         image: AssetImage('Images/offer5.png'),
                         fit: BoxFit.cover)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -64,8 +74,8 @@ class _OffersState extends State<Offers> {
                   Container(
                     height: 130,
                     width: 165,
-                    decoration: BoxDecoration(
-                        //  color: Colors.amber,
+                    decoration: const BoxDecoration(
+                        color: Colors.amber,
                         image: DecorationImage(
                             image: AssetImage('Images/offer1.png'),
                             fit: BoxFit.cover)),
@@ -73,36 +83,36 @@ class _OffersState extends State<Offers> {
                   Container(
                     height: 130,
                     width: 165,
-                    decoration: BoxDecoration(
-                        // color: Colors.amber,
+                    decoration: const BoxDecoration(
+                        color: Colors.amber,
                         image: DecorationImage(
                             image: AssetImage('Images/offer2.png'),
                             fit: BoxFit.cover)),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 7,
               ),
               Container(
                 height: 280,
-                width: double.infinity,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    // color: Colors.amber,
-                    image: DecorationImage(
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                    color: Colors.amber,
+                    image: const DecorationImage(
                         image: AssetImage('Images/offer3.png'),
                         fit: BoxFit.cover),
                     border: Border.all(color: Colors.black)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
                 height: 80,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    //   color: Colors.amber,
+                width: MediaQuery.of(context).size.width,
+                decoration: const BoxDecoration(
+                    color: Colors.amber,
                     image: DecorationImage(
                         image: AssetImage('Images/offer4.png'),
                         fit: BoxFit.cover)),

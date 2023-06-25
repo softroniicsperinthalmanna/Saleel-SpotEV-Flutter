@@ -9,7 +9,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   double _curentValue = 50;
-
+  double _curentVal = 50;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
                 child: GestureDetector(
                   onTap: () {
                     showModalBottomSheet(
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(25))),
                         isScrollControlled: true,
@@ -64,9 +64,9 @@ class _HomeState extends State<Home> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 20.0, top: 18),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 20.0, top: 18),
                                       child: Text(
                                         'Station Status',
                                         style: TextStyle(
@@ -86,11 +86,11 @@ class _HomeState extends State<Home> {
                                             child: OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
-                                                        Color.fromARGB(
+                                                        const Color.fromARGB(
                                                             255, 99, 49, 216),
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'All',
                                                   style: TextStyle(
                                                       color: Colors.white),
@@ -115,7 +115,7 @@ class _HomeState extends State<Home> {
                                                         .transparent,
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -125,7 +125,7 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'Available',
                                                 )),
                                           ),
@@ -138,7 +138,7 @@ class _HomeState extends State<Home> {
                                                         .transparent,
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -148,15 +148,15 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'Unavailable',
                                                 )),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
+                                    const Padding(
+                                      padding: EdgeInsets.only(
                                         left: 20.0,
                                       ),
                                       child: Text(
@@ -178,11 +178,11 @@ class _HomeState extends State<Home> {
                                             child: OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
-                                                        Color.fromARGB(
+                                                        const Color.fromARGB(
                                                             255, 99, 49, 216),
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -192,7 +192,7 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'AC',
                                                   style: TextStyle(
                                                       color: Colors.white),
@@ -207,7 +207,7 @@ class _HomeState extends State<Home> {
                                                         .transparent,
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -217,7 +217,7 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'DC',
                                                 )),
                                           ),
@@ -228,7 +228,7 @@ class _HomeState extends State<Home> {
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
                                                         Colors.transparent,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Colors.white,
                                                     ),
                                                     shape:
@@ -238,15 +238,15 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   '',
                                                 )),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
+                                    const Padding(
+                                      padding: EdgeInsets.only(
                                         left: 20.0,
                                       ),
                                       child: Text(
@@ -275,7 +275,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -285,7 +286,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'All',
                                                     )),
                                               ),
@@ -300,7 +301,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -310,7 +312,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'CCS2',
                                                     )),
                                               ),
@@ -325,7 +327,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -335,13 +338,13 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'CCS',
                                                     )),
                                               ),
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 7,
                                           ),
                                           Row(
@@ -359,7 +362,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -369,7 +373,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'GB/T',
                                                     )),
                                               ),
@@ -384,7 +388,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -409,7 +414,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -419,7 +425,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'CHAdeMo',
                                                     )),
                                               ),
@@ -443,7 +449,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -453,7 +460,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       '15 AMP SWITCH',
                                                       style: TextStyle(
                                                         fontSize: 12,
@@ -471,7 +478,8 @@ class _HomeState extends State<Home> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -492,7 +500,7 @@ class _HomeState extends State<Home> {
                                                     style: OutlinedButton.styleFrom(
                                                         backgroundColor:
                                                             Colors.transparent,
-                                                        side: BorderSide(
+                                                        side: const BorderSide(
                                                             color:
                                                                 Colors.white),
                                                         shape: RoundedRectangleBorder(
@@ -501,7 +509,7 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       '',
                                                     )),
                                               ),
@@ -510,9 +518,8 @@ class _HomeState extends State<Home> {
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 25.0),
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 25.0),
                                       child: Text(
                                         'Distance',
                                         style: TextStyle(
@@ -524,7 +531,7 @@ class _HomeState extends State<Home> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Text('0 km'),
+                                        const Text('0 km'),
                                         Slider(
                                             value: _curentValue,
                                             divisions: 10,
@@ -534,13 +541,12 @@ class _HomeState extends State<Home> {
                                                 _curentValue = value;
                                               });
                                             }),
-                                        Text('100 km')
+                                        const Text('100 km')
                                       ],
                                     ),
-                                    Center(child: Text('50 km')),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 25.0),
+                                    const Center(child: Text('50 km')),
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 25.0),
                                       child: Text(
                                         'Price',
                                         style: TextStyle(
@@ -552,7 +558,7 @@ class _HomeState extends State<Home> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Row(
+                                        const Row(
                                           children: [
                                             Icon(
                                               Icons.currency_rupee_sharp,
@@ -562,15 +568,15 @@ class _HomeState extends State<Home> {
                                           ],
                                         ),
                                         Slider(
-                                            value: _curentValue,
+                                            value: _curentVal,
                                             divisions: 10,
                                             max: 100,
                                             onChanged: (double value) {
                                               setState(() {
-                                                _curentValue = value;
+                                                _curentVal = value;
                                               });
                                             }),
-                                        Row(
+                                        const Row(
                                           children: [
                                             Icon(
                                               Icons.currency_rupee_sharp,
@@ -581,7 +587,7 @@ class _HomeState extends State<Home> {
                                         )
                                       ],
                                     ),
-                                    Row(
+                                    const Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -592,7 +598,7 @@ class _HomeState extends State<Home> {
                                         Text('100 Price/Unit'),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Row(
@@ -613,7 +619,8 @@ class _HomeState extends State<Home> {
                                                               Colors.white,
                                                           foregroundColor:
                                                               Colors.black,
-                                                          side: BorderSide(
+                                                          side:
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xff0000FF),
                                                           ),
@@ -623,10 +630,10 @@ class _HomeState extends State<Home> {
                                                                       .circular(
                                                                           10))),
                                                   onPressed: () {},
-                                                  child:
-                                                      Text('Clear Filters'))),
+                                                  child: const Text(
+                                                      'Clear Filters'))),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 20,
                                         ),
                                         Container(
@@ -637,11 +644,11 @@ class _HomeState extends State<Home> {
                                                     elevation: 5,
                                                     shadowColor: Colors.blue,
                                                     backgroundColor:
-                                                        Color.fromARGB(
+                                                        const Color.fromARGB(
                                                             255, 99, 49, 216),
                                                     foregroundColor:
                                                         Colors.white,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -651,10 +658,11 @@ class _HomeState extends State<Home> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text('Apply Filters')))
+                                                child: const Text(
+                                                    'Apply Filters')))
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 5,
                                     )
                                   ],
@@ -664,7 +672,7 @@ class _HomeState extends State<Home> {
                           });
                         });
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                       radius: 22.5,
                       backgroundColor: Colors.white,
                       child: Icon(
@@ -683,19 +691,22 @@ class _HomeState extends State<Home> {
           //       height: 100,
           //       width: 180,
           //       color: Colors.red,
-          //       child:
-          //       ),
-          // ), insert dropdown add vehicle
+          //       child:DropdownButton(items: [ ], onChanged: (val){
 
-          Align(
+          //       })
+          //       ),
+          // ),
+          // insert dropdown add vehicle
+
+          const Align(
               alignment: Alignment.center,
               child: Icon(
                 Icons.location_on,
                 size: 100,
                 color: Colors.red,
               )),
-          Padding(
-            padding: const EdgeInsets.only(right: 30, bottom: 30),
+          const Padding(
+            padding: EdgeInsets.only(right: 30, bottom: 30),
             child: Align(
               alignment: AlignmentDirectional.bottomEnd,
               child: CircleAvatar(

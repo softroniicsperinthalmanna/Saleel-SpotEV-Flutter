@@ -71,7 +71,7 @@ class _HomePageUserState extends State<HomePageUser> {
       body: TabWidgets.elementAt(currentIndex),
       bottomNavigationBar: Container(
         margin: EdgeInsets.all(screenWidth * .0),
-        height: screenWidth * .155,
+        height: screenWidth * .140,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -84,7 +84,7 @@ class _HomePageUserState extends State<HomePageUser> {
         child: ListView.builder(
           itemCount: 4,
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: screenWidth * .05),
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * .08),
           itemBuilder: (context, index) => InkWell(
             onTap: () {
               setState(() {
@@ -106,8 +106,8 @@ class _HomePageUserState extends State<HomePageUser> {
                   child: AnimatedContainer(
                     duration: Duration(seconds: 1),
                     curve: Curves.fastLinearToSlowEaseIn,
-                    height: index == currentIndex ? screenWidth * .12 : 0,
-                    width: index == currentIndex ? screenWidth * .32 : 0,
+                    height: index == currentIndex ? screenWidth * .10 : 0,
+                    width: index == currentIndex ? screenWidth * .30 : 0,
                     decoration: BoxDecoration(
                         color: index == currentIndex
                             ? Colors.blueAccent.withOpacity(.2)

@@ -21,14 +21,14 @@ class _Tabbar_mybookings1State extends State<Tabbar_mybookings1> {
                   decoration: BoxDecoration(
                     border: (Border.all(
                       width: 0.3,
-                      color: Colors.blueAccent,
+                      color: Colors.indigo,
                     )),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10)),
                     color: Colors.white,
                   ),
-                  width: double.infinity,
+                  width: MediaQuery.of(context).size.width,
                   height: 50,
                   child: Center(
                     child: Padding(
@@ -61,7 +61,10 @@ class _Tabbar_mybookings1State extends State<Tabbar_mybookings1> {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(Icons.map_outlined),
+                                Icon(
+                                  Icons.location_on,
+                                  color: Colors.indigoAccent,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Column(
@@ -96,8 +99,8 @@ class _Tabbar_mybookings1State extends State<Tabbar_mybookings1> {
                                           child: Row(
                                             children: [
                                               Icon(
-                                                Icons.navigate_next,
-                                                color: Colors.black,
+                                                Icons.near_me,
+                                                color: Colors.blueAccent,
                                               ),
                                               Text(
                                                 'Navigate',
@@ -121,7 +124,10 @@ class _Tabbar_mybookings1State extends State<Tabbar_mybookings1> {
                           ),
                           child: Row(
                             children: [
-                              Icon(Icons.map_outlined),
+                              Icon(
+                                Icons.trip_origin_outlined,
+                                color: Colors.indigoAccent,
+                              ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: Text("DC Type 1"),
@@ -210,7 +216,7 @@ class _Tabbar_mybookings1State extends State<Tabbar_mybookings1> {
                     border: (Border.all(
                       width: 0.3,
                     )),
-                    color: Color.fromARGB(255, 235, 162, 95),
+                    color: Color.fromARGB(255, 112, 64, 20),
                   ),
                   width: double.infinity,
                   height: 50,
