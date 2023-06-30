@@ -16,9 +16,9 @@ class _StationBookingsState extends State<StationBookings> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(centerTitle: true,
           // leading: Icon(Icons.arrow_back),
-          title: Center(child: Text('Bookings')),
+          title: Text('Bookings'),
           toolbarHeight: 60,
           backgroundColor: Color(0xff5A5AD2),
           shape: RoundedRectangleBorder(

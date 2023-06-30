@@ -24,7 +24,7 @@ class _IndroScreenState extends State<IndroScreen> {
         ),
         title: 'Wallet',
         body:
-            'Add money to your SpotEV wallet and charge your vehicle hassle free',
+            'Add money to your SpotEV wallet and Manage Ev Charging Expenses Easily',
       ),
       PageViewModel(
         image: Image.asset(
@@ -33,28 +33,28 @@ class _IndroScreenState extends State<IndroScreen> {
           height: 200,
         ),
         title: 'Community',
-        body: 'Please Choose your Payment Method',
+        body: 'Connect With Fellow EV Enthusiasts',
       ),
       PageViewModel(
         image: Image.asset('Images/tripplan.jpg'),
         title: 'Trip Plan',
         body:
-            'Experiance woory-free road trips by relying on our convenient charging station to tackle anyrange anxiety on your next adventure',
+            'Plan electric journeys with charging station access',
       ),
       PageViewModel(
         image: Image.asset('Images/Choose Payment method.jpg'),
         title: 'Choose Payment method',
-        body: 'Please Choose your Payment Method',
+        body: 'Seamless,Secure Charging Payments',
       ),
       PageViewModel(
         image: Image.asset('Images/Discover1.png'),
         title: 'Discover',
-        body: 'Please Choose your Station',
+        body: 'Explore Nearby Charging Stations',
       ),
       PageViewModel(
         image: Image.asset('Images/filter.gif'),
         title: 'Filter Stations',
-        body: 'Please Choose your Station',
+        body: 'Personalize Charging Station Search',
       ),
     ];
   }

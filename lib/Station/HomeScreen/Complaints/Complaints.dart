@@ -11,9 +11,9 @@ class _ComplaintPageState extends State<ComplaintPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(centerTitle: true,
         // leading: Icon(Icons.arrow_back),
-        title: Center(child: Text('Complaints')),
+        title: Text('Complaints'),
         toolbarHeight: 80,
         backgroundColor: Color(0xff5A5AD2),
         shape: RoundedRectangleBorder(

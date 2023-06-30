@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/HomeScreen/ManageStation/Add%20slots.dart';
 
 class Slots extends StatefulWidget {
   const Slots({super.key});
@@ -15,15 +17,17 @@ class _SlotsState extends State<Slots> {
           elevation: 0,
           backgroundColor: const Color(0xff5A5AD2),
           icon: const Icon(Icons.add),
-          onPressed: () {},
+          onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddSlots(),));
+          },
           label: const Text("Add Slots")),
       appBar: AppBar(
+        centerTitle: true,
         // leading: Icon(Icons.arrow_back),
-        title: Center(
-            child: Text(
+        title: Text(
           'Slots',
           style: TextStyle(fontWeight: FontWeight.bold),
-        )),
+        ),
         toolbarHeight: 80,
         backgroundColor: const Color(0xff5A5AD2),
         shape: const RoundedRectangleBorder(

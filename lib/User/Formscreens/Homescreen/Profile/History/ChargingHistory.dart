@@ -11,10 +11,10 @@ class ChargingHistory extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Charging History'),
+        title: const Text('Charging History'),
         toolbarHeight: 80,
-        backgroundColor: Color(0xff5A5AD2),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff5A5AD2),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
@@ -25,8 +25,8 @@ class ChargingHistory extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 '   Sort by',
                 style: TextStyle(fontSize: 18),
@@ -42,12 +42,12 @@ class ChargingHistory extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color(0xff5A5AD2),
+                      color: const Color(0xff5A5AD2),
                     ),
-                    child: Row(
+                    child: const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0),
                           child: Icon(
                             Icons.check,
                             color: Colors.white,
@@ -73,7 +73,7 @@ class ChargingHistory extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
-                      child: Center(
+                      child: const Center(
                           child: Text(
                         "Newest",
                         style: TextStyle(
@@ -90,7 +90,7 @@ class ChargingHistory extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
                     ),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "Oldest",
                       style: TextStyle(
@@ -101,7 +101,7 @@ class ChargingHistory extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
@@ -119,7 +119,7 @@ class ChargingHistory extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => PaymentHistory(),
+                            builder: (context) => const PaymentHistory(),
                           ));
                         },
                         child: Container(
@@ -137,7 +137,7 @@ class ChargingHistory extends StatelessWidget {
                                 spreadRadius: 5, //spread radius
                                 blurRadius: 7, // blur radius
                                 offset:
-                                    Offset(0, 2), // changes position of shadow
+                                    const Offset(0, 2), // changes position of shadow
                                 //first paramerter of offset is left-right
                                 //second parameter is top to down
                               ),
@@ -152,25 +152,25 @@ class ChargingHistory extends StatelessWidget {
                                   children: [
                                     Text(
                                       ' ${charging[index]['date']}',
-                                      style: TextStyle(color: Colors.red),
+                                      style: const TextStyle(color: Colors.red),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 20,
                                     ),
                                     Text(
                                       '${charging[index]['time']}',
-                                      style: TextStyle(color: Colors.indigo),
+                                      style: const TextStyle(color: Colors.indigo),
                                     ),
                                   ],
                                 ),
                                 // SizedBox(height: 10,),
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.ev_station_outlined,
                                       color: Colors.blue,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text('${charging[index]['station']}'),
@@ -178,7 +178,7 @@ class ChargingHistory extends StatelessWidget {
                                       child: ListTile(
                                         trailing: Text(
                                           'Rs.${charging[index]['rate']}',
-                                          style: TextStyle(color: Colors.green),
+                                          style: const TextStyle(color: Colors.green),
                                         ),
                                       ),
                                     ),
@@ -186,11 +186,11 @@ class ChargingHistory extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.radio_button_checked_sharp,
                                       color: Colors.blue,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Text(

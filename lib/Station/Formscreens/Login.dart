@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/HomeScreen/Homepage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -174,7 +175,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                           RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10)))),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>HomePage() ,));
+                                  },
                                   child: Text(
                                     "LOGIN",
                                     style: TextStyle(

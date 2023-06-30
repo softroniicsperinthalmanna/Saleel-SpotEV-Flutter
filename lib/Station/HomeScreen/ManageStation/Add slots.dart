@@ -35,13 +35,12 @@ class _AddSlotsState extends State<AddSlots> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(centerTitle: true,
         // leading: Icon(Icons.arrow_back),
-        title: const Center(
-            child: Text(
+        title: Text(
           'Add Slots',
           style: TextStyle(fontWeight: FontWeight.bold),
-        )),
+        ),
         toolbarHeight: 80,
         backgroundColor: const Color(0xff5A5AD2),
         shape: const RoundedRectangleBorder(
@@ -216,7 +215,7 @@ class _AddSlotsState extends State<AddSlots> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       )),
-                  onPressed: () {},
+                  onPressed: () {Navigator.pop(context);},
                   child: const Text(
                     'Submit',
                     style: TextStyle(fontSize: 18),
