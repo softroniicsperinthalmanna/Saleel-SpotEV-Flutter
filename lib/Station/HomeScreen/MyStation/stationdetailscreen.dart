@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:spotev/Station/HomeScreen/View%20OtherStations/OverViewstation.dart';
-import 'package:spotev/Station/HomeScreen/View%20OtherStations/Reviewstation.dart';
-import 'package:spotev/Station/HomeScreen/View%20OtherStations/StationPhotos.dart';
+import 'package:spotev/Station/HomeScreen/MyStation/OverViewstation.dart';
+import 'package:spotev/Station/HomeScreen/MyStation/Reviewstation.dart';
+import 'package:spotev/Station/HomeScreen/MyStation/StationPhotos.dart';
 
-class StationDetailPageStation extends StatefulWidget {
-  const StationDetailPageStation({Key? key}) : super(key: key);
+class StationDetailPageStationMystation extends StatefulWidget {
+  const StationDetailPageStationMystation({Key? key}) : super(key: key);
 
   @override
-  State<StationDetailPageStation> createState() => _StationDetailPageStationState();
+  State<StationDetailPageStationMystation> createState() => _StationDetailPageStationMystationState();
 }
 
-class _StationDetailPageStationState extends State<StationDetailPageStation> {
+class _StationDetailPageStationMystationState extends State<StationDetailPageStationMystation> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -29,11 +29,9 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                     TextStyle(color: Colors.white),),
                    
                   ),
-                  PopupMenuItem(
-                    child: Text("Download offline map",style: 
-                    TextStyle(color: Colors.white),),
+                  
                    
-                  )],)],
+                  ],)],
         ),
         body:
         Stack(
@@ -46,7 +44,7 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'YX Vestby',
+                      'ChargeBy',
                       style: TextStyle(
                           color: Colors.indigo,
                           fontSize: 20,
@@ -319,7 +317,7 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
               initialChildSize: 0.52,
              
               minChildSize: 0.52,
-              maxChildSize: 0.90,
+              maxChildSize: .97,
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Container(
@@ -333,12 +331,9 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                   ),
                   child: SingleChildScrollView(physics: BouncingScrollPhysics(),
                     controller: scrollController,
-                    child: Column(
-                      children: [
-                        AppBar(),
-                       // SizedBox(height: 10,),
+                    child: Column(children: [SizedBox(height: 10,),
                       
-                      TabBar(
+                      TabBar(indicatorSize: TabBarIndicatorSize.tab,indicatorWeight: 3,
                         indicatorColor: Colors.blueAccent,
                         labelColor: Colors.blue,
                         tabs: [
@@ -354,9 +349,9 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                         height: 675,
                         child: TabBarView(
                           children: [
-                            OverViewPageStation(),
-                            ReviewPageStation(),
-                            PhotosGridView(),
+                            OverViewPageStationMystation(),
+                            ReviewPageStationMystation(),
+                            PhotosGridViewMtstation(),
                           ],
                         ),
                       ),

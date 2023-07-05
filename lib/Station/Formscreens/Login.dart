@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/Formscreens/SignUp.dart';
 import 'package:spotev/Station/HomeScreen/Homepage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -162,6 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 width: MediaQuery.of(context).size.width,
                                 height: 45,
                                 child: ElevatedButton(
+                                  
                                   style: ButtonStyle(
                                       backgroundColor: MaterialStatePropertyAll(
                                         Colors.white,
@@ -274,7 +276,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                     TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp(),));
+                                        },
                                         child: Text(
                                           "Sign Up",
                                           style: TextStyle(

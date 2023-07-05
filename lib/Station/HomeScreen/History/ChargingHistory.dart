@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:spotev/User/Formscreens/Homescreen/Profile/History/PaymentHistory.dart';
+import 'package:spotev/Station/HomeScreen/History/PaymentHistory.dart';
 
- import 'ChargingHistoryList.dart';
+import 'ChargingHistoryList.dart';
 
-class ChargingHistory extends StatelessWidget {
-  const ChargingHistory({Key? key}) : super(key: key);
+class  ChargingHistoryStation extends StatefulWidget {
+   ChargingHistoryStation({Key? key}) : super(key: key);
+
+  @override
+  State<ChargingHistoryStation> createState() => _ChargingHistoryStationState();
+}
+
+class _ChargingHistoryStationState extends State<ChargingHistoryStation> {
+  DateTime _dateTime = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +32,51 @@ class ChargingHistory extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
+             Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text(
-                '   Sort by',
-                style: TextStyle(fontSize: 18),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '   Sort by',
+                    style: TextStyle(fontSize: 18),
+                  ), Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                        onPressed: () async {
+                          DateTime? _newDate = await showDatePicker(
+                            context: context,
+                            initialDate: _dateTime,
+                            firstDate: DateTime(2020),
+                            lastDate: DateTime(2050),
+                            builder: (context, child) => Theme(
+                                data: ThemeData.light().copyWith(
+                                  colorScheme: ColorScheme.fromSwatch(
+                                    primarySwatch: Colors.indigo,
+                                    // primaryColorDark: Colors.green,
+                                    // accentColor: Color(0xff5A5AD2),
+                                  ),
+                                  dialogBackgroundColor: Colors.white,
+                                ),
+                                child: child!),
+                          );
+                          if (_newDate != null) {
+                            setState(() {
+                              _dateTime = _newDate;
+                            });
+                          }
+                        },
+                        icon: Icon(
+                          Icons.calendar_month,
+                          size: 40,
+                          color: Color(0xff5A5AD2),
+                        )),
+                  ),
+
+
+
+
+                  
+                ],
               ),
             ),
             Padding(
@@ -106,7 +153,8 @@ class ChargingHistory extends StatelessWidget {
             ),
             Container(
               height: MediaQuery.of(context).size.height,
-              child: ListView.builder(controller: ScrollController(),
+              child: ListView.builder(
+                controller: ScrollController(),
                 itemCount: charging.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
@@ -119,7 +167,7 @@ class ChargingHistory extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const PaymentHistory(),
+                            builder: (context) => const PaymentHistoryStation(),
                           ));
                         },
                         child: Container(
@@ -167,13 +215,13 @@ class ChargingHistory extends StatelessWidget {
                                 Row(
                                   children: [
                                     const Icon(
-                                      Icons.ev_station_outlined,
+                                      Icons.person_2_outlined,
                                       color: Colors.blue,
                                     ),
                                     const SizedBox(
                                       width: 10,
                                     ),
-                                    Text('${charging[index]['station']}'),
+                                    Text('${charging[index]['User']}'),
                                     Expanded(
                                       child: ListTile(
                                         trailing: Text(
@@ -210,7 +258,7 @@ class ChargingHistory extends StatelessWidget {
             ),
           ],
         ),
-      ),
+     ),
     );
   }
 }

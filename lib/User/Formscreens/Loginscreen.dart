@@ -9,11 +9,14 @@ class Login extends StatefulWidget {
 
   @override
   State<Login> createState() => _LoginState();
+  
 }
-
+bool _isPasswordVisible = false;
+bool? isChecked = false;
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -104,6 +107,7 @@ class _LoginState extends State<Login> {
                             elevation: 10,
                             color: Colors.black,
                             child: TextFormField(
+                               obscureText: !_isPasswordVisible,
                               decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide.none),
@@ -112,7 +116,16 @@ class _LoginState extends State<Login> {
                                 hintText: 'ENTER YOUR PASSWORD',
                                 prefixIcon: Icon(
                                   (Icons.lock),
-                                ),
+                                  
+                                ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisible = !_isPasswordVisible;
+            });
+          },),
                               ),
                             ),
                           ),
@@ -144,6 +157,24 @@ class _LoginState extends State<Login> {
                                     ),
                                   ],
                                 ),
+                              ),  Row(
+                                children: [
+                                  Checkbox(
+                                      checkColor: Colors.white,
+                                      activeColor: Colors.red,
+                                      fillColor: MaterialStatePropertyAll(
+                                          Colors.indigo),
+                                      value: isChecked,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          isChecked = value;
+                                        });
+                                      }),
+                                  Text(
+                                    "Remeber me",
+                                    style: TextStyle(color: Colors.black),
+                                  )
+                                ],
                               ),
                               SizedBox(
                                 height: 45,

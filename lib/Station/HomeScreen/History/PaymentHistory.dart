@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PaymentHistory extends StatefulWidget {
-  const PaymentHistory({super.key});
+class PaymentHistoryStation extends StatefulWidget {
+  const PaymentHistoryStation({super.key});
 
   @override
-  State<PaymentHistory> createState() => _PaymentHistoryState();
+  State<PaymentHistoryStation> createState() => _PaymentHistoryStationState();
 }
 
-class _PaymentHistoryState extends State<PaymentHistory> {
+class _PaymentHistoryStationState extends State<PaymentHistoryStation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,73 +64,73 @@ class _PaymentHistoryState extends State<PaymentHistory> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 70, 20, 10),
-              child:  Card(elevation: 6,shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+              child: Card(elevation: 6,shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.indigo, width: 2),
+                      border: Border.all(color: Colors.indigo,width: 2 ),
                       borderRadius: BorderRadius.circular(10)),
                   child: const Padding(
                     padding: EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                       Text(
-                            "Payment ID",
-                            style: TextStyle(fontSize: 21),
-                          ),
-                          Text(
-                            "#689214",
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        
-                          Padding(
-                            padding: EdgeInsets.only(left: 8, top: 10),
-                            child: Text(
-                              "From:Roshan",
-                              style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10,top: 5),
-                            child: Text(
-                              "Vestby@gmail.com",
-                              style: TextStyle(fontSize: 15),
-                            ),
-                            
-                          // ), 
-                          // Padding(
-                          //   padding: EdgeInsets.all(8.0),
-                          //   child: Text(
-                          //     "To:YXVestby",
-                          //     style: TextStyle(fontSize: 18),
-                          //   ),
-                          // ),
-                          // Padding(
-                          //   padding: EdgeInsets.only(left: 8),
-                          //   child: Text(
-                          //     "Vestby@gmail.com",
-                          //     style: TextStyle(fontSize: 18),
-                          //   ),
-                          ), Padding(
-              padding: EdgeInsets.only(left: 11),                          child: Text(
-                                "987654321",
-                                style: TextStyle(fontSize: 15),
-                              ),
-                          ), Padding(
-                          padding: EdgeInsets.fromLTRB(8,8,0,0),
+                        Text(
+                          "Payment ID",
+                          style: TextStyle(fontSize: 21),
+                        ),
+                        Text(
+                          "#689214",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, top: 10),
                           child: Text(
-                            "To:YXVestby",
+                            "From:Roshan",
                             style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 10,top: 5),
                           child: Text(
                             "Vestby@gmail.com",
                             style: TextStyle(fontSize: 15),
                           ),
+                          
+                        // ), 
+                        // Padding(
+                        //   padding: EdgeInsets.all(8.0),
+                        //   child: Text(
+                        //     "To:YXVestby",
+                        //     style: TextStyle(fontSize: 18),
+                        //   ),
+                        // ),
+                        // Padding(
+                        //   padding: EdgeInsets.only(left: 8),
+                        //   child: Text(
+                        //     "Vestby@gmail.com",
+                        //     style: TextStyle(fontSize: 18),
+                        //   ),
+                        ), Padding(
+padding: EdgeInsets.only(left: 11),                          child: Text(
+                              "987654321",
+                              style: TextStyle(fontSize: 15),
+                            ),
+                        ), Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "To:YXVestby",
+                          style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),
                         ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Text(
+                          "Vestby@gmail.com",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
                       ],
                     ),
                   ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class StationProfile extends StatefulWidget {
+  const StationProfile({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<StationProfile> createState() => _StationProfileState();
 }
-
-class _SignUpState extends State<SignUp> {
+bool switchselect = true;
+class _StationProfileState extends State<StationProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,26 +15,17 @@ class _SignUpState extends State<SignUp> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        // width: double.infinity,
+       
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
             child: Column(children: [
-              SizedBox(
-                height: 20,
-              ),
+             
               Column(
-                children: [
-                  Container(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 33,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 50),
+                children: [SizedBox(height: 35),
+                  CircleAvatar(radius: 70,backgroundColor:Colors.white,child: Icon(Icons.ev_station,size: 70,),),
+                SizedBox(height: 20), Text("Add Profile Pictre",style: TextStyle(color: Colors.white),),
+                  SizedBox(height: 35),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,8 +276,28 @@ class _SignUpState extends State<SignUp> {
                           Column(
                             children: [
                               SizedBox(
-                                height: 40,
+                                height: 20,
                               ),
+                              
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Text('Disable Station',style: TextStyle(color: Colors.white),),
+              const SizedBox(
+                width: 20,
+              ),
+              Switch(
+                  value: switchselect,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      switchselect = !switchselect;
+                    });
+                  })
+            ],
+          ), SizedBox(
+                                height: 20,
+                              ),
+                              
                               Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: 45,
@@ -306,34 +317,17 @@ class _SignUpState extends State<SignUp> {
                                                   BorderRadius.circular(10)))),
                                   onPressed: () {},
                                   child: Text(
-                                    "Register",
+                                    "Submit",
                                     style: TextStyle(
                                       color: Colors.white,
                                     ),
                                   ),
                                 ),
+                              ), SizedBox(
+                                height: 20,
                               ),
-                              Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Have an account?",
-                                      style: TextStyle(
-                                          fontSize: 14, color: Colors.white),
-                                    ),
-                                    TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          "Sign In",
-                                          style: TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold),
-                                        ))
-                                  ],
-                                ),
-                              ),
+                              
+                              
                             ],
                           )
                         ],

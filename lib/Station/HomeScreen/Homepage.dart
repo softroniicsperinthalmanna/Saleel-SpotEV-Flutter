@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/HomeScreen/StationProfile.dart';
 
 import 'StationHome.dart';
 
@@ -11,7 +12,7 @@ class HomePage extends StatefulWidget {
 
 List tabwidgets = [
   StationHome(),
-  StationHome(),
+ StationProfile(),
 ];
 
 class _HomePageState extends State<HomePage> {

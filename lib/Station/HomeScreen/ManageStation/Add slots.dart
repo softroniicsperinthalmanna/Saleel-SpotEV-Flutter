@@ -207,7 +207,7 @@ class _AddSlotsState extends State<AddSlots> {
             padding: const EdgeInsets.all(20),
             child: Container(
               height: 50,
-              width: double.infinity,
+              width:MediaQuery.of(context).size.width,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xff5A5AD2),

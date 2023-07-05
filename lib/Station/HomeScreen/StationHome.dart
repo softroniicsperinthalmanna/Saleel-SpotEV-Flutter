@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:spotev/Station/HomeScreen/Bookings/Bookings.dart';
 import 'package:spotev/Station/HomeScreen/Complaints/Complaints.dart';
+import 'package:spotev/Station/HomeScreen/History/ChargingHistory.dart';
 import 'package:spotev/Station/HomeScreen/ManageStation/Slots.dart';
+import 'package:spotev/Station/HomeScreen/MyStation/stationdetailscreen.dart';
 import 'package:spotev/Station/HomeScreen/Offer/Offers.dart';
 import 'package:spotev/Station/HomeScreen/View%20OtherStations/stationdetailscreen.dart';
 
@@ -22,52 +24,56 @@ class _StationHomeState extends State<StationHome> {
           child: Column(
             children: [
               const SizedBox(height: 40),
-              Container(
-                height: 120,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: const Color(0xff0000ff),
+              GestureDetector(onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => StationDetailPageStationMystation(),));
+              },
+                child: Container(
+                  height: 120,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xff0000ff),
+                    ),
+                    color: const Color(0xffEE5A8F),
                   ),
-                  color: const Color(0xffEE5A8F),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  
-                  children: [
-                    Container(
-                      height: 118,
-                      width: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: const Color(0xff0000ff),
-                        ),
-                        image: const DecorationImage(
-                          image: AssetImage('Images/ev4.jpg'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    const Center(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 50),
-                        child: Text(
-                          'ChargeBy',
-                          style: TextStyle(
-                              fontSize: 19,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                    color: Colors.black12, offset: Offset(0, 3))
-                              ]),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    
+                    children: [
+                      Container(
+                        height: 118,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: const Color(0xff0000ff),
+                          ),
+                          image: const DecorationImage(
+                            image: AssetImage('Images/ev4.jpg'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      const Center(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 50),
+                          child: Text(
+                            'ChargeBy',
+                            style: TextStyle(
+                                fontSize: 19,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                shadows: [
+                                  Shadow(
+                                      color: Colors.black12, offset: Offset(0, 3))
+                                ]),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),const SizedBox(height: 20,),
               Column(
@@ -236,7 +242,9 @@ class _StationHomeState extends State<StationHome> {
                   Row(                    mainAxisAlignment: MainAxisAlignment.spaceAround,
 
                     children: [GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ChargingHistoryStation() ,));
+                        },
                         child: Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
