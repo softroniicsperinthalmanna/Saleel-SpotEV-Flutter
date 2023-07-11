@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class PhotosGridView extends StatelessWidget {
+class PhotosGridView extends StatefulWidget {
   PhotosGridView({Key? key}) : super(key: key);
+
+  @override
+  State<PhotosGridView> createState() => _PhotosGridViewState();
+}
+
+class _PhotosGridViewState extends State<PhotosGridView> {
 List img=[
   'Images/ev 1.jpg',
   'Images/ev2.jpg',
@@ -20,70 +26,71 @@ List img=[
   'Images/ev14.jpg',
   'Images/ev15.png',
 ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold (
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  height: 150,
-                  width: 120,
+                  height: 145,
+                  width: 110,
                   decoration: BoxDecoration(
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('Images/ev 1.jpg'),fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: Color(0xff0000FF),
+                      color: const Color(0xff0000FF),
                       width: 3
                     )
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 115),
+                  child: const Padding(
+                    padding: EdgeInsets.only(top: 115,),
                     child: Text(' All',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),),
                   ),
                 ),
                 Container(
-                  height: 150,
-                  width: 120,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
+                  height: 145,
+                  width: 110,
+                  decoration: BoxDecoration(  borderRadius: BorderRadius.circular(10),
+                      image: const DecorationImage(
                           image: AssetImage('Images/ev14.jpg'),fit: BoxFit.cover
                       )
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 115),
+                  child: const Padding(
+                    padding: EdgeInsets.only(top: 115),
                     child: Text(' Latest',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white),),
                   ),
                 ),
                 Container(
-                  height: 150,
-                  width: 120,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
+                  height: 145,
+                  width: 110,
+                  decoration: BoxDecoration(  borderRadius: BorderRadius.circular(10),
+                      image: const DecorationImage(
                           image: AssetImage('Images/ev15.png'),fit: BoxFit.cover
                       )
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 115),
+                  child: const Padding(
+                    padding: EdgeInsets.only(top: 115),
                     child: Text(' Videos',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white),),
                   ),
                 ),
 
               ],
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('All'),
+                  const Text('All'),
                   Container(
                     height: 35,
                     width: 140,
@@ -92,12 +99,12 @@ List img=[
                           backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18),
-                            side: BorderSide(
+                            side: const BorderSide(
                               color: Colors.black
                             )
                           )
                         ),
-                        onPressed: (){}, child: Row(
+                        onPressed: (){}, child: const Row(
                       children: [
                         Icon(Icons.camera_alt_outlined,color: Colors.black,),
                         Text('Add a photo',style: TextStyle(color: Color(0xff0000ff)),)
@@ -107,11 +114,11 @@ List img=[
                 ],
               ),
             ),
-           Container(
-             height: 500,
+           Container(height: 1000,
              child: MasonryGridView.builder(
+              physics: NeverScrollableScrollPhysics(),
                itemCount: img.length,
-               gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+               gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                crossAxisCount: 2
              ), itemBuilder: (BuildContext context, int index) {
                return Padding(
@@ -121,7 +128,7 @@ List img=[
                      child: Image(image: AssetImage('${img[index]}'))),
                );
              },),
-           )
+           ),
           ],
         ),
       ),

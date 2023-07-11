@@ -116,26 +116,22 @@ class OverViewPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('4.0',),
-                const Row(
-                  children: [
-                    Icon(Icons.star,color: Colors.amber,),
-                    Icon(Icons.star,color: Colors.amber,),
-                    Icon(Icons.star,color: Colors.amber,),
-                    Icon(Icons.star,color: Colors.amber,),
-                    Icon(Icons.star_border),
-                    Text('(12)'),
-                  ],
-                ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('Images/review.png'),
-                    )
+              
+               
+                Stack(
+                children: [
+                  Container(
+                    height: 220,color: Colors.red,
+                    width: MediaQuery.of(context).size.width,
+                   child: Image.asset('Images/review.png',fit:BoxFit.fill,height: 250,width: 50,),
                   ),
-                )
+                   Align(alignment:Alignment.topCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Text('4.0 (12)',),
+                    )),
+                ], 
+               ),
               ],
             ),
           ),
@@ -145,7 +141,7 @@ class OverViewPage extends StatelessWidget {
               color: Color(0xff0000FF),
               thickness: 0.2,
             ),
-          ),
+          ),SizedBox(height: 20,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

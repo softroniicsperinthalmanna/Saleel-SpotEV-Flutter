@@ -11,12 +11,26 @@ class StationDetailPage extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+         appBar:  AppBar(foregroundColor: Colors.black,
+          backgroundColor: Colors.white,elevation: 1,
+          actions: [const Icon(Icons.search,),
+          PopupMenuButton(color: Colors.indigo,
+            itemBuilder: (context) => [
+                  const PopupMenuItem(
+                    child: Text("Share Place",style: 
+                    TextStyle(color: Colors.white),),
+                   
+                  ),
+                  
+                   
+                  ],)],
+        ),
         body: Stack(
           children: [
             Container(
                 child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(25, 30, 0, 0),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(25, 30, 0, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -28,14 +42,14 @@ class StationDetailPage extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 40),
+                      padding: EdgeInsets.only(right: 40),
                       child: Text(
                         '45 KM',
                         style: TextStyle(fontSize: 18, color: Colors.indigo),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
+                      padding: EdgeInsets.only(right: 20.0),
                       child: Text(
                         'AVAILABLE',
                         style: TextStyle(
@@ -47,8 +61,8 @@ class StationDetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(25, 10, 0, 10),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(25, 10, 0, 10),
                 child: Row(
                   children: [
                     Text(
@@ -87,8 +101,8 @@ class StationDetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: Row(
                   children: [
                     SizedBox(
@@ -156,14 +170,14 @@ class StationDetailPage extends StatelessWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              backgroundColor: Color(0xff0000FF),
+                              backgroundColor: const Color(0xff0000FF),
                               foregroundColor: Colors.white),
                           onPressed: () {},
                           child: Row(
                             children: [
                               Transform.flip(
                                   flipY: true,
-                                  child: CircleAvatar(
+                                  child: const CircleAvatar(
                                     backgroundColor: Colors.black,
                                     radius: 12,
                                     child: Icon(
@@ -172,10 +186,10 @@ class StationDetailPage extends StatelessWidget {
                                       color: Colors.white,
                                     ),
                                   )),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
-                              Text('Direction'),
+                              const Text('Direction'),
                             ],
                           )),
                     ),
@@ -184,16 +198,16 @@ class StationDetailPage extends StatelessWidget {
                       width: 100,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              side: BorderSide(
+                              side: const BorderSide(
                                 color: Color(0xff0000FF),
                               ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              backgroundColor: Color(0xffFFFFFF),
+                              backgroundColor: const Color(0xffFFFFFF),
                               foregroundColor: Colors.black),
                           onPressed: () {},
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -216,16 +230,16 @@ class StationDetailPage extends StatelessWidget {
                       width: 100,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              side: BorderSide(
+                              side: const BorderSide(
                                 color: Color(0xff0000FF),
                               ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              backgroundColor: Color(0xffFFFFFF),
+                              backgroundColor: const Color(0xffFFFFFF),
                               foregroundColor: Colors.black),
                           onPressed: () {},
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -261,7 +275,7 @@ class StationDetailPage extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
@@ -272,7 +286,7 @@ class StationDetailPage extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
@@ -296,7 +310,7 @@ class StationDetailPage extends StatelessWidget {
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
@@ -306,7 +320,7 @@ class StationDetailPage extends StatelessWidget {
                   child: SingleChildScrollView(
                     controller: scrollController,
                     child: Column(children: [
-                      TabBar(
+                      const TabBar(
                         indicatorColor: Colors.blueAccent,
                         labelColor: Colors.blue,
                         tabs: [
@@ -315,14 +329,14 @@ class StationDetailPage extends StatelessWidget {
                           Tab(text: 'Photos'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         height: 675,
                         child: TabBarView(
                           children: [
-                            OverViewPage(),
+                            const OverViewPage(),
                             ReviewPage(),
                             PhotosGridView(),
                           ],

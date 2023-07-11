@@ -16,10 +16,10 @@ class _PaymentState extends State<Payment> {
     return Scaffold( appBar: AppBar(
             // leading: Icon(Icons.arrow_back),
             centerTitle: true,
-            title: Text('Payment'),
+            title: const Text('Payment'),
             toolbarHeight: 80,
-            backgroundColor: Color(0xff5A5AD2),
-            shape: RoundedRectangleBorder(
+            backgroundColor: const Color(0xff5A5AD2),
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
@@ -29,14 +29,14 @@ class _PaymentState extends State<Payment> {
       body: SingleChildScrollView(
         child: Column(children: [
          
-          Padding(
-            padding: const EdgeInsets.all(15),
+          const Padding(
+            padding: EdgeInsets.all(15),
             child: Divider(),
           ),
-          Row(
+          const Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: 20),
                 child: Text("• Select your method"),
               ),
             ],
@@ -46,7 +46,7 @@ class _PaymentState extends State<Payment> {
               Padding(
                 padding: const EdgeInsets.only(left: 30, top: 10),
                 child: Container(
-                  child: Image(
+                  child: const Image(
                       image: AssetImage(
                     "Images/Googlepay.jpeg",
                   )),
@@ -59,24 +59,24 @@ class _PaymentState extends State<Payment> {
                 child: Container(
                   height: 50,
                   width: 80,
-                  child: Image(image: AssetImage("Images/Paytm1.png")),
+                  child: const Image(image: AssetImage("Images/Paytm1.png")),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 40, top: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 40, top: 10),
               ),
               Container(
                   height: 70,
                   width: 60,
-                  child: Image(
+                  child: const Image(
                       image: NetworkImage(
                           "https://pradeepaggarwal.com/wwmh/Phonepe.png")))
             ],
           ),
-          Row(
+          const Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 10),
+                padding: EdgeInsets.only(left: 20, top: 10),
                 child: Text("• Select your method"),
               ),
             ],
@@ -84,7 +84,7 @@ class _PaymentState extends State<Payment> {
           Padding(
             padding: const EdgeInsets.all(20),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(0),
@@ -96,7 +96,7 @@ class _PaymentState extends State<Payment> {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 0),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(0),
@@ -113,7 +113,7 @@ class _PaymentState extends State<Payment> {
                   height: 50,
                   width: 150,
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(0),
@@ -126,9 +126,9 @@ class _PaymentState extends State<Payment> {
                   padding: const EdgeInsets.all(15),
                   child: Container(
                     height: 50,
-                    width: 150,
+                    width: 140,
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(0),
@@ -143,8 +143,8 @@ class _PaymentState extends State<Payment> {
           ),
           Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
+              const Padding(
+                padding: EdgeInsets.only(left: 20),
                 child: Text("Remember card details"),
               ),
               Padding(
@@ -160,18 +160,18 @@ class _PaymentState extends State<Payment> {
                 ),
               )
             ],
-          ),
+          ),SizedBox(height: 30,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(
-                    Color.fromARGB(255, 129, 6, 160),
+                  backgroundColor: const MaterialStatePropertyAll(
+                    const Color(0xff5A5AD2),
                   ),
-                  minimumSize: MaterialStatePropertyAll(
-                    Size(250, 50),
+                  minimumSize: const MaterialStatePropertyAll(
+                    Size(600, 50),
                   ),
-                  textStyle: MaterialStatePropertyAll(
+                  textStyle: const MaterialStatePropertyAll(
                     TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   shape: MaterialStatePropertyAll(RoundedRectangleBorder(
@@ -195,7 +195,7 @@ class _PaymentState extends State<Payment> {
           TextButton(
             child: const Text('Ok'),
             onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChargingSummary(),));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChargingSummary(),));
         },),
           
     
@@ -208,9 +208,12 @@ class _PaymentState extends State<Payment> {
     
         },
         );
-  }, child: Text(
+  },
+  
+  
+   child: const Text(
                 "BOOK NOW",
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 15),
               ),
           
   ),

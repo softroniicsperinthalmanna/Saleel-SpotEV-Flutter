@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/Station/Formscreens/ForgetPassword/Recovery.dart';
 import 'package:spotev/Station/Formscreens/SignUp.dart';
 import 'package:spotev/Station/HomeScreen/Homepage.dart';
 
@@ -10,12 +11,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 bool? isChecked = false;
+ bool _isPasswordVisible = false;
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 21, 124, 110),
+      backgroundColor: const Color.fromARGB(255, 21, 124, 110),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -35,13 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Column(
               children: [
                 Container(
-                  child: Text(
+                  child: const Text(
                     "Sign In",
                     style: TextStyle(
                       fontSize: 33,
@@ -55,8 +57,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
+                      const Padding(
+                        padding: EdgeInsets.only(
                           left: 5.0,
                         ),
                         child: Text(
@@ -71,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         elevation: 10,
                         color: Colors.black,
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder:
                                 OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
@@ -83,16 +85,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.only(left: 5.0, bottom: 3),
+                                EdgeInsets.only(left: 5.0, bottom: 3),
                             child: Text(
                               'Password',
                               style: TextStyle(
@@ -104,8 +106,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           Card(
                             elevation: 10,
                             color: Colors.black,
-                            child: TextFormField(
-                              decoration: InputDecoration(
+                            child: TextFormField(                                 obscureText: !_isPasswordVisible,
+                         
+                              decoration:  InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide.none),
                                 filled: true,
@@ -113,8 +116,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                 hintText: 'ENTER YOUR PASSWORD',
                                 prefixIcon: Icon(
                                   (Icons.lock),
+                                ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisible = !_isPasswordVisible;
+            });
+          },),
+                                   
+                                     
                                 ),
-                              ),
+                                
+                              
                             ),
                           ),
                           Column(
@@ -127,8 +142,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       padding:
                                           const EdgeInsets.only(right: 5.0),
                                       child: TextButton(
-                                        onPressed: () {},
-                                        child: Text(
+                                        onPressed: () {
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RecoveryStation(),));
+                                        },
+                                        child: const Text(
                                           "Forget Password?",
                                           style: TextStyle(
                                             fontSize: 14,
@@ -145,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Checkbox(
                                       checkColor: Colors.black,
                                       activeColor: Colors.white,
-                                      fillColor: MaterialStatePropertyAll(
+                                      fillColor: const MaterialStatePropertyAll(
                                           Colors.white),
                                       value: isChecked,
                                       onChanged: (value) {
@@ -153,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           isChecked = value;
                                         });
                                       }),
-                                  Text(
+                                  const Text(
                                     "Remeber me",
                                     style: TextStyle(color: Colors.white),
                                   )
@@ -165,10 +182,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: ElevatedButton(
                                   
                                   style: ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll(
+                                      backgroundColor: const MaterialStatePropertyAll(
                                         Colors.white,
                                       ),
-                                      textStyle: MaterialStatePropertyAll(
+                                      textStyle: const MaterialStatePropertyAll(
                                         TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
@@ -178,9 +195,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                               borderRadius:
                                                   BorderRadius.circular(10)))),
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>HomePage() ,));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const HomePage() ,));
                                   },
-                                  child: Text(
+                                  child: const Text(
                                     "LOGIN",
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 21, 124, 110),
@@ -192,7 +209,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding:
                                     const EdgeInsets.only(left: 20, top: 10),
                                 child: Container(
-                                  child: Text(
+                                  child: const Text(
                                     "or",
                                     style: TextStyle(
                                       fontSize: 19,
@@ -202,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               ),
                               Container(
-                                child: Text(
+                                child: const Text(
                                   "Continue With",
                                   style: TextStyle(
                                     color: Colors.white,
@@ -210,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               Column(
@@ -224,13 +241,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                             onPressed: () {},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.white,
-                                                minimumSize: Size(165, 50)),
-                                            icon: Icon(
+                                                minimumSize: const Size(165, 50)),
+                                            icon: const Icon(
                                               Icons.facebook,
                                               color: Colors.blue,
                                               size: 30,
                                             ),
-                                            label: Text(
+                                            label: const Text(
                                               "FACEBOOK",
                                               style: TextStyle(
                                                   color: Colors.black),
@@ -248,7 +265,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   fit: BoxFit.cover,
                                                   height: 30,
                                                 ),
-                                                Text(
+                                                const Text(
                                                   "Google",
                                                   style: TextStyle(
                                                       fontSize: 17,
@@ -268,7 +285,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Don't have an account?",
                                       style: TextStyle(
                                         fontSize: 14,
@@ -277,9 +294,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     TextButton(
                                         onPressed: () {
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp(),));
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignUp(),));
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           "Sign Up",
                                           style: TextStyle(
                                             fontSize: 14,

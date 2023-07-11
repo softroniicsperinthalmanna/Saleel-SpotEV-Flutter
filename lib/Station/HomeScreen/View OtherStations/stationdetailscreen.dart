@@ -17,31 +17,27 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
       length: 3,
       child: Scaffold(
 
-        appBar:  AppBar(
+        appBar:  AppBar(foregroundColor: Colors.black,
           backgroundColor: Colors.white,elevation: 1,
-          automaticallyImplyLeading: false,
-          leading: Icon(Icons.arrow_back,color: Colors.black,),
-          actions: [Icon(Icons.search,color: Colors.black,),
+          actions: [const Icon(Icons.search,),
           PopupMenuButton(color: Colors.indigo,
             itemBuilder: (context) => [
-                  PopupMenuItem(
+                  const PopupMenuItem(
                     child: Text("Share Place",style: 
                     TextStyle(color: Colors.white),),
                    
                   ),
-                  PopupMenuItem(
-                    child: Text("Download offline map",style: 
-                    TextStyle(color: Colors.white),),
+                  
                    
-                  )],)],
+                  ],)],
         ),
         body:
         Stack(
           children: [
             Container(
                 child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(25, 15, 0, 0),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(25, 15, 0, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -53,14 +49,14 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                           fontWeight: FontWeight.bold),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 40),
+                      padding: EdgeInsets.only(right: 40),
                       child: Text(
                         '45 KM',
                         style: TextStyle(fontSize: 18, color: Colors.indigo),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 20.0),
+                      padding: EdgeInsets.only(right: 20.0),
                       child: Text(
                         'AVAILABLE',
                         style: TextStyle(
@@ -72,8 +68,8 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(25, 10, 0, 10),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(25, 10, 0, 10),
                 child: Row(
                   children: [
                     Text(
@@ -112,8 +108,8 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: Row(
                   children: [
                     SizedBox(
@@ -181,14 +177,14 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              backgroundColor: Color(0xff0000FF),
+                              backgroundColor: const Color(0xff0000FF),
                               foregroundColor: Colors.white),
                           onPressed: () {},
                           child: Row(
                             children: [
                               Transform.flip(
                                   flipY: true,
-                                  child: CircleAvatar(
+                                  child: const CircleAvatar(
                                     backgroundColor: Colors.black,
                                     radius: 12,
                                     child: Icon(
@@ -197,10 +193,10 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                                       color: Colors.white,
                                     ),
                                   )),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
-                              Text('Direction'),
+                              const Text('Direction'),
                             ],
                           )),
                     ),
@@ -209,16 +205,16 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                       width: 100,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              side: BorderSide(
+                              side: const BorderSide(
                                 color: Color(0xff0000FF),
                               ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              backgroundColor: Color(0xffFFFFFF),
+                              backgroundColor: const Color(0xffFFFFFF),
                               foregroundColor: Colors.black),
                           onPressed: () {},
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -241,16 +237,16 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                       width: 100,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              side: BorderSide(
+                              side: const BorderSide(
                                 color: Color(0xff0000FF),
                               ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              backgroundColor: Color(0xffFFFFFF),
+                              backgroundColor: const Color(0xffFFFFFF),
                               foregroundColor: Colors.black),
                           onPressed: () {},
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -286,7 +282,7 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
@@ -297,7 +293,7 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
@@ -319,26 +315,26 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
               initialChildSize: 0.52,
              
               minChildSize: 0.52,
-              maxChildSize: 0.90,
+              maxChildSize: 1,
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Container(
                  
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
                       topRight: Radius.circular(0),
                     ),
                   ),
-                  child: SingleChildScrollView(physics: BouncingScrollPhysics(),
+                  child: SingleChildScrollView(physics: const BouncingScrollPhysics(),
                     controller: scrollController,
                     child: Column(
                       children: [
-                        AppBar(),
+                       
                        // SizedBox(height: 10,),
                       
-                      TabBar(
+                      const TabBar(
                         indicatorColor: Colors.blueAccent,
                         labelColor: Colors.blue,
                         tabs: [
@@ -347,14 +343,14 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
                           Tab(text: 'Photos'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         height: 675,
                         child: TabBarView(
                           children: [
-                            OverViewPageStation(),
+                            const OverViewPageStation(),
                             ReviewPageStation(),
                             PhotosGridView(),
                           ],

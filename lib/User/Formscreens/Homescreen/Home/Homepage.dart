@@ -22,7 +22,7 @@ List listofIcons = [
   Icons.person,
 ];
 List listofStrings = ['Home', 'Station', 'Offers', 'Profile'];
-List TabWidgets = [Home(), StationsShow(), Offers(), Profile()];
+List TabWidgets = [const Home(), const StationsShow(), const Offers(), const Profile()];
 
 class _HomePageUserState extends State<HomePageUser> {
   @override
@@ -78,7 +78,7 @@ class _HomePageUserState extends State<HomePageUser> {
               BoxShadow(
                   color: Colors.black.withOpacity(.2),
                   blurRadius: 30,
-                  offset: Offset(0, 10)),
+                  offset: const Offset(0, 10)),
             ],
             borderRadius: BorderRadius.circular(0)),
         child: ListView.builder(
@@ -97,14 +97,14 @@ class _HomePageUserState extends State<HomePageUser> {
             child: Stack(
               children: [
                 AnimatedContainer(
-                  duration: Duration(seconds: 1),
+                  duration: const Duration(seconds: 1),
                   curve: Curves.fastLinearToSlowEaseIn,
                   width: index == currentIndex
                       ? screenWidth * .32
                       : screenWidth * .18,
                   alignment: Alignment.center,
                   child: AnimatedContainer(
-                    duration: Duration(seconds: 1),
+                    duration: const Duration(seconds: 1),
                     curve: Curves.fastLinearToSlowEaseIn,
                     height: index == currentIndex ? screenWidth * .10 : 0,
                     width: index == currentIndex ? screenWidth * .30 : 0,
@@ -116,7 +116,7 @@ class _HomePageUserState extends State<HomePageUser> {
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(seconds: 3),
+                  duration: const Duration(seconds: 3),
                   curve: Curves.fastLinearToSlowEaseIn,
                   width: index == currentIndex
                       ? screenWidth * .31
@@ -127,14 +127,14 @@ class _HomePageUserState extends State<HomePageUser> {
                       Row(
                         children: [
                           AnimatedContainer(
-                            duration: Duration(seconds: 2),
+                            duration: const Duration(seconds: 2),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
                                 index == currentIndex ? screenWidth * .13 : 0,
                           ),
                           AnimatedOpacity(
                             opacity: index == currentIndex ? 1 : 0,
-                            duration: Duration(
+                            duration: const Duration(
                               seconds: 1,
                             ),
                             curve: Curves.fastLinearToSlowEaseIn,
@@ -142,7 +142,7 @@ class _HomePageUserState extends State<HomePageUser> {
                               index == currentIndex
                                   ? '${listofStrings[index]}'
                                   : '',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.blueAccent,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12,
@@ -154,7 +154,7 @@ class _HomePageUserState extends State<HomePageUser> {
                       Row(
                         children: [
                           AnimatedContainer(
-                            duration: Duration(seconds: 1),
+                            duration: const Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width:
                                 index == currentIndex ? screenWidth * .03 : 20,

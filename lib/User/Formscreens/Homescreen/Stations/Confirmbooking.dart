@@ -17,10 +17,10 @@ class _ConfirmbookingState extends State<Confirmbooking> {
        appBar: AppBar(
             // leading: Icon(Icons.arrow_back),
             centerTitle: true,
-            title: Text('Confirm Booking'),
+            title: const Text('Confirm Booking'),
             toolbarHeight: 80,
-            backgroundColor: Color(0xff5A5AD2),
-            shape: RoundedRectangleBorder(
+            backgroundColor: const Color(0xff5A5AD2),
+            shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
                   bottomRight: Radius.circular(20),
@@ -28,151 +28,120 @@ class _ConfirmbookingState extends State<Confirmbooking> {
             ),
           ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-           
-            Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 45, left: 50),
-                    child: Text(
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Column(
+            children: [
+             const SizedBox(height: 30,),
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
                       "YX Vestby,Perinthalmanna",
-                      style: TextStyle(fontSize: 25),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
+                      style: TextStyle(fontSize: 20),
+                    ),const SizedBox(height: 10,),
+                    const Text(
                       "Sat,13 May,12:15 PM",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 50, top: 15),
-                    child: Divider(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 0, left: 50),
-                    child: Text(
+                      style: TextStyle(fontSize: 16),
+                    ),const SizedBox(height: 10,),
+                    const Divider(),
+                    const Text(
                       "Connector",
-                      style: TextStyle(fontSize: 25, color: Colors.blue),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
+                      style: TextStyle(fontSize: 20, color: Colors.indigo),
+                    ),const SizedBox(height: 10,),
+                    const Text(
                       "Type-2 Connector",
                       style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
+                    ),const SizedBox(height: 5,),
+                    const Text(
                       "50 Kw",
                       style: TextStyle(fontSize: 18),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 50, top: 15),
-                    child: Divider(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
-                      "Unit Price (?100/hour)",
-                      style: TextStyle(fontSize: 20, color: Colors.green),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
+                    const Divider(),
+                    const SizedBox(height: 10,),
+                    const Text(
+                      "Unit Price ( ₹100/hour)",
+                      style: TextStyle(fontSize: 17, color: Colors.green),
+                    ),const SizedBox(height: 10,),
+                    const Text(
                       "Pricing",
-                      style: TextStyle(fontSize: 22, color: Colors.purple),
+                      style: TextStyle(fontSize: 20, color: Colors.redAccent),
+                    ),const SizedBox(height: 10,),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 2),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "45 mins ",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "₹80.00",
+                            style: TextStyle(fontSize: 18),),
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
-                      "45 mins                                 ?80.00",
-                      style: TextStyle(fontSize: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 2),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Taxes",
+                            style: TextStyle(fontSize: 20),
+                          ),Text(
+                            "₹15.20",
+                            style: TextStyle(fontSize: 18),),
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
-                      "Taxes                                     ?15.20",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, top: 10),
-                    child: Text(
-                      "Taxes",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 45, top: 10),
-                    child: Row(
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Checkbox(
-                            value: isChecked,
-                            onChanged: (value) {
-                              setState(() {
-                                isChecked = value;
-                              });
-                            }),
-                        Text("Use Wallet Amount"),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 110,
-                          ),
-                          child: Text(
-                            "?0.00",
-                            style: TextStyle(fontSize: 20, color: Colors.red),
-                          ),
+                        Row(                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                          children: [
+                            Checkbox(
+                                value: isChecked,
+                                onChanged: (value) {
+                                  setState(() {
+                                    isChecked = value;
+                                  });
+                                }),const Text("Use Wallet Amount"),
+                          ],
+                        ),
+                        
+                        const Text(
+                          "₹0.00",
+                          style: TextStyle(fontSize: 18, color: Colors.red),
                         ),
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 35, top: 15),
-                    child: Divider(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, right: 35, top: 0),
-                    child: Row(
+                    const Divider(),
+                    const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Total",
-                          style: TextStyle(fontSize: 24),
+                          style: TextStyle(fontSize: 20),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 195,
-                          ),
-                          child: Text(
-                            "?95.20",
-                            style: TextStyle(fontSize: 20),
-                          ),
+                        Text(
+                          "₹95.20",
+                          style: TextStyle(fontSize: 20),
                         ),
                       ],
-                    ),
-                  ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(50),
+                    ),const SizedBox(height: 40,),
+                    const SizedBox(height: 30,),
+                    Center(
                       child: ElevatedButton(
                         style: ButtonStyle(
-                            backgroundColor: MaterialStatePropertyAll(
-                              Color.fromARGB(255, 129, 6, 160),
+                            backgroundColor: const MaterialStatePropertyAll(
+                              Color(0xff5A5AD2),
                             ),
-                            minimumSize: MaterialStatePropertyAll(
-                              Size(300, 50),
+                            minimumSize: const MaterialStatePropertyAll(
+                              Size(700, 50),
                             ),
-                            textStyle: MaterialStatePropertyAll(
+                            textStyle: const MaterialStatePropertyAll(
                               TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
                             ),
@@ -180,16 +149,16 @@ class _ConfirmbookingState extends State<Confirmbooking> {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)))),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Payment(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Payment(),));
                         },
-                        child: Text("Proceed to Pay ?95.20"),
+                        child: const Text("Proceed to Pay ₹95.20"),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

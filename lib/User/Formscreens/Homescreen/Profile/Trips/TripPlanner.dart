@@ -12,16 +12,22 @@ class _TripState extends State<Trip> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(children: [
-      Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("Images/GoogleMap.jpg"),
-            fit: BoxFit.cover,
-          ),
-          color: Colors.cyan,
-        ),
+      Stack(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("Images/GoogleMap.jpg"),
+                fit: BoxFit.cover,
+              ),
+              color: Colors.cyan,
+            ),
+          ),Positioned(right: 15,height: 130,
+            child: CircleAvatar(backgroundColor: Colors.black38,radius: 25,
+              child: CircleAvatar( backgroundColor: Colors.white,radius: 25,child: Icon(Icons.favorite),)))
+        ],
       ),
       DraggableScrollableSheet(
           initialChildSize: .5,

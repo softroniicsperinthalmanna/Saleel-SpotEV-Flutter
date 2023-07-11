@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:spotev/User/Formscreens/Loginscreen.dart';
 import 'package:spotev/User/Formscreens/OTPverification.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
-
+      
   @override
   State<Registration> createState() => _RegistrationState();
+  
 }
+        bool _isPasswordVisible = false;
+         bool _isPasswordVisiblee = false;
 
 class _RegistrationState extends State<Registration> {
   @override
@@ -21,13 +25,13 @@ class _RegistrationState extends State<Registration> {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
             child: Column(children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Column(
                 children: [
                   Container(
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(
                         fontSize: 33,
@@ -35,13 +39,13 @@ class _RegistrationState extends State<Registration> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0),
                         child: Text(
                           'User Name',
                           style: TextStyle(
@@ -56,19 +60,19 @@ class _RegistrationState extends State<Registration> {
                         child: TextFormField(
                           decoration: InputDecoration(
                             enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                                const OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.grey[350],
                             hintText: 'ENTER YOUR NAME',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.person_outline,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, bottom: 3),
+                      const SizedBox(height: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0, bottom: 3),
                         child: Text(
                           'Mobile Number',
                           style: TextStyle(
@@ -83,19 +87,27 @@ class _RegistrationState extends State<Registration> {
                         child: TextFormField(
                           decoration: InputDecoration(
                             enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                                const OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.grey[350],
                             hintText: 'ENTER YOUR NUMBER',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.call,
                             ),
-                          ),
+                          ),keyboardType: TextInputType.phone,
+                                                  inputFormatters: [LengthLimitingTextInputFormatter(10)],
+                                                   onChanged: (value) {
+                          if (value.length == 10) {
+                            FocusScope.of(context).nextFocus();
+                          }
+                        },
+ // Show numeric keyboard
+   
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, top: 3),
+                      const SizedBox(height: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0, top: 3),
                         child: Text(
                           'Email',
                           style: TextStyle(
@@ -110,21 +122,21 @@ class _RegistrationState extends State<Registration> {
                         child: TextFormField(
                           decoration: InputDecoration(
                             enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                                const OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.grey[350],
                             hintText: 'ENTER YOUR EMAIL',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.mail,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, top: 3),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0, top: 3),
                         child: Text(
                           'Password',
                           style: TextStyle(
@@ -136,29 +148,37 @@ class _RegistrationState extends State<Registration> {
                       Card(
                         elevation: 10,
                         color: Colors.black,
-                        child: TextFormField(
+                        child: TextFormField(  obscureText: !_isPasswordVisible,
                           decoration: InputDecoration(
                             enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                                const OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.grey[350],
                             hintText: 'ENTER YOUR PASSWORD',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.lock,
-                            ),
+                            ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisible = !_isPasswordVisible;
+            });
+          },),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.only(left: 5.0, bottom: 3),
+                                EdgeInsets.only(left: 5.0, bottom: 3),
                             child: Text(
                               'Confirm Password',
                               style: TextStyle(
@@ -170,22 +190,30 @@ class _RegistrationState extends State<Registration> {
                           Card(
                             elevation: 10,
                             color: Colors.black,
-                            child: TextFormField(
+                            child: TextFormField(  obscureText: !_isPasswordVisiblee,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                     borderSide: BorderSide.none),
                                 filled: true,
                                 fillColor: Colors.grey[350],
                                 hintText: 'CONFIRM PASSWORD',
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   (Icons.lock),
-                                ),
+                                ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisiblee ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisiblee = !_isPasswordVisiblee;
+            });
+          },),
                               ),
                             ),
                           ),
                           Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 40,
                               ),
                               Container(
@@ -193,10 +221,10 @@ class _RegistrationState extends State<Registration> {
                                 height: 45,
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll(
+                                      backgroundColor: const MaterialStatePropertyAll(
                                         Color.fromARGB(255, 99, 49, 216),
                                       ),
-                                      textStyle: MaterialStatePropertyAll(
+                                      textStyle: const MaterialStatePropertyAll(
                                         TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
@@ -210,16 +238,16 @@ class _RegistrationState extends State<Registration> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                OTPverification()));
+                                                const OTPverification()));
                                   },
-                                  child: Text("Register"),
+                                  child: const Text("Register"),
                                 ),
                               ),
                               Container(
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Have an account?",
                                       style: TextStyle(
                                           fontSize: 14, color: Colors.blueGrey),
@@ -230,9 +258,9 @@ class _RegistrationState extends State<Registration> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Login()));
+                                                      const Login()));
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           "Sign In",
                                           style: TextStyle(
                                             fontSize: 14,

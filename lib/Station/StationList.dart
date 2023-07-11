@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotev/User/Formscreens/Homescreen/Stations/StationDetails.dart';
+import 'package:spotev/Station/HomeScreen/View%20OtherStations/stationdetailscreen.dart';
 
 class StationsListPage extends StatefulWidget {
   const StationsListPage({super.key});
@@ -25,11 +25,11 @@ class _StationsListPageState extends State<StationsListPage> {
               padding: const EdgeInsets.only(left: 8.0, right: 70, top: 40),
               child: TextField(
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: const Icon(Icons.search),
                     hintText: 'Search station..',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.black,
                           width: 2,
                         ))),
@@ -45,7 +45,7 @@ class _StationsListPageState extends State<StationsListPage> {
                 child: GestureDetector(
                   onTap: () {
                     showModalBottomSheet(
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(25))),
                         isScrollControlled: true,
@@ -61,8 +61,8 @@ class _StationsListPageState extends State<StationsListPage> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
+                                    const Padding(
+                                      padding: EdgeInsets.only(
                                           left: 20.0, top: 18),
                                       child: Text(
                                         'Station Status',
@@ -83,11 +83,11 @@ class _StationsListPageState extends State<StationsListPage> {
                                             child: OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
-                                                        Color.fromARGB(
+                                                        const Color.fromARGB(
                                                             255, 99, 49, 216),
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -97,7 +97,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'All',
                                                   style: TextStyle(
                                                       color: Colors.white),
@@ -112,7 +112,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                         .transparent,
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -122,7 +122,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'Available',
                                                 )),
                                           ),
@@ -135,7 +135,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                         .transparent,
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -145,15 +145,15 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'Unavailable',
                                                 )),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
+                                    const Padding(
+                                      padding: EdgeInsets.only(
                                         left: 20.0,
                                       ),
                                       child: Text(
@@ -175,11 +175,11 @@ class _StationsListPageState extends State<StationsListPage> {
                                             child: OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
-                                                        Color.fromARGB(
+                                                        const Color.fromARGB(
                                                             255, 99, 49, 216),
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -189,7 +189,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'AC',
                                                   style: TextStyle(
                                                       color: Colors.white),
@@ -204,7 +204,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                         .transparent,
                                                     foregroundColor:
                                                         Colors.black,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -214,7 +214,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   'DC',
                                                 )),
                                           ),
@@ -225,7 +225,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
                                                         Colors.transparent,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Colors.white,
                                                     ),
                                                     shape:
@@ -235,15 +235,15 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text(
+                                                child: const Text(
                                                   '',
                                                 )),
                                           ),
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
+                                    const Padding(
+                                      padding: EdgeInsets.only(
                                         left: 20.0,
                                       ),
                                       child: Text(
@@ -272,7 +272,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -282,7 +282,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'All',
                                                     )),
                                               ),
@@ -297,7 +297,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -307,7 +307,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'CCS2',
                                                     )),
                                               ),
@@ -322,7 +322,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -332,13 +332,13 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'CCS',
                                                     )),
                                               ),
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 7,
                                           ),
                                           Row(
@@ -356,7 +356,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -366,7 +366,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'GB/T',
                                                     )),
                                               ),
@@ -381,7 +381,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -391,7 +391,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'IEC 60309',
                                                     )),
                                               ),
@@ -406,7 +406,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -416,13 +416,13 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'CHAdeMo',
                                                     )),
                                               ),
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 7,
                                           ),
                                           Row(
@@ -440,7 +440,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -450,7 +450,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       '15 AMP SWITCH',
                                                       style: TextStyle(
                                                         fontSize: 12,
@@ -468,7 +468,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: BorderSide(
+                                                            side: const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -478,7 +478,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'Type-2',
                                                     )),
                                               ),
@@ -489,7 +489,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                     style: OutlinedButton.styleFrom(
                                                         backgroundColor:
                                                             Colors.transparent,
-                                                        side: BorderSide(
+                                                        side: const BorderSide(
                                                             color:
                                                                 Colors.white),
                                                         shape: RoundedRectangleBorder(
@@ -498,7 +498,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       '',
                                                     )),
                                               ),
@@ -507,9 +507,9 @@ class _StationsListPageState extends State<StationsListPage> {
                                         ],
                                       ),
                                     ),
-                                    Padding(
+                                    const Padding(
                                       padding:
-                                          const EdgeInsets.only(left: 25.0),
+                                          EdgeInsets.only(left: 25.0),
                                       child: Text(
                                         'Distance',
                                         style: TextStyle(
@@ -521,7 +521,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Text('0 km'),
+                                        const Text('0 km'),
                                         Slider(
                                             value: _curentValue,
                                             divisions: 10,
@@ -531,13 +531,13 @@ class _StationsListPageState extends State<StationsListPage> {
                                                 _curentValue = value;
                                               });
                                             }),
-                                        Text('100 km')
+                                        const Text('100 km')
                                       ],
                                     ),
-                                    Center(child: Text('50 km')),
-                                    Padding(
+                                    const Center(child: Text('50 km')),
+                                    const Padding(
                                       padding:
-                                          const EdgeInsets.only(left: 25.0),
+                                          EdgeInsets.only(left: 25.0),
                                       child: Text(
                                         'Price',
                                         style: TextStyle(
@@ -549,7 +549,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Row(
+                                        const Row(
                                           children: [
                                             Icon(
                                               Icons.currency_rupee_sharp,
@@ -567,7 +567,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                 _curentVal = value;
                                               });
                                             }),
-                                        Row(
+                                        const Row(
                                           children: [
                                             Icon(
                                               Icons.currency_rupee_sharp,
@@ -578,7 +578,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                         )
                                       ],
                                     ),
-                                    Row(
+                                    const Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -589,7 +589,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                         Text('100 Price/Unit'),
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Row(
@@ -610,7 +610,7 @@ class _StationsListPageState extends State<StationsListPage> {
                                                               Colors.white,
                                                           foregroundColor:
                                                               Colors.black,
-                                                          side: BorderSide(
+                                                          side: const BorderSide(
                                                             color: Color(
                                                                 0xff0000FF),
                                                           ),
@@ -621,9 +621,9 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                           10))),
                                                   onPressed: () {},
                                                   child:
-                                                      Text('Clear Filters'))),
+                                                      const Text('Clear Filters'))),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 20,
                                         ),
                                         Container(
@@ -634,11 +634,11 @@ class _StationsListPageState extends State<StationsListPage> {
                                                     elevation: 5,
                                                     shadowColor: Colors.blue,
                                                     backgroundColor:
-                                                        Color.fromARGB(
+                                                        const Color.fromARGB(
                                                             255, 99, 49, 216),
                                                     foregroundColor:
                                                         Colors.white,
-                                                    side: BorderSide(
+                                                    side: const BorderSide(
                                                       color: Color(0xff0000FF),
                                                     ),
                                                     shape:
@@ -648,10 +648,10 @@ class _StationsListPageState extends State<StationsListPage> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: Text('Apply Filters')))
+                                                child: const Text('Apply Filters')))
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 5,
                                     )
                                   ],
@@ -668,7 +668,7 @@ class _StationsListPageState extends State<StationsListPage> {
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(color: Colors.indigo, width: 1.5),
                     ),
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                         radius: 22.5,
                         backgroundColor: Colors.white,
                         child: Icon(
@@ -690,7 +690,7 @@ class _StationsListPageState extends State<StationsListPage> {
                   padding: const EdgeInsets.only(top: 15, left: 13, right: 13),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => StationDetailPage(),));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const StationDetailPageStation(),));
                     },
                     child: Stack(
                       children:[Container(
@@ -705,7 +705,7 @@ class _StationsListPageState extends State<StationsListPage> {
                               color: Colors.grey.withOpacity(0.5), //color of shadow
                               spreadRadius: 5, //spread radius
                               blurRadius: 7, // blur radius
-                              offset: Offset(0, 2), // changes position of shadow
+                              offset: const Offset(0, 2), // changes position of shadow
                               //first paramerter of offset is left-right
                               //second parameter is top to down
                             ),
@@ -714,8 +714,8 @@ class _StationsListPageState extends State<StationsListPage> {
                         ),
                         child: Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8.0, right: 8,top: 20),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 8.0, right: 8,top: 20),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -779,16 +779,16 @@ class _StationsListPageState extends State<StationsListPage> {
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 3,
                             ),
                             Container(
                               height: 60,
                               width: MediaQuery.of(context).size.width,
-                              child: Row(
+                              child: const Row(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.fromLTRB(6, 0, 0, 0),
+                                    padding: EdgeInsets.fromLTRB(6, 0, 0, 0),
                                     child: Column(
                                       children: [
                                         Icon(
@@ -866,7 +866,7 @@ class _StationsListPageState extends State<StationsListPage> {
                       ), Positioned(right: 20,top: 20,
                         child: Transform.flip(
                                           flipY: true,
-                                          child: CircleAvatar(
+                                          child: const CircleAvatar(
                                             radius: 12,
                                             child: Icon(
                                               Icons

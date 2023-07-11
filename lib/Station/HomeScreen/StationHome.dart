@@ -5,7 +5,7 @@ import 'package:spotev/Station/HomeScreen/History/ChargingHistory.dart';
 import 'package:spotev/Station/HomeScreen/ManageStation/Slots.dart';
 import 'package:spotev/Station/HomeScreen/MyStation/stationdetailscreen.dart';
 import 'package:spotev/Station/HomeScreen/Offer/Offers.dart';
-import 'package:spotev/Station/HomeScreen/View%20OtherStations/stationdetailscreen.dart';
+import 'package:spotev/Station/StationList.dart';
 
 class StationHome extends StatefulWidget {
   const StationHome({super.key});
@@ -121,7 +121,7 @@ class _StationHomeState extends State<StationHome> {
                           ),
                         ),
                         GestureDetector(
-                    onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) =>StationDetailPageStation() ));},
+                    onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) =>StationsListPage() ));},
                           child: Card(
                             elevation: 5,
                             shape: RoundedRectangleBorder(

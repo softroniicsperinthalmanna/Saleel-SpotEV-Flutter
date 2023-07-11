@@ -9,14 +9,14 @@ class Login extends StatefulWidget {
 
   @override
   State<Login> createState() => _LoginState();
-  
 }
+
 bool _isPasswordVisible = false;
 bool? isChecked = false;
+
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -25,25 +25,25 @@ class _LoginState extends State<Login> {
         child: SingleChildScrollView(
           child: Column(children: [
             Padding(
-              padding: const EdgeInsets.only(left: 50, right: 50, top: 40),
+              padding: const EdgeInsets.only(left: 50, right: 50, top: 35),
               child: Center(
                 child: Container(
                   //color: Colors.amber,
                   child: Image.asset(
                     "Images/logo.png",
                     fit: BoxFit.cover,
-                    height: 100,
+                    height: 98,
                   ),
                 ),
               ),
             ),
-            SizedBox(
-              height: 40,
+            const SizedBox(
+              height: 10,
             ),
             Column(
               children: [
                 Container(
-                  child: Text(
+                  child: const Text(
                     "Sign In",
                     style: TextStyle(
                       fontSize: 33,
@@ -57,8 +57,8 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
+                      const Padding(
+                        padding: EdgeInsets.only(
                           left: 5.0,
                         ),
                         child: Text(
@@ -74,27 +74,26 @@ class _LoginState extends State<Login> {
                         color: Colors.black,
                         child: TextFormField(
                           decoration: InputDecoration(
-                            enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                            enabledBorder: const OutlineInputBorder(
+                                borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.grey[350],
                             hintText: 'ENTER YOUR EMAIL',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.mail,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 5.0, bottom: 3),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, bottom: 3),
                             child: Text(
                               'Password',
                               style: TextStyle(
@@ -107,25 +106,28 @@ class _LoginState extends State<Login> {
                             elevation: 10,
                             color: Colors.black,
                             child: TextFormField(
-                               obscureText: !_isPasswordVisible,
+                              obscureText: !_isPasswordVisible,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                     borderSide: BorderSide.none),
                                 filled: true,
                                 fillColor: Colors.grey[350],
                                 hintText: 'ENTER YOUR PASSWORD',
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   (Icons.lock),
-                                  
-                                ), suffixIcon: IconButton(
-          icon: Icon(
-            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-          ),
-          onPressed: () {
-            setState(() {
-              _isPasswordVisible = !_isPasswordVisible;
-            });
-          },),
+                                ),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _isPasswordVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isPasswordVisible = !_isPasswordVisible;
+                                    });
+                                  },
+                                ),
                               ),
                             ),
                           ),
@@ -136,7 +138,8 @@ class _LoginState extends State<Login> {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.all(5.0),
+                                      padding: const EdgeInsets.only(
+                                          right: 3.0, top: 2),
                                       child: TextButton(
                                         onPressed: () {
                                           Navigator.push(
@@ -145,7 +148,7 @@ class _LoginState extends State<Login> {
                                                   builder: (context) =>
                                                       const Recovery()));
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           "Forget Password?",
                                           style: TextStyle(
                                             fontSize: 13,
@@ -157,12 +160,13 @@ class _LoginState extends State<Login> {
                                     ),
                                   ],
                                 ),
-                              ),  Row(
+                              ),
+                              Row(
                                 children: [
                                   Checkbox(
                                       checkColor: Colors.white,
                                       activeColor: Colors.red,
-                                      fillColor: MaterialStatePropertyAll(
+                                      fillColor: const MaterialStatePropertyAll(
                                           Colors.indigo),
                                       value: isChecked,
                                       onChanged: (value) {
@@ -170,13 +174,13 @@ class _LoginState extends State<Login> {
                                           isChecked = value;
                                         });
                                       }),
-                                  Text(
+                                  const Text(
                                     "Remeber me",
                                     style: TextStyle(color: Colors.black),
                                   )
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 45,
                               ),
                               Container(
@@ -184,10 +188,11 @@ class _LoginState extends State<Login> {
                                 height: 45,
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll(
+                                      backgroundColor:
+                                          const MaterialStatePropertyAll(
                                         Color.fromARGB(255, 99, 49, 216),
                                       ),
-                                      textStyle: MaterialStatePropertyAll(
+                                      textStyle: const MaterialStatePropertyAll(
                                         TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
@@ -199,29 +204,30 @@ class _LoginState extends State<Login> {
                                   onPressed: () {
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(
-                                      builder: (context) => HomePageUser(),
+                                      builder: (context) =>
+                                          const HomePageUser(),
                                     ));
                                   },
-                                  child: Text("LOGIN"),
+                                  child: const Text("LOGIN"),
                                 ),
                               ),
                               Padding(
                                 padding:
                                     const EdgeInsets.only(left: 20, top: 10),
                                 child: Container(
-                                  child: Text(
+                                  child: const Text(
                                     "or",
                                     style: TextStyle(fontSize: 19),
                                   ),
                                 ),
                               ),
                               Container(
-                                child: Text(
+                                child: const Text(
                                   "Continue With",
                                   style: TextStyle(fontSize: 16),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               Column(
@@ -235,13 +241,14 @@ class _LoginState extends State<Login> {
                                             onPressed: () {},
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor: Colors.white,
-                                                minimumSize: Size(165, 50)),
-                                            icon: Icon(
+                                                minimumSize:
+                                                    const Size(165, 50)),
+                                            icon: const Icon(
                                               Icons.facebook,
                                               color: Colors.blue,
                                               size: 30,
                                             ),
-                                            label: Text(
+                                            label: const Text(
                                               "FACEBOOK",
                                               style: TextStyle(
                                                   color: Colors.black),
@@ -259,7 +266,7 @@ class _LoginState extends State<Login> {
                                                   fit: BoxFit.cover,
                                                   height: 30,
                                                 ),
-                                                Text(
+                                                const Text(
                                                   "Google",
                                                   style: TextStyle(
                                                       fontSize: 17,
@@ -279,7 +286,7 @@ class _LoginState extends State<Login> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Don't have an account?",
                                       style: TextStyle(
                                           fontSize: 14, color: Colors.blueGrey),
@@ -290,9 +297,9 @@ class _LoginState extends State<Login> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Registration()));
+                                                      const Registration()));
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           "Sign Up",
                                           style: TextStyle(
                                             fontSize: 14,

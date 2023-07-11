@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:spotev/Station/Formscreens/Login.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -8,10 +10,12 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  bool _isPasswordVisible = false;
+  bool _isPasswordVisiblee = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 21, 124, 110),
+      backgroundColor: const Color.fromARGB(255, 21, 124, 110),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -20,13 +24,13 @@ class _SignUpState extends State<SignUp> {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
             child: Column(children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Column(
                 children: [
                   Container(
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(
                         fontSize: 33,
@@ -34,13 +38,13 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50),
+                  const SizedBox(height: 15),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0),
                         child: Text(
                           'Station Name',
                           style: TextStyle(
@@ -53,7 +57,7 @@ class _SignUpState extends State<SignUp> {
                         elevation: 10,
                         color: Colors.black,
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder:
                                 OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
@@ -64,13 +68,13 @@ class _SignUpState extends State<SignUp> {
                             ),
                           ),
                         ),
-                      ), SizedBox(height: 10),
-                     
-                      Row(mainAxisSize: MainAxisSize.min,
+                      ),
+                      const SizedBox(height: 10),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [ Padding(
-                            padding: const EdgeInsets.only(left: 5.0, bottom: 3),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, bottom: 3),
                             child: Row(
                               children: [
                                 Text(
@@ -79,95 +83,31 @@ class _SignUpState extends State<SignUp> {
                                     fontSize: 15,
                                     color: Colors.white,
                                   ),
-                                ), 
+                                ),
                               ],
                             ),
                           ),
-                              Container(width: MediaQuery.of(context).size.width/2,
-                                child: Card(
-                                  elevation: 10,
-                                  color: Colors.black,
-                                  child: TextFormField(
-                                    decoration: InputDecoration(
-                                      enabledBorder:
-                                          OutlineInputBorder(borderSide: BorderSide.none),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      hintText: 'LOCATION',
-                                      prefixIcon: Icon(
-                                        Icons.location_on_outlined,
-                                      ),
-                                    ),
-                                  ),
+                          Card(
+                            elevation: 10,
+                            color: Colors.black,
+                            child: TextFormField(
+                              decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                filled: true,
+                                fillColor: Colors.white,
+                                hintText: 'LOCATION',
+                                prefixIcon: Icon(
+                                  Icons.location_on_outlined,
                                 ),
                               ),
-                              
-                            ],
-                          ),  Expanded(
-                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [ Padding(
-                                     padding: const EdgeInsets.only(left:5.0,bottom: 3),
-                                     child: Text(
-                                                                     'City',
-                                                                     style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.white,
-                                                                     ),
-                                                                   ),
-                                   ), 
-                                     Card(
-                                         elevation: 10,
-                                         color: Colors.black,
-                                         child: TextFormField(
-                                           decoration: InputDecoration(
-                                             enabledBorder:
-                                                 OutlineInputBorder(borderSide: BorderSide.none),
-                                             filled: true,
-                                             fillColor: Colors.white,
-                                             hintText: 'City',
-                                             prefixIcon: Icon(
-                                               Icons.location_city,
-                                             ),
-                                           ),
-                                         ),
-                                       ),
-                                   ],
-                                 ),
-                               ),
-                              
-                            ],
-                          ),
-                       
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, bottom: 3),
-                        child: Text(
-                          'Lattitude,Longitude',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 10,
-                        color: Colors.black,
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
-                            filled: true,
-                            fillColor: Colors.white,
-                            hintText: 'LATTITUDE,LONGITUDE',
-                            suffixIcon: Icon(
-                              Icons.map,
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, bottom: 3),
+                      const SizedBox(height: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0, bottom: 3),
                         child: Text(
                           'Mobile Number',
                           style: TextStyle(
@@ -180,7 +120,7 @@ class _SignUpState extends State<SignUp> {
                         elevation: 10,
                         color: Colors.black,
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder:
                                 OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
@@ -190,11 +130,21 @@ class _SignUpState extends State<SignUp> {
                               Icons.call,
                             ),
                           ),
+                          keyboardType: TextInputType.phone,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(10)
+                          ],
+                          onChanged: (value) {
+                            if (value.length == 10) {
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          // Show numeric keyboard
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, top: 3),
+                      const SizedBox(height: 10),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0, top: 3),
                         child: Text(
                           'Email',
                           style: TextStyle(
@@ -207,7 +157,7 @@ class _SignUpState extends State<SignUp> {
                         elevation: 10,
                         color: Colors.black,
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             enabledBorder:
                                 OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
@@ -219,11 +169,11 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5.0, top: 3),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 5.0, top: 3),
                         child: Text(
                           'Password',
                           style: TextStyle(
@@ -236,28 +186,40 @@ class _SignUpState extends State<SignUp> {
                         elevation: 10,
                         color: Colors.black,
                         child: TextFormField(
+                          obscureText: !_isPasswordVisible,
                           decoration: InputDecoration(
-                            enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                            enabledBorder: const OutlineInputBorder(
+                                borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.white,
                             hintText: 'ENTER YOUR PASSWORD',
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.lock,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isPasswordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _isPasswordVisible = !_isPasswordVisible;
+                                });
+                              },
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 5.0, bottom: 3),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 5.0, bottom: 3),
                             child: Text(
                               'Confirm Password',
                               style: TextStyle(
@@ -270,21 +232,35 @@ class _SignUpState extends State<SignUp> {
                             elevation: 10,
                             color: Colors.black,
                             child: TextFormField(
+                              obscureText: _isPasswordVisiblee,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                     borderSide: BorderSide.none),
                                 filled: true,
                                 fillColor: Colors.white,
                                 hintText: 'CONFIRM PASSWORD',
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   (Icons.lock),
+                                ),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _isPasswordVisiblee
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isPasswordVisiblee =
+                                          !_isPasswordVisiblee;
+                                    });
+                                  },
                                 ),
                               ),
                             ),
                           ),
                           Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 40,
                               ),
                               Container(
@@ -292,10 +268,11 @@ class _SignUpState extends State<SignUp> {
                                 height: 45,
                                 child: ElevatedButton(
                                   style: ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll(
-                                       Colors.black,
+                                      backgroundColor:
+                                          const MaterialStatePropertyAll(
+                                        Colors.black,
                                       ),
-                                      textStyle: MaterialStatePropertyAll(
+                                      textStyle: const MaterialStatePropertyAll(
                                         TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
@@ -304,8 +281,13 @@ class _SignUpState extends State<SignUp> {
                                           RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10)))),
-                                  onPressed: () {},
-                                  child: Text(
+                                  onPressed: () {
+                                    // Navigator.of(context)
+                                    //     .push(MaterialPageRoute(
+                                    //   builder: (context) => OTP(),
+                                    // ));
+                                  },
+                                  child: const Text(
                                     "Register",
                                     style: TextStyle(
                                       color: Colors.white,
@@ -317,14 +299,19 @@ class _SignUpState extends State<SignUp> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Have an account?",
                                       style: TextStyle(
                                           fontSize: 14, color: Colors.white),
                                     ),
                                     TextButton(
-                                        onPressed: () {},
-                                        child: Text(
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) => LoginScreen(),
+                                          ));
+                                        },
+                                        child: const Text(
                                           "Sign In",
                                           style: TextStyle(
                                               fontSize: 14,

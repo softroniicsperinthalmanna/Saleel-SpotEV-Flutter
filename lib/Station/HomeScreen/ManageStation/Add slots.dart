@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+
+import '../../../CONNECTION/connect.dart';
 
 class AddSlots extends StatefulWidget {
   AddSlots({Key? key}) : super(key: key);
@@ -13,24 +18,56 @@ class _AddSlotsState extends State<AddSlots> {
     '22 KW',
     '50 KW',
   ];
-  var charger = [
-    'CHAdeMo',
-    'CCS',
-    'TYPE-2',
-    'GB/T',
-    'CCS2',
-  ];
-  var price = [
-    'Rs 100/hour',
-    'Rs 200/hour',
-    'Rs 110/hour',
-    'Rs 150/hour',
-    'Rs 50/hour',
-  ];
+ 
   var selected_item1;
   var selected_item2;
   var selected_item3;
   bool switchselect = true;
+
+
+
+var name_flag;
+  var ListData = [];
+
+
+
+   Future<void> getName() async {
+    var response = await post(Uri.parse('${Con.url}/getConnectorName.php'));
+    print(response.body);
+
+    if (response.statusCode == 200 &&
+        jsonDecode(response.body)[0]['result'] == 'Success') {
+      name_flag = 1;
+      var connectorName = jsonDecode(response.body);
+      print('*********************************************');
+      print('connectorName is = $connectorName');
+
+      setState(() {
+        ListData = connectorName
+            .map((listItem) => {
+                  'c_id': listItem['c_id'],
+                  'name': listItem['name'],
+                  'volt': listItem['volt'],
+                  'price': listItem['price'],
+                })
+            .toList();
+      });
+      print('*********************************************');
+
+      print('ListData is = $ListData');
+      // return jsonDecode(response.body);
+    }
+    // else
+    //   drop_flag=0;
+    // drop_flag==1?      item=jsonDecode(response.body):item.add('Nothing to show');
+  }
+
+  @override
+void initState(){
+
+  super.initState();
+  getName();
+}
 
   @override
   Widget build(BuildContext context) {
@@ -54,133 +91,63 @@ class _AddSlotsState extends State<AddSlots> {
           const SizedBox(
             height: 120,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 5.0),
-                    child: Text("Voltage"),
-                  ),
-                  Card(
-                    elevation: 3,
-                    child: Container(
-                      height: 50,
-                      width: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: DropdownButton(
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.black),
-                            underline: Container(),
-                            isExpanded: true,
-                            hint: const Text(' Voltage'),
-                            value: selected_item1,
-                            items: voltage
-                                .map((e) => DropdownMenuItem(
-                                      child: Text('$e'),
-                                      value: e,
-                                    ))
-                                .toList(),
-                            onChanged: (val) {
-                              setState(() {
-                                selected_item1 = val;
-                              });
-                            }),
-                      ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 5.0),
+                  child: Text("Select Your Slot"),
+                ),
+                Card(
+                  elevation: 3,
+                  child: Container(
+                    // height: 50,
+                    // width: 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: DropdownButton(
+                        itemHeight: 80,
+                          style: const TextStyle(
+                              fontSize: 16, color: Colors.black),
+                          underline: Container(),
+                          isExpanded: true,
+                          hint: const Text(' Select Your Slot'),
+                          value: selected_item1,
+                          items: ListData
+                              .map((e) => DropdownMenuItem(
+                                    child: Card(
+                                      child: Container(
+                                        height: 150,
+                                        child: ListTile(
+                                          
+                                          title: Text('Connector Type: ${e['name']}'),
+                                          subtitle:   Text('Volt: ${e['volt']}kW '),
+                                          trailing:Text(' Rs. ${e['price']}',style: TextStyle(color: Colors.red),)),
+                                      ),
+                                    ),
+                                    value: e,
+                                  ))
+                              .toList(),
+                          onChanged: (val) {
+                            setState(() {
+                              selected_item1 = val;
+                            });
+                          }),
                     ),
                   ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 5.0),
-                    child: Text("Charger Type"),
-                  ),
-                  Card(
-                    elevation: 3,
-                    child: Container(
-                      height: 50,
-                      width: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: DropdownButton(
-                            style: const TextStyle(
-                                fontSize: 16, color: Colors.black),
-                            underline: Container(),
-                            isExpanded: true,
-                            hint: Text(' Charger type'),
-                            value: selected_item2,
-                            items: charger
-                                .map((e) => DropdownMenuItem(
-                                      child: Text(e),
-                                      value: e,
-                                    ))
-                                .toList(),
-                            onChanged: (val) {
-                              setState(() {
-                                selected_item2 = val;
-                              });
-                            }),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 50,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 5.0),
-                child: Text("Price"),
-              ),
-              Card(
-                elevation: 3,
-                child: Container(
-                  height: 50,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: DropdownButton(
-                        hint: const Text(' Price'),
-                        underline: Container(),
-                        isExpanded: true,
-                        style: TextStyle(fontSize: 16, color: Colors.black),
-                        value: selected_item3,
-                        items: price
-                            .map((e) => DropdownMenuItem(
-                                  child: Text(e),
-                                  value: e,
-                                ))
-                            .toList(),
-                        onChanged: (val) {
-                          setState(() {
-                            selected_item3 = val;
-                          });
-                        }),
-                  ),
-                ),
-              ),
-            ],
-          ),
+         
           const SizedBox(
             height: 50,
           ),

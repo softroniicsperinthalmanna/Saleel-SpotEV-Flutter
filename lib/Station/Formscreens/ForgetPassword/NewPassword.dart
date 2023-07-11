@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:spotev/User/Formscreens/Loginscreen.dart';
+import 'package:spotev/Station/Formscreens/Login.dart';
 
-class NewPassword extends StatefulWidget {
-  const NewPassword({super.key});
+class NewPasswordStation extends StatefulWidget {
+  const NewPasswordStation({super.key});
 
   @override
-  State<NewPassword> createState() => _NewPasswordState();
+  State<NewPasswordStation> createState() => _NewPasswordStationState();
 }
 
-class _NewPasswordState extends State<NewPassword> {
+class _NewPasswordStationState extends State<NewPasswordStation> {
           bool _isPasswordVisible = false;
-           bool _isPasswordVisiblee = false;
+ bool _isPasswordVisiblee = false;
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +146,7 @@ class _NewPasswordState extends State<NewPassword> {
                           borderRadius: BorderRadius.circular(10)))),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Login()));
+                        MaterialPageRoute(builder: (context) => const LoginScreen()));
                   },
                   child: const Text("Continue"),
                 ),

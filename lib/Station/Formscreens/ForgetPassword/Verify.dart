@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:spotev/User/Formscreens/ForgetPassword/NewPassword.dart';
+import 'package:spotev/Station/Formscreens/ForgetPassword/NewPassword.dart';
 
-class Verify extends StatefulWidget {
-  const Verify({super.key});
+class VerifyStation extends StatefulWidget {
+  const VerifyStation({super.key});
 
   @override
-  State<Verify> createState() => _RecoveryState();
+  State<VerifyStation> createState() => _RecoveryState();
 }
 
-class _RecoveryState extends State<Verify> {
+class _RecoveryState extends State<VerifyStation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,7 +172,7 @@ class _RecoveryState extends State<Verify> {
                         borderRadius: BorderRadius.circular(10)))),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => const NewPassword())));
+                      MaterialPageRoute(builder: ((context) => const NewPasswordStation())));
                 },
                 child: const Text("Verify and Proceed"),
               ),

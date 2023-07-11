@@ -106,7 +106,7 @@ class _OverViewPageStationState extends State<OverViewPageStation> {
                     SizedBox(height: 5,),
                     Icon(CupertinoIcons.ellipsis_circle,color: Color(0xff0000FF),),
                     SizedBox(height: 5,),
-                    Text('0/1 taken', style: TextStyle(color: Colors.red),)
+                    Text('0/1 taken', style: TextStyle(color: Colors.green),)
                   ],
                 )
                   ,),
@@ -130,9 +130,9 @@ class _OverViewPageStationState extends State<OverViewPageStation> {
                     width: MediaQuery.of(context).size.width,
                    child: Image.asset('Images/review.png',fit:BoxFit.fill,height: 250,width: 50,),
                   ),
-                   Align(alignment:Alignment.topCenter,
+                   const Align(alignment:Alignment.topCenter,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.only(top: 20),
                       child: Text('4.0 (12)',),
                     )),
                 ], 

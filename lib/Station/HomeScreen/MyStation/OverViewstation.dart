@@ -136,7 +136,7 @@ class _OverViewPageStationMystationState extends State<OverViewPageStationMystat
                       child: Text('4.0 (12)',),
                     )),
                 ], 
-               )
+               ),
               ],
             ),
           ),

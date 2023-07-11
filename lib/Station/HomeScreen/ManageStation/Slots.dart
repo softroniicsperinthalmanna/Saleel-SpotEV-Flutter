@@ -1,6 +1,11 @@
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:spotev/Station/HomeScreen/ManageStation/Add%20slots.dart';
+
+import '../../../CONNECTION/connect.dart';
 
 class Slots extends StatefulWidget {
   const Slots({super.key});
@@ -10,6 +15,24 @@ class Slots extends StatefulWidget {
 }
 
 class _SlotsState extends State<Slots> {
+  var flag;
+ Future<dynamic> getData() async {
+  var data={
+    'station_id':'3'
+  };
+  var response=await post(Uri.parse("${Con.url}/viewSlots.php"),body: data);
+  print(response.body);
+   if (jsonDecode(response.body)[0]['result'] == 'Success') {
+      flag = 1;
+      return jsonDecode(response.body);
+    } else {
+      flag = 0;
+      print(response.body);
+    }
+   
+
+ }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,48 +67,72 @@ class _SlotsState extends State<Slots> {
             ),
             Container(
               height: MediaQuery.of(context).size.height,
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: Container(
-                        height: 80,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            border: Border(
-                                bottom: BorderSide(
-                          color: Colors.grey,
-                          width: 0.5,
-                        ))),
-                        child: ListTile(
-                          leading: Icon(
-                            Icons.ev_station_outlined,
-                            color: Colors.blueAccent,
-                          ),
-                          trailing: Text(
-                            '0/1',
-                            style: TextStyle(color: Colors.green),
-                          ),
-                          title: Row(
-                            children: [
-                              Text('CHAdeMo '),
-                              Text(': 110 kW '),
-                            ],
-                          ),
-                          subtitle: Row(
-                            children: [
-                              Text(
-                                'Unit Price',
-                                style: TextStyle(color: Colors.red),
+              child:FutureBuilder(
+                future: getData(),
+                builder: (context, snapshot) {
+                    if (snapshot.hasError) print(snapshot.error);
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(child: Text('waiting for connection....'));
+                      return Center(child: Text('waiting for connection....'));
+                    }
+                    if (!snapshot.hasData || snapshot.data.length == 0) {
+                      return Center(
+                        child: Text('No Data Found !!'),
+                      );
+                    }
+
+                    return flag == 1 ?
+
+
+
+
+
+
+
+                   ListView.builder(
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            height: 80,
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(
+                              color: Colors.grey,
+                              width: 0.5,
+                            ))),
+                            child: ListTile(
+                              leading: Icon(
+                                Icons.ev_station_outlined,
+                                color: Colors.blueAccent,
                               ),
-                              Text(': 110/hour'),
-                            ],
+                              trailing: Text(
+                                '0/1',
+                                style: TextStyle(color: Colors.green),
+                              ),
+                              title: Row(
+                                children: [
+                                  Text('${snapshot.data[index]['name']}: '),
+                                  Text('${snapshot.data[index]['volt']}'),
+                                ],
+                              ),
+                              subtitle: Row(
+                                children: [
+                                  Text(
+                                    'Unit Price: ',
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                  Text('${snapshot.data[index]['price']}/hour'),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    );
-                  }),
+                        );
+                      }):  Center(child: CircularProgressIndicator(),);
+                }
+              ),
             ),
           ],
         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotev/User/Formscreens/Homescreen/Stations/postReview.dart';
+import 'package:spotev/Station/HomeScreen/View%20OtherStations/postReviewstation.dart';
 class ReviewPageStation extends StatefulWidget {
   ReviewPageStation({Key? key}) : super(key: key);
 
@@ -15,37 +15,37 @@ var is_selected_down=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              physics: BouncingScrollPhysics(),
-              // mainAxisAlignment: MainAxisAlignment.start,
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-               
-                 Stack(
-                  children: [
-                    Container(
-                      height: 220,color: Colors.red,
-                      width: MediaQuery.of(context).size.width,
-                     child: Image.asset('Images/review.png',fit:BoxFit.fill,height: 250,width: 50,),
-                    ),
-                     Align(alignment:Alignment.topCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: Text('4.0 (12)',),
-                      )),
-                  ], 
-                 ),SizedBox(height: 20,),
-                GestureDetector(
-                  onTap: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ReviewPost(),));
-                  },
-                  child: Padding(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          controller: ScrollController(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+             Stack(
+                children: [
+                  Container(
+                    height: 220,color: Colors.red,
+                    width: MediaQuery.of(context).size.width,
+                   child: Image.asset('Images/review.png',fit:BoxFit.fill,height: 250,width: 50,),
+                  ),
+                   const Align(alignment:Alignment.topCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Text('4.0 (12)',),
+                    )),
+                ], 
+               ),
+              GestureDetector(
+                onTap: (){
+Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ReviewPostStation(),));
+                },
+                child: Container(
+                    child: Padding(
                     padding: const EdgeInsets.only(left:20.0),
                     child: Container(
-                        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                        child: const Column(crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(' Rate and Review',style: TextStyle(fontSize:17,fontWeight: FontWeight.bold),),
                              SizedBox(height: 5,),
@@ -79,23 +79,26 @@ var is_selected_down=false;
                             
                     ),
                   ),
+
                 ),
-                // Divider(
-                //   thickness: 0.5,
-                //   color: Colors.blueGrey,
-                // ),
-                
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(14,10,0,6),
+              ),
+
+              const Divider(
+                thickness: 0.5,
+                color: Colors.blueGrey,
+              ),
+             const Padding(
+                  padding: EdgeInsets.only(left: 10,top: 10),
                   child: Text('Sort by',style: TextStyle(fontSize: 18),),
                 ),
                
-                SingleChildScrollView( 
+              const SizedBox(height: 10,),
+               SingleChildScrollView( 
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
                       Container(
                           height: 35,
                          // width: 120,
@@ -104,22 +107,22 @@ var is_selected_down=false;
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                backgroundColor: Color.fromARGB(255, 23, 98, 160),
-                                foregroundColor: Color.fromARGB(255, 211, 211, 218),
+                                backgroundColor: const Color.fromARGB(255, 23, 98, 160),
+                                foregroundColor: const Color.fromARGB(255, 211, 211, 218),
                               ),
-                              onPressed: (){}, child: Row(
+                              onPressed: (){}, child: const Row(
                                 children: [Icon(Icons.check),SizedBox(width: 5,),
                                   Text('Most Relevent',style: TextStyle(fontSize: 12),),
                                 ],
                               ))),
-                      SizedBox(width: 10,),
+                      const SizedBox(width: 10,),
             
                       Container(
                           height: 35,
                           width: 90,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                side: BorderSide(
+                                side: const BorderSide(
                                   color: Colors.black
                                 ),
                                 shape: RoundedRectangleBorder(
@@ -128,15 +131,15 @@ var is_selected_down=false;
                                 backgroundColor: Colors.white,
                                 foregroundColor: Colors.black,
                               ),
-                              onPressed: (){}, child: Text('Newest',style: TextStyle(fontSize: 12),))),
-                      SizedBox(width: 10,),
+                              onPressed: (){}, child: const Text('Newest',style: TextStyle(fontSize: 12),))),
+                      const SizedBox(width: 10,),
             
                       Container(
                           height: 35,
                           width: 90,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                side: BorderSide(
+                                side: const BorderSide(
                                   color: Colors.black
                                 ),
                                 shape: RoundedRectangleBorder(
@@ -145,14 +148,14 @@ var is_selected_down=false;
                                 backgroundColor: Colors.white,
                                 foregroundColor: Colors.black,
                               ),
-                              onPressed: (){}, child: Text('Highest',style: TextStyle(fontSize: 12),))),
-                      SizedBox(width: 10,),
+                              onPressed: (){}, child: const Text('Highest',style: TextStyle(fontSize: 12),))),
+                      const SizedBox(width: 10,),
                       Container(
                           height: 35,
                           width: 90,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                side: BorderSide(
+                                side: const BorderSide(
                                   color: Colors.black
                                 ),
                                 shape: RoundedRectangleBorder(
@@ -161,22 +164,21 @@ var is_selected_down=false;
                                 backgroundColor: Colors.white,
                                 foregroundColor: Colors.black,
                               ),
-                              onPressed: (){}, child: Text('Lowest',style: TextStyle(fontSize: 12),))),
+                              onPressed: (){}, child: const Text('Lowest',style: TextStyle(fontSize: 12),))),
                     ],
                   ),
                 ),
-                SizedBox(height: 20,),
-
-                Expanded(
-                  child: ListView.separated(
-                     physics:ClampingScrollPhysics() ,
+              
+              Container(constraints: BoxConstraints(
+    maxHeight: 20000,), 
+                child: ListView.separated(
+                     physics:const ClampingScrollPhysics() ,
                     shrinkWrap: true,
-                   controller: ScrollController(),
-                  itemCount:20,
-                  separatorBuilder: (BuildContext context, int index) => Divider(thickness: 1,color:Colors.black12 ,),
+                  itemCount:12,
+                  separatorBuilder: (BuildContext context, int index) => const Divider(thickness: 1,color:Colors.black12 ,),
                   itemBuilder: (BuildContext context, int index) {
                             return ListTile(
-                             leading: CircleAvatar(
+                             leading: const CircleAvatar(
                               radius: 18,
                               backgroundColor: Colors.red,
                               child: Text('A',style: TextStyle(color: Colors.white),),
@@ -184,20 +186,20 @@ var is_selected_down=false;
                             ),
                               title: Column(mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [SizedBox(height: 10,),
-                  Text('Amjid p'),
+                  children: [const SizedBox(height: 10,),
+                  const Text('Amjid p'),
                   
-                   Row(
+                   const Row(
                      children: [ Icon(Icons.star,color: Colors.amber,size: 15,), Icon(Icons.star,color: Colors.amber,size: 15,), Icon(Icons.star,color: Colors.amber,size: 15,), Icon(Icons.star,color: Colors.amber,size: 15,),
                        Icon(Icons.star,color: Colors.amber,size: 15,),
                      ],
-                   ),  Text('Best service not much of days'),
-                   SizedBox(height: 10,),
+                   ),  const Text('Best service not much of days'),
+                   const SizedBox(height: 10,),
                    Row(
                    crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
                        Container(height: 40,width: 110,
-                        decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent),borderRadius: BorderRadius.all(Radius.circular(10))),
+                        decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent),borderRadius: const BorderRadius.all(Radius.circular(10))),
                          child: Row( 
                            children: [
                              IconButton(onPressed: () { 
@@ -205,26 +207,26 @@ var is_selected_down=false;
                                               is_selected=!is_selected;
                                             });
                                           },
-                                          icon: (is_selected)?Icon(Icons.thumb_up,color: Color(0xff0000FF),)
-                                              :Icon(Icons.thumb_up_alt_outlined,color: Color(0xff0000FF),)),
-                        Text("Helpful")   ],
+                                          icon: (is_selected)?const Icon(Icons.thumb_up,color: Color(0xff0000FF),)
+                                              :const Icon(Icons.thumb_up_alt_outlined,color: Color(0xff0000FF),)),
+                        const Text("Helpful")   ],
                          ),
                        ),
                     
-                                SizedBox(width: 10,),
+                                const SizedBox(width: 10,),
                                 Expanded(
                                   child: Container(height: 40,
-                                                      decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent),borderRadius: BorderRadius.all(Radius.circular(10))),
+                                                      decoration: BoxDecoration(border: Border.all(color: Colors.blueAccent),borderRadius: const BorderRadius.all(Radius.circular(10))),
                                             
                                     child: Row(
                                       children: [
                                         IconButton(
-                                          icon: (is_selected_down)?Icon(Icons.thumb_down,color: Color(0xff0000FF),)
-                                              :Icon(Icons.thumb_down_alt_outlined,color: Color(0xff0000FF),), onPressed: () {
+                                          icon: (is_selected_down)?const Icon(Icons.thumb_down,color: Color(0xff0000FF),)
+                                              :const Icon(Icons.thumb_down_alt_outlined,color: Color(0xff0000FF),), onPressed: () {
                                             setState(() {
                                               is_selected_down=!is_selected_down;
                                             });
-                                        },),   Text("Not Helpful") 
+                                        },),   const Text("Not Helpful") 
                                       ],
                                     ),
                                   ),
@@ -240,12 +242,12 @@ var is_selected_down=false;
                             
                   
                               }  ),
-                )
-              ],
-            ),
-          ),
-        ],
+              ),SizedBox(height: 120,),
+                      
+                   ] ),
+
       ),
-    );
+      ),);
+                }
   }
-}
+

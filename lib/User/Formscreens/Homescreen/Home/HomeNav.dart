@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('Images/GoogleMap.jpg'), fit: BoxFit.cover),
             ),
@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 70, top: 50),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: InputBorder.none,
                 filled: true,
                 fillColor: Colors.white,
@@ -160,7 +160,7 @@ class _HomeState extends State<Home> {
                                         left: 20.0,
                                       ),
                                       child: Text(
-                                        'Charger Type',
+                                        'Voltage',
                                         style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
@@ -193,7 +193,7 @@ class _HomeState extends State<Home> {
                                                                         10))),
                                                 onPressed: () {},
                                                 child: const Text(
-                                                  'AC',
+                                                  '50 kW',
                                                   style: TextStyle(
                                                       color: Colors.white),
                                                 )),
@@ -218,18 +218,20 @@ class _HomeState extends State<Home> {
                                                                         10))),
                                                 onPressed: () {},
                                                 child: const Text(
-                                                  'DC',
+                                                  '110 kW',
                                                 )),
                                           ),
                                           Container(
-                                            height: 30,
+                                            height: 35,
                                             width: 98,
                                             child: OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
                                                     backgroundColor:
                                                         Colors.transparent,
+                                                         foregroundColor:
+                                                        Colors.black,
                                                     side: const BorderSide(
-                                                      color: Colors.white,
+                                                      color: Color(0xff0000FF),
                                                     ),
                                                     shape:
                                                         RoundedRectangleBorder(
@@ -239,7 +241,7 @@ class _HomeState extends State<Home> {
                                                                         10))),
                                                 onPressed: () {},
                                                 child: const Text(
-                                                  '',
+                                                  '25kW',
                                                 )),
                                           ),
                                         ],
@@ -399,7 +401,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'IEC 60309',
                                                     )),
                                               ),
@@ -431,7 +433,7 @@ class _HomeState extends State<Home> {
                                               ),
                                             ],
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 7,
                                           ),
                                           Row(
@@ -489,7 +491,7 @@ class _HomeState extends State<Home> {
                                                                         .circular(
                                                                             10))),
                                                     onPressed: () {},
-                                                    child: Text(
+                                                    child: const Text(
                                                       'Type-2',
                                                     )),
                                               ),
