@@ -1,147 +1,169 @@
 import 'package:flutter/material.dart';
-import 'package:spotev/User/Formscreens/Homescreen/Stations/ChargingSessionSummary.dart';
 
+import 'chargingSessionSummary.dart';
 class Payment extends StatefulWidget {
-  const Payment({super.key});
+  Payment({Key? key}) : super(key: key);
 
   @override
   State<Payment> createState() => _PaymentState();
 }
-
-bool isselected = false;
-
+bool isselected=false;
 class _PaymentState extends State<Payment> {
+bool is_checked=false;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold( appBar: AppBar(
-            // leading: Icon(Icons.arrow_back),
-            centerTitle: true,
-            title: const Text('Payment'),
-            toolbarHeight: 80,
-            backgroundColor: const Color(0xff5A5AD2),
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                )
-            ),
-          ),
-      body: SingleChildScrollView(
-        child: Column(children: [
-         
-          const Padding(
-            padding: EdgeInsets.all(15),
-            child: Divider(),
-          ),
-          const Row(
+    return Scaffold (
+      appBar: AppBar(centerTitle: true,
+        // leading: Icon(Icons.arrow_back),
+        title: const Text('Payment'),
+        toolbarHeight: 80,
+        backgroundColor: const Color(0xff5A5AD2),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            )
+        ),
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+        
+              const SizedBox(height: 30,),
               Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text("• Select your method"),
+                padding: const EdgeInsets.only(left: 8),
+                child: const Text('• Select your method',style:TextStyle(fontSize: 13),),
               ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 30, top: 10),
-                child: Container(
-                  child: const Image(
-                      image: AssetImage(
-                    "Images/Googlepay.jpeg",
-                  )),
-                  height: 70,
-                  width: 80,
-                ),
+              const SizedBox(height: 15,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 70,
+                    width: 100,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('Images/Phonepay.webp'),fit: BoxFit.cover
+                      )
+                    ),
+                  ),
+                  Container(
+                    height: 70,
+                    width: 100,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('Images/Phonepay.webp'),fit: BoxFit.cover
+                      )
+                    ),
+                  ),
+                  Container(
+                    height: 70,
+                    width: 100,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('Images/Phonepay.webp'),fit: BoxFit.cover
+                      )
+                    ),
+                  ),
+                ],
               ),
+              const SizedBox(height:25,),
               Padding(
-                padding: const EdgeInsets.only(left: 40, top: 10),
-                child: Container(
-                  height: 50,
-                  width: 80,
-                  child: const Image(image: AssetImage("Images/Paytm1.png")),
+                padding: const EdgeInsets.only(left: 6),
+                child: const Text('• Enter your payment details',style: TextStyle(fontSize: 13),),
+
+              ), SizedBox(height: 6,),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration( border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0),
+                    ),
+                  ),
+                    hintText: 'CARD HOLDER NAME',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.indigo,
+                        width: 1.5,
+                      )
+                    )
+                  ),
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(left: 40, top: 10),
-              ),
-              Container(
-                  height: 70,
-                  width: 60,
-                  child: const Image(
-                      image: NetworkImage(
-                          "https://pradeepaggarwal.com/wwmh/Phonepe.png")))
-            ],
-          ),
-          const Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 20, top: 10),
-                child: Text("• Select your method"),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration( border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(0),
                     ),
                   ),
-                  hintText: "CARD HOLDER NAME"),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 0),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(
+                    hintText: 'CARD NUMBER',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.indigo,
+                        width: 1.5,
+                      )
+                    )
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Row(
+               //   direction: Axis.horizontal,
+               //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                     // flex: 2,
+                     // width: 185,
+                      child: TextField(
+                        decoration: InputDecoration( border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(0),
                     ),
                   ),
-                  hintText: "CARD NUMBER"),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: [
-                Container(
-                  height: 50,
-                  width: 150,
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(0),
-                          ),
+                          hintText: 'EXP DATE',
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.indigo,
+                              width: 1.5,
+                            )
+                          )
                         ),
-                        hintText: "EXP DATE"),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Container(
-                    height: 50,
-                    width: 140,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(0),
-                            ),
-                          ),
-                          hintText: "CVV"),
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    Expanded(
+                      //width: 180,
+                      child: TextField(
+                        decoration: InputDecoration( border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(0),
                     ),
                   ),
+                          hintText: 'CVV',
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.indigo,
+                              width: 1.5,
+                            )
+                          )
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-          Row(
+              ),
+              const SizedBox(height: 10,),
+              Row(
             children: [
               const Padding(
                 padding: EdgeInsets.only(left: 20),
@@ -156,70 +178,42 @@ class _PaymentState extends State<Payment> {
                     });
                   },
                   value: isselected,
-                  activeColor: Colors.green,
+                  activeColor: Colors.indigo,
                 ),
               )
             ],
-          ),SizedBox(height: 30,),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: const MaterialStatePropertyAll(
-                    const Color(0xff5A5AD2),
-                  ),
-                  minimumSize: const MaterialStatePropertyAll(
-                    Size(600, 50),
-                  ),
-                  textStyle: const MaterialStatePropertyAll(
-                    TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  ),
-                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)))),
-              onPressed: () {
- showDialog<void>(
-    context: context,
-    barrierDismissible: false, // user must tap button!
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Success',style: TextStyle(color: Colors.green),),
-        content: const SingleChildScrollView(
-          child: ListBody(
-            children: <Widget>[
-              Text('Your Booking Is Successfully Completed'),
-             
+          ),
+              const SizedBox(height: 50,),
+        
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          backgroundColor:  const Color(0xff5A5AD2),
+                          foregroundColor: Colors.white
+                        ),
+                        onPressed: (){
+                          showDialog(context: context, builder: (context){
+                            return AlertDialog(
+                              title: const Text('Your Booking is successfully completed'),
+                              actions: [
+                                TextButton(onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const ChargingSummary()));
+                                }, child: const Text('Ok',style: TextStyle(color: Colors.indigo),))
+                              ],
+                            );
+                          });
+                        }, child: const Text('Book Now'))),
+              )
             ],
           ),
         ),
-        actions: <Widget>[
-          TextButton(
-            child: const Text('Ok'),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChargingSummary(),));
-        },),
-          
-    
-             
-          ], 
-          );
-          
-        
-             
-    
-        },
-        );
-  },
-  
-  
-   child: const Text(
-                "BOOK NOW",
-                style: TextStyle(fontSize: 15),
-              ),
-          
-  ),
-  ),
-  ],
-    )
       ),
     );
   }

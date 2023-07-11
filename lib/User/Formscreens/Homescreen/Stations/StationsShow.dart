@@ -62,8 +62,8 @@ class _StationsShowState extends State<StationsShow> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     const Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 20.0, top: 18),
+                                      padding:
+                                          EdgeInsets.only(left: 20.0, top: 18),
                                       child: Text(
                                         'Station Status',
                                         style: TextStyle(
@@ -223,12 +223,13 @@ class _StationsShowState extends State<StationsShow> {
                                             width: 98,
                                             child: OutlinedButton(
                                                 style: OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.transparent,
-                                                         foregroundColor:
+                                                    backgroundColor: Colors
+                                                        .transparent,
+                                                    foregroundColor:
                                                         Colors.black,
                                                     side: const BorderSide(
- color: Color(0xff0000FF),                                                    ),
+                                                      color: Color(0xff0000FF),
+                                                    ),
                                                     shape:
                                                         RoundedRectangleBorder(
                                                             borderRadius:
@@ -273,7 +274,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -298,7 +300,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -323,7 +326,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -357,7 +361,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -382,7 +387,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -407,7 +413,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -441,7 +448,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -469,7 +477,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .transparent,
                                                             foregroundColor:
                                                                 Colors.black,
-                                                            side: const BorderSide(
+                                                            side:
+                                                                const BorderSide(
                                                               color: Color(
                                                                   0xff0000FF),
                                                             ),
@@ -509,8 +518,7 @@ class _StationsShowState extends State<StationsShow> {
                                       ),
                                     ),
                                     const Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 25.0),
+                                      padding: EdgeInsets.only(left: 25.0),
                                       child: Text(
                                         'Distance',
                                         style: TextStyle(
@@ -537,8 +545,7 @@ class _StationsShowState extends State<StationsShow> {
                                     ),
                                     const Center(child: Text('50 km')),
                                     const Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 25.0),
+                                      padding: EdgeInsets.only(left: 25.0),
                                       child: Text(
                                         'Price',
                                         style: TextStyle(
@@ -611,7 +618,8 @@ class _StationsShowState extends State<StationsShow> {
                                                               Colors.white,
                                                           foregroundColor:
                                                               Colors.black,
-                                                          side: const BorderSide(
+                                                          side:
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0xff0000FF),
                                                           ),
@@ -621,8 +629,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                       .circular(
                                                                           10))),
                                                   onPressed: () {},
-                                                  child:
-                                                      const Text('Clear Filters'))),
+                                                  child: const Text(
+                                                      'Clear Filters'))),
                                         ),
                                         const SizedBox(
                                           width: 20,
@@ -649,7 +657,8 @@ class _StationsShowState extends State<StationsShow> {
                                                                     .circular(
                                                                         10))),
                                                 onPressed: () {},
-                                                child: const Text('Apply Filters')))
+                                                child: const Text(
+                                                    'Apply Filters')))
                                       ],
                                     ),
                                     const SizedBox(
@@ -685,18 +694,20 @@ class _StationsShowState extends State<StationsShow> {
         Container(
           height: MediaQuery.of(context).size.height,
           child: ListView.builder(
-            controller: ScrollController(),
-            shrinkWrap: true,
+              controller: ScrollController(),
+              shrinkWrap: true,
               itemCount: 6,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 15, left: 13, right: 13),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const StationDetailPage(),));
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const StationDetailPage(),
+                      ));
                     },
-                  child:  Stack(
-                      children:[Container(
+                    child: Stack(children: [
+                      Container(
                         height: 160,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
@@ -705,10 +716,12 @@ class _StationsShowState extends State<StationsShow> {
                               BorderRadius.circular(10), //border corner radius
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5), //color of shadow
+                              color: Colors.grey
+                                  .withOpacity(0.5), //color of shadow
                               spreadRadius: 5, //spread radius
                               blurRadius: 7, // blur radius
-                              offset: const Offset(0, 2), // changes position of shadow
+                              offset: const Offset(
+                                  0, 2), // changes position of shadow
                               //first paramerter of offset is left-right
                               //second parameter is top to down
                             ),
@@ -718,7 +731,8 @@ class _StationsShowState extends State<StationsShow> {
                         child: Column(
                           children: [
                             const Padding(
-                              padding: EdgeInsets.only(left: 8.0, right: 8,top: 20),
+                              padding:
+                                  EdgeInsets.only(left: 8.0, right: 8, top: 20),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -736,9 +750,6 @@ class _StationsShowState extends State<StationsShow> {
                                         '45km',
                                         style: TextStyle(fontSize: 15),
                                       ),
-                                     
-                                                                       
-                                     
                                     ],
                                   ),
                                   Text('Palakkad'),
@@ -823,7 +834,8 @@ class _StationsShowState extends State<StationsShow> {
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text('CSS'),
                                       Text('Type-2'),
@@ -835,7 +847,8 @@ class _StationsShowState extends State<StationsShow> {
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(':  110 KW'),
                                       Text(':  22 KW'),
@@ -866,39 +879,40 @@ class _StationsShowState extends State<StationsShow> {
                             )
                           ],
                         ),
-                      ), Positioned(right: 60,
-                        child: IconButton(
-                                          onPressed: () {
-                                            setState(() {
-                                              is_selected = !is_selected;
-                                            });
-                                          },
-                                          icon: (is_selected)
-                                              ? const Icon(
-                                                  Icons.star,
-                                                  color: Colors.amber,
-                                                )
-                                              : const Icon(Icons.star_border)),
                       ),
-
-                      
-                      
-                       Positioned(right: 20,top: 20,
+                      Positioned(
+                        right: 60,
+                        child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                is_selected = !is_selected;
+                              });
+                            },
+                            icon: (is_selected)
+                                ? const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  )
+                                : const Icon(Icons.star_border)),
+                      ),
+                      Positioned(
+                        right: 20,
+                        top: 20,
                         child: Transform.flip(
-                                          flipY: true,
-                                          child: const CircleAvatar(
-                                            radius: 12,
-                                            child: Icon(
-                                              Icons
-                                                  .subdirectory_arrow_right_rounded,
-                                              size: 15,
-                                            ),
-                                          )),
+                            flipY: true,
+                            child: const CircleAvatar(
+                              radius: 12,
+                              child: Icon(
+                                Icons.subdirectory_arrow_right_rounded,
+                                size: 15,
+                              ),
+                            )),
                       )
-        ]  ),                  ),
+                    ]),
+                  ),
                 );
               }),
-        )
+        ),
       ]),
     ));
   }

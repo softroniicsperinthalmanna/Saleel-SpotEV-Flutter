@@ -149,7 +149,7 @@ class _ConfirmbookingState extends State<Confirmbooking> {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)))),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Payment(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) =>  Payment(),));
                         },
                         child: const Text("Proceed to Pay ₹95.20"),
                       ),

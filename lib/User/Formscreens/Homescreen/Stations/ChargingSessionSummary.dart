@@ -30,7 +30,7 @@ class _ChargingSummaryState extends State<ChargingSummary> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [const SizedBox(height: 15,),
+          children: [const SizedBox(height: 20,),
             const Text('Thank You',style: TextStyle(fontSize: 20,color: Color(0xff0000FF)),),
             Padding(
               padding: const EdgeInsets.all(10),
@@ -49,8 +49,8 @@ class _ChargingSummaryState extends State<ChargingSummary> {
                     )
                   ),
                   child: const Column(
-                    children: [
-                      Text('Session Details',style:TextStyle(decoration: TextDecoration.underline,fontWeight: FontWeight.bold,fontSize: 18),),
+                    children: [SizedBox(height: 10,),
+                      Text('Session Details',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                       SizedBox(height: 20,),
                       Padding(
                         padding: EdgeInsets.all(10),
@@ -109,8 +109,8 @@ class _ChargingSummaryState extends State<ChargingSummary> {
                     )
                   ),
                   child: const Column(
-                    children: [
-                      Text('Invoice Details',style:TextStyle(decoration: TextDecoration.underline,fontWeight: FontWeight.bold,fontSize: 18),),
+                    children: [SizedBox(height: 5,),
+                      Text('Invoice Details',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                       SizedBox(height: 20,),
                       Padding(
                         padding: EdgeInsets.all(10),
@@ -163,19 +163,19 @@ class _ChargingSummaryState extends State<ChargingSummary> {
                       )
                   ),
                   child: Column(
-                    children: [
-                      const Text('Feedback',style:TextStyle(decoration: TextDecoration.underline,fontWeight: FontWeight.bold,fontSize: 18),),
-                      const SizedBox(height: 20,),
-                      const Text('Please rate your experience',),
+                    children: [SizedBox(height: 10,),
+                      Center(child: const Text('Feedback',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),
+                      const SizedBox(height: 10,),
+                      Center(child: const Text('Please rate your experience',)),
                       Padding(
-                        padding: const EdgeInsets.only(left: 86),
+                        padding: const EdgeInsets.only(left: 66,top: 5),
                         child: Container(
                           height: 50,
                           child: ListView.builder(
                               itemCount: 5,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context,index){
-                            return const Icon(Icons.star_border,size:40,color: Color(0xff0000FF),);
+                            return Center(child: const Icon(Icons.star_border,size:40,color: Color(0xff0000FF),));
                           }),
                         ),
                       ),
@@ -215,7 +215,8 @@ class _ChargingSummaryState extends State<ChargingSummary> {
            ] ),
               ),
             ),
-          )  ],
+          ), SizedBox(height: 15,),
+            ],
           ),
       ));
 
