@@ -43,7 +43,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href="" target="_blank">
+     <a class="navbar-brand m-0" href="" target="_blank">
         <img src="../assets/img/logo.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">SpotEv</span>
       </a>
@@ -52,7 +52,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="../pages/dashboard.html">
+          <a class="nav-link" href="../pages/dashboard.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -61,17 +61,17 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/User.html">
+          <a class="nav-link " href="../pages/User.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fas fa-thin fa-users text-success text-sm opacity-10"></i>
-
+ 
             </div>
             <span class="nav-link-text ms-1">Users</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Stations.html">
+          <a class="nav-link " href="../pages/Stations.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fas fa-charging-station text-success text-sm opacity-10"></i>
@@ -80,7 +80,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Complaints.html">
+          <a class="nav-link " href="../pages/Complaints.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
@@ -89,7 +89,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Reviews&Ratings.html">
+          <a class="nav-link active " href="../pages/Reviews&Ratings.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
@@ -98,7 +98,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Charging.html">
+          <a class="nav-link " href="../pages/Charging.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-paper-diploma text-danger text-sm opacity-10"></i>
@@ -110,7 +110,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li> -->
         <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
+          <a class="nav-link " href="../pages/profile.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -118,7 +118,7 @@
           </a>
         </li> -->
         <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-in.html">
+          <a class="nav-link " href="../pages/sign-in.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -126,7 +126,7 @@
             <span class="nav-link-text ms-1">Sign In</span>
           </a>
         </li> -->
-
+       
       </ul>
     </div>
     <!-- <div class="sidenav-footer mx-3 ">
@@ -152,12 +152,10 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.html">Dashboard</a></li>
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.html">OFFERS</a></li>
-
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Offers</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.php">Dashboard</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Reviews & Ratings</li>
           </ol>
-          <!-- <h6 class="font-weight-bolder text-white mb-0">offers</h6> -->
+          <!-- <h6 class="font-weight-bolder text-white mb-0">Reviews</h6> -->
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -171,8 +169,8 @@
               <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Sign In</span>
-              </a> -->
-            </li>
+              </a>
+            </li> -->
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -275,40 +273,28 @@
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
-
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Offer's table</h6>
+              <h6>Reviews's table</h6>
             </div>
-
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th
-                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Sl no
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sl no
                       </th>
-                      <th
-                        class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Station ID</th>
+                      <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">User Name</th>
 
-                      <th
-                        class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                        Station Name</th>
-                      <th
-                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-                        Place</th>
+                      <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Station Name</th>
 
-                      <th
-                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-                        Offer</th>
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Date</th>
 
-                      <th
-                        class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">
-                        Validity</th>
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Time</th>
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Ratings</th>
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Actions</th>
 
+                     
                     </tr>
                   </thead>
                   <tbody>
@@ -317,29 +303,43 @@
                         <p class="align-middle text-center text-xs font-weight-bold mb-0">1</p>
                       </td>
                       <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">543210</p>
+                        <p class="align-middle text-center text-xs font-weight-bold mb-0">John Michael</p>
                       </td>
                       <td>
                         <p class="align-middle text-center text-xs font-weight-bold mb-0">VestiBY</p>
                       </td>
-
-                      <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">Perinthalmanna</p>
-
-                      </td>
-
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">Paytm Voucher 40% </span>
-                      </td>
+                     
+                     
                       <td>
                         <p class="align-middle text-center text-xs font-weight-bold mb-0">2023/05/25</p>
 
                       </td>
 
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">10:08 AM</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="reviews" style=" color: #f9d71c;">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i><!--Empty star-->
+
+                      </div>
+                      </td>
+                      
+                     
+                    
+<td class="align-middle text-center">
+                       <a href="./ReviewPage.php" class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-success">View Reviews</span>
+                       </a> </td>
+                    
+                     
                     </tr>
-
-
+                   
+                   
 
                     </tr>
                   </tbody>
@@ -349,7 +349,7 @@
           </div>
         </div>
       </div>
-
+     
   </main>
   <div class="fixed-plugin">
     <!-- <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -428,9 +428,9 @@
             class="btn btn-dark mb-0 me-2" target="_blank">
             <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
           </a> -->
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
@@ -452,4 +452,4 @@
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
-</html>
+  </html>

@@ -114,7 +114,7 @@
                       <input class="form-check-input" type="checkbox" id="rememberMe">
                       <label class="form-check-label" for="rememberMe">Remember me</label>
                     </div>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                     <div class="text-center">
                       <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>
                     </div></a>
@@ -161,4 +161,4 @@
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
-</html>
+  </html>

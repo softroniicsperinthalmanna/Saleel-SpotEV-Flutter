@@ -52,7 +52,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../pages/dashboard.html">
+          <a class="nav-link" href="../pages/dashboard.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -61,26 +61,25 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/User.html">
+          <a class="nav-link " href="../pages/User.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="fas fa-thin fa-users text-success text-sm opacity-10"></i>
- 
             </div>
             <span class="nav-link-text ms-1">Users</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Stations.html">
+          <a class="nav-link active " href="../pages/Stations.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fas fa-charging-station text-success text-sm opacity-10"></i>
+              <i class="fas fa-charging-station text-success text-sm "></i>
             </div>
             <span class="nav-link-text ms-1">Stations</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Complaints.html">
+          <a class="nav-link " href="../pages/Complaints.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
@@ -89,7 +88,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/Reviews&Ratings.html">
+          <a class="nav-link " href="../pages/Reviews&Ratings.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
@@ -98,7 +97,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="../pages/Charging.html">
+          <a class="nav-link " href="../pages/Charging.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-paper-diploma text-danger text-sm opacity-10"></i>
@@ -110,7 +109,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li> -->
         <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
+          <a class="nav-link " href="../pages/profile.php">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -118,7 +117,7 @@
           </a>
         </li> -->
         <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-in.html">
+          <a class="nav-link " href="../pages/sign-in.php">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
@@ -152,10 +151,10 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.html">Dashboard</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Charging</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.php">Dashboard</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Stations</li>
           </ol>
-          <!-- <h6 class="font-weight-bolder text-white mb-0">Charging</h6> -->
+          <!-- <h6 class="font-weight-bolder text-white mb-0">Stations</h6> -->
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -273,9 +272,12 @@
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
+          <div style="justify-content:end; display: flex; padding-bottom: 10px;" , >
+            <h5 style="padding-top: 9px; color:yellow;">Total Stations</h5>  <h3 style="padding-left: 8px;  color:yellow;">864</h3> 
+          </div>
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Charging table</h6>
+              <h6>Stations's table</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -284,20 +286,13 @@
                     <tr>
                       <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sl no
                       </th>
-                      <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Station ID</th>
 
                       <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Station Name</th>
-                      <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Charger Type</th>
-
-                      <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Voltage</th>
-                      <th class=" align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
-
-
                       <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Place</th>
 
-                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Date</th>
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Email</th>
 
-                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Time</th>
+                      <th class="align-middle text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Phone Number</th>
                      
                     </tr>
                   </thead>
@@ -306,32 +301,22 @@
                       <td>
                         <p class="align-middle text-center text-xs font-weight-bold mb-0">1</p>
                       </td>
-                      <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">543210</p>
-                      </td>
+                     
                       <td>
                         <p class="align-middle text-center text-xs font-weight-bold mb-0">VestiBY</p>
                       </td>
-                      <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">CHAdeMo</p>
-                      </td>
-                      <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">50kW</p>
-                      </td>
-                      <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">Rs.1000</p>
-                      </td>
+                     
                       <td>
                         <p class="align-middle text-center text-xs font-weight-bold mb-0">Perinthalmanna</p>
 
                       </td>
                       <td>
-                        <p class="align-middle text-center text-xs font-weight-bold mb-0">2023/05/25</p>
+                        <p class="align-middle text-center text-xs font-weight-bold mb-0">john@creative-tim.com</p>
 
                       </td>
 
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">10:08 AM</span>
+                        <span class="text-secondary text-xs font-weight-bold">987654321</span>
                       </td>
                      
                     </tr>
@@ -449,4 +434,4 @@
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
-</html>
+  </html>

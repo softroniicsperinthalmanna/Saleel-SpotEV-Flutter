@@ -19,8 +19,8 @@
     <body>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-              <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard.html">Dashboard</a></li>
-              <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="Reviews&Ratings.html">Reviews & Ratings</a></li>
+              <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="dashboard..php">Dashboard</a></li>
+              <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="Reviews&Ratings..php">Reviews & Ratings</a></li>
 
               <li class="breadcrumb-item text-sm text-white active" aria-current="page">All Reviews</li>
  
@@ -164,6 +164,6 @@
             </div>
         </section>
     </body>
-    </html>
+</html>
       
       
