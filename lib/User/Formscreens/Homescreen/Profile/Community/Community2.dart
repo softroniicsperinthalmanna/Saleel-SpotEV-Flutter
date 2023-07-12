@@ -18,22 +18,22 @@ class _Community1State extends State<Community1> {
             pinned: true,
             floating: true,
             expandedHeight: 150,
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.elliptical(100, 120),
                   bottomRight: Radius.elliptical(50, 30)),
             ),
             //  leading: Icon(Icons.arrow_back),
-            backgroundColor: Color.fromARGB(255, 99, 49, 216),
+            backgroundColor: const Color.fromARGB(255, 99, 49, 216),
             flexibleSpace: Container(
               width: MediaQuery.of(context).size.width,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -53,7 +53,7 @@ class _Community1State extends State<Community1> {
                       )
                     ],
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Image.asset(
                     "Images/Communityimg.png",
                     fit: BoxFit.cover,
@@ -69,14 +69,14 @@ class _Community1State extends State<Community1> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Today"),
+                          const Text("Today"),
                           Container(
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border:
                                     Border.all(color: Colors.blue, width: 3),
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                   Radius.circular(15),
                                 )),
                             child: Container(
@@ -98,7 +98,7 @@ class _Community1State extends State<Community1> {
                                             ),
                                             child: Stack(children: [
                                               Image.asset("Images/Avtr1.png"),
-                                              Positioned(
+                                              const Positioned(
                                                 bottom: 0,
                                                 right: 0,
                                                 child: Icon(
@@ -109,7 +109,7 @@ class _Community1State extends State<Community1> {
                                               )
                                             ]),
                                           ),
-                                          Text("Anil")
+                                          const Text("Anil")
                                         ],
                                       ),
                                       Expanded(
@@ -117,9 +117,9 @@ class _Community1State extends State<Community1> {
                                           padding: const EdgeInsets.all(8.0),
                                           child: Column(
                                             children: [
-                                              Text(
+                                              const Text(
                                                   "datLorem Ipsum is simply dummy text of the printing and typesetting d scrambled it to make a type specimen book. It has survived not only five centuries,a"),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 15,
                                               ),
                                               Row(
@@ -128,7 +128,7 @@ class _Community1State extends State<Community1> {
                                                     child: Image.asset(
                                                         "Images/ola.png"),
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     width: 12,
                                                   ),
                                                   Container(
@@ -137,10 +137,10 @@ class _Community1State extends State<Community1> {
                                                   ),
                                                 ],
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 5,
                                               ),
-                                              Row(
+                                              const Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
                                                         .spaceBetween,
@@ -165,7 +165,7 @@ class _Community1State extends State<Community1> {
                           ),
                         ]),
                     // ),
-                  )),
+                  ),),
         ),
       ]),
     );

@@ -22,7 +22,7 @@ class _StationsListPageState extends State<StationsListPage> {
         Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 70, top: 40),
+              padding: const EdgeInsets.only(left: 8.0, right: 70, top: 60),
               child: TextField(
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.search),
@@ -38,7 +38,7 @@ class _StationsListPageState extends State<StationsListPage> {
             Padding(
               padding: const EdgeInsets.only(
                 right: 15,
-                top: 45,
+                top: 65,
               ),
               child: Align(
                 alignment: AlignmentDirectional.topEnd,
@@ -682,9 +682,11 @@ class _StationsListPageState extends State<StationsListPage> {
           ],
         ),
         Container(
-          height: MediaQuery.of(context).size.height,
+          // height: MediaQuery.of(context).size.height,
           child: ListView.builder(
+             controller: ScrollController(),
               itemCount: 6,
+              shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(top: 15, left: 13, right: 13),
@@ -879,7 +881,7 @@ class _StationsListPageState extends State<StationsListPage> {
                   ),
                 );
               }),
-        )
+        ),SizedBox(height: 20,),
       ]),
     ));
   }

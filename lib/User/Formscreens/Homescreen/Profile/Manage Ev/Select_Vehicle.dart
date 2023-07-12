@@ -40,15 +40,16 @@ class _SelectVehicleState extends State<SelectVehicle> {
           centerTitle: true,
           title: const Text(
             "Select Vehicle",
-            style: TextStyle(color: Colors.black),
+           
           ),
           backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
           // leading: const Icon(
           //   Icons.arrow_back,
           //   color: Colors.black,
           // ),
         ),
-        body: SingleChildScrollView(
+        body: SingleChildScrollView(controller: ScrollController(),
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
@@ -705,7 +706,9 @@ class _SelectVehicleState extends State<SelectVehicle> {
                   ),
                 ),
                 const Expanded(
-                  child: TabBarView(children: [
+                  
+                  child: TabBarView(
+                    children: [
                     AllCars(),
                     Tata(),
                     MG(),

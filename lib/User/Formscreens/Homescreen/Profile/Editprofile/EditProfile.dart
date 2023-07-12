@@ -6,6 +6,9 @@ class EditProfile extends StatefulWidget {
   @override
   State<EditProfile> createState() => _EditProfileState();
 }
+  bool _isPasswordVisiblee = false;
+  bool _isPasswordVisiblee1 = false;
+  bool _isPasswordVisiblee2 = false;
 
 class _EditProfileState extends State<EditProfile> {
   @override
@@ -19,12 +22,12 @@ class _EditProfileState extends State<EditProfile> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height / 5,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40),
                   ),
-                  color: Colors.blueAccent),
+                  color: Colors.indigo),
             ),
             Positioned(
               bottom: -50,
@@ -42,17 +45,17 @@ class _EditProfileState extends State<EditProfile> {
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 55,
         ),
-        Text(
+        const Text(
           "Change ProfilePicture",
           style: TextStyle(fontSize: 15),
         ),
         Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Padding(
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               child: Column(
                 children: [
                   Padding(
@@ -66,8 +69,8 @@ class _EditProfileState extends State<EditProfile> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5.0),
+                              const Padding(
+                                padding: EdgeInsets.only(left: 5.0),
                                 child: Text(
                                   'User Name',
                                   style: TextStyle(
@@ -82,21 +85,21 @@ class _EditProfileState extends State<EditProfile> {
                                 child: TextFormField(
                                   decoration: InputDecoration(
                                     //  border: InputBorder.none,
-                                    enabledBorder: OutlineInputBorder(
+                                    enabledBorder: const OutlineInputBorder(
                                         borderSide: BorderSide.none),
                                     filled: true,
                                     fillColor: Colors.grey[350],
                                     hintText: 'MOHAMMED SALEEL',
-                                    prefixIcon: Icon(
+                                    prefixIcon: const Icon(
                                       Icons.person_outline,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
-                              Padding(
+                              const SizedBox(height: 10),
+                              const Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 5.0, bottom: 3),
+                                    EdgeInsets.only(left: 5.0, bottom: 3),
                                 child: Text(
                                   'Mobile Number',
                                   style: TextStyle(
@@ -110,21 +113,21 @@ class _EditProfileState extends State<EditProfile> {
                                 color: Colors.black,
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
+                                    enabledBorder: const OutlineInputBorder(
                                         borderSide: BorderSide.none),
                                     filled: true,
                                     fillColor: Colors.grey[350],
                                     hintText: '987654321',
-                                    prefixIcon: Icon(
+                                    prefixIcon: const Icon(
                                       Icons.call,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
-                              Padding(
+                              const SizedBox(height: 10),
+                              const Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 5.0, top: 3),
+                                    EdgeInsets.only(left: 5.0, top: 3),
                                 child: Text(
                                   'Email',
                                   style: TextStyle(
@@ -136,25 +139,25 @@ class _EditProfileState extends State<EditProfile> {
                               Card(
                                 elevation: 10,
                                 color: Colors.black,
-                                child: TextFormField(
+                                child: TextFormField(obscureText: !_isPasswordVisiblee,
                                   decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
+                                    enabledBorder: const OutlineInputBorder(
                                         borderSide: BorderSide.none),
                                     filled: true,
                                     fillColor: Colors.grey[350],
                                     hintText: 'Apple123@gmail.com',
-                                    prefixIcon: Icon(
+                                    prefixIcon: const Icon(
                                       Icons.mail,
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
-                              Padding(
+                              const Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 5.0, top: 3),
+                                    EdgeInsets.only(left: 5.0, top: 3),
                                 child: Text(
                                   'Password',
                                   style: TextStyle(
@@ -166,25 +169,33 @@ class _EditProfileState extends State<EditProfile> {
                               Card(
                                 elevation: 10,
                                 color: Colors.black,
-                                child: TextFormField(
+                                child: TextFormField(obscureText: !_isPasswordVisiblee,
                                   decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
+                                    enabledBorder: const OutlineInputBorder(
                                         borderSide: BorderSide.none),
                                     filled: true,
                                     fillColor: Colors.grey[350],
                                     hintText: 'ENTER YOUR PASSWORD',
-                                    prefixIcon: Icon(
+                                    prefixIcon: const Icon(
                                       Icons.lock,
-                                    ),
+                                    ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisiblee ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisiblee = !_isPasswordVisiblee;
+            });
+          },),
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
-                              Padding(
+                              const Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 5.0, bottom: 3),
+                                    EdgeInsets.only(left: 5.0, bottom: 3),
                                 child: Text(
                                   'New Password',
                                   style: TextStyle(
@@ -196,16 +207,24 @@ class _EditProfileState extends State<EditProfile> {
                               Card(
                                 elevation: 10,
                                 color: Colors.black,
-                                child: TextFormField(
+                                child: TextFormField(obscureText: !_isPasswordVisiblee1,
                                   decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
+                                    enabledBorder: const OutlineInputBorder(
                                         borderSide: BorderSide.none),
                                     filled: true,
                                     fillColor: Colors.grey[350],
                                     hintText: 'NEW PASSWORD',
-                                    prefixIcon: Icon(
+                                    prefixIcon: const Icon(
                                       (Icons.lock),
-                                    ),
+                                    ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisiblee ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisiblee1 = !_isPasswordVisiblee1;
+            });
+          },),
                                   ),
                                 ),
                               ),
@@ -213,11 +232,11 @@ class _EditProfileState extends State<EditProfile> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
+                                  const Padding(
+                                    padding: EdgeInsets.only(
                                         left: 5.0, bottom: 3),
                                     child: Text(
                                       'Confirm Password',
@@ -230,21 +249,29 @@ class _EditProfileState extends State<EditProfile> {
                                   Card(
                                     elevation: 10,
                                     color: Colors.black,
-                                    child: TextFormField(
+                                    child: TextFormField(obscureText: !_isPasswordVisiblee2,
                                       decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
+                                        enabledBorder: const OutlineInputBorder(
                                             borderSide: BorderSide.none),
                                         filled: true,
                                         fillColor: Colors.grey[350],
                                         hintText: 'CONFIRM PASSWORD',
-                                        prefixIcon: Icon(
+                                        prefixIcon: const Icon(
                                           (Icons.lock),
-                                        ),
+                                        ), suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisiblee ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisiblee2 = !_isPasswordVisiblee2;
+            });
+          },),
                                       ),
                                     ),
                                   ),
                                   Column(children: [
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 40,
                                     ),
                                     Container(
@@ -253,12 +280,12 @@ class _EditProfileState extends State<EditProfile> {
                                       child: ElevatedButton(
                                         style: ButtonStyle(
                                             backgroundColor:
-                                                MaterialStatePropertyAll(
+                                                const MaterialStatePropertyAll(
                                               Color.fromARGB(255, 99, 49, 216),
                                             ),
-                                            textStyle: MaterialStatePropertyAll(
+                                            textStyle: const MaterialStatePropertyAll(
                                               TextStyle(
-                                                fontSize: 18,
+                                                fontSize: 17,
                                               ),
                                             ),
                                             shape: MaterialStatePropertyAll(
@@ -267,7 +294,7 @@ class _EditProfileState extends State<EditProfile> {
                                                         BorderRadius.circular(
                                                             10)))),
                                         onPressed: () {},
-                                        child: Text("Edit Profile"),
+                                        child: const Text("Edit Profile",style: TextStyle(fontWeight: FontWeight.bold),),
                                       ),
                                     ),
                                   ])

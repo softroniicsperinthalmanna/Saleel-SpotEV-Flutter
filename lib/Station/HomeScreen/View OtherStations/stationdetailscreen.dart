@@ -316,6 +316,9 @@ class _StationDetailPageStationState extends State<StationDetailPageStation> {
              
               minChildSize: 0.52,
               maxChildSize: 1,
+               // ignore: prefer_const_literals_to_create_immutables
+               snapSizes: [0.52,1],
+              snap: true,
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Container(

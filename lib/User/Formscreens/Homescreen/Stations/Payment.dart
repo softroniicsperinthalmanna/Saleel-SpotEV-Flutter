@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spotev/User/Formscreens/Homescreen/Stations/ChargingSessionSummary.dart';
 
-import 'chargingSessionSummary.dart';
 class Payment extends StatefulWidget {
   Payment({Key? key}) : super(key: key);
 
@@ -44,31 +44,27 @@ bool is_checked=false;
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    height: 70,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('Images/Phonepay.webp'),fit: BoxFit.cover
-                      )
+                  Card(
+                    child: Container(
+                      height: 70,
+                      width: 100,
+                     child: Image.asset('Images/Googlepay.png'),
                     ),
                   ),
-                  Container(
-                    height: 70,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('Images/Phonepay.webp'),fit: BoxFit.cover
-                      )
+                  Card(
+                    child: Container(
+                      height: 70,
+                      width: 100,
+                                         child: Image.asset('Images/Paytmlogo.png'),
+
                     ),
                   ),
-                  Container(
-                    height: 70,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('Images/Phonepay.webp'),fit: BoxFit.cover
-                      )
+                  Card(
+                    child: Container(
+                      height: 70,
+                      width: 100,
+                                          child: Image.asset('Images/Phonepay2.png'),
+
                     ),
                   ),
                 ],

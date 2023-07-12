@@ -12,12 +12,13 @@ class _ManageEVState extends State<ManageEV> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(centerTitle: true,
         // leading: Icon(Icons.arrow_back),
-        title: Center(child: Text('Manage Vehicle')),
+        // ignore: prefer_const_constructors
+        title: Text('Manage Vehicle'),
         toolbarHeight: 80,
-        backgroundColor: Color(0xff5A5AD2),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xff5A5AD2),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
@@ -25,14 +26,14 @@ class _ManageEVState extends State<ManageEV> {
       ),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
             child: Text(
               "Add a new Vehicles",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
@@ -40,7 +41,7 @@ class _ManageEVState extends State<ManageEV> {
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SelectVehicle(),
+                  builder: (context) => const SelectVehicle(),
                 ));
               },
               child: Container(
@@ -56,7 +57,7 @@ class _ManageEVState extends State<ManageEV> {
                   padding: const EdgeInsets.all(0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15.0),
-                    child: Image(
+                    child: const Image(
                       image: AssetImage("Images/addcar.webp"),
                       fit: BoxFit.cover,
                       height: 150,
@@ -66,8 +67,8 @@ class _ManageEVState extends State<ManageEV> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 20, 0, 10),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(10, 20, 0, 10),
             child: Text(
               "My Vehicles",
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
@@ -89,7 +90,7 @@ class _ManageEVState extends State<ManageEV> {
                     color: Colors.blueAccent,
                     height: 22,
                   ),
-                  title: Text(
+                  title: const Text(
                     "Tata Nexon EV",
                     style: TextStyle(color: Colors.blueAccent),
                   ),
@@ -100,7 +101,7 @@ class _ManageEVState extends State<ManageEV> {
                       child: Container(
                         height: 30,
                         width: 30,
-                        child: Icon(
+                        child: const Icon(
                           Icons.delete,
                           color: Colors.white,
                         ),
@@ -123,7 +124,7 @@ class _ManageEVState extends State<ManageEV> {
                     color: Colors.blueAccent,
                     height: 22,
                   ),
-                  title: Text(
+                  title: const Text(
                     "Tata Xpress-T EV",
                     style: TextStyle(color: Colors.blueAccent),
                   ),
@@ -134,7 +135,7 @@ class _ManageEVState extends State<ManageEV> {
                       child: Container(
                         height: 30,
                         width: 30,
-                        child: Icon(
+                        child: const Icon(
                           Icons.delete,
                           color: Colors.white,
                         ),
@@ -157,7 +158,7 @@ class _ManageEVState extends State<ManageEV> {
                     color: Colors.blueAccent,
                     height: 22,
                   ),
-                  title: Text(
+                  title: const Text(
                     "Hyundai Kona Electric",
                     style: TextStyle(color: Colors.blueAccent),
                   ),
@@ -168,7 +169,7 @@ class _ManageEVState extends State<ManageEV> {
                       child: Container(
                         height: 30,
                         width: 30,
-                        child: Icon(
+                        child: const Icon(
                           Icons.delete,
                           color: Colors.white,
                         ),

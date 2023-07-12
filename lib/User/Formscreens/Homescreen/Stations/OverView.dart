@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotev/User/Formscreens/Homescreen/Stations/Book%20A%20Section.dart';
+import 'package:spotev/User/Formscreens/Homescreen/Stations/Payment.dart';
 
 class OverViewPage extends StatelessWidget {
   const OverViewPage({Key? key}) : super(key: key);
@@ -86,7 +87,7 @@ class OverViewPage extends StatelessWidget {
               Card(
                 elevation: 10,
                 child: Container(height: 120,
-                width: 100,
+                width: 105,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: const Color(0xff0000FF)
@@ -101,7 +102,7 @@ class OverViewPage extends StatelessWidget {
                     SizedBox(height: 5,),
                     Icon(CupertinoIcons.ellipsis_circle,color: Color(0xff0000FF),),
                     SizedBox(height: 5,),
-                    Text('0/1 taken', style: TextStyle(color: Colors.red),)
+                    Text('0/1 taken', style: TextStyle(color: Colors.green),)
                   ],
                 )
                   ,),
@@ -141,7 +142,7 @@ class OverViewPage extends StatelessWidget {
               color: Color(0xff0000FF),
               thickness: 0.2,
             ),
-          ),SizedBox(height: 20,),
+          ),SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -157,7 +158,7 @@ class OverViewPage extends StatelessWidget {
                       )
                     ),
 
-                    onPressed: (){}, child: const Text('NEXT'),)),
+                    onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => Payment(),));}, child: const Text('NEXT'),)),
               Container(
                   height: 50,
                   width: 150,

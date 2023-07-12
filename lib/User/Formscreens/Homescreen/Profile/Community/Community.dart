@@ -13,7 +13,7 @@ class _CommunityState extends State<Community> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomAppBar(
+        bottomNavigationBar: const BottomAppBar(
           color: Colors.red,
         ),
         body: SingleChildScrollView(
@@ -21,7 +21,7 @@ class _CommunityState extends State<Community> {
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
             child: Stack(children: [
               Container(
                 height: MediaQuery.of(context).size.height,
@@ -33,7 +33,7 @@ class _CommunityState extends State<Community> {
                       child: Container(
                         height: 300,
                         width: 200,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Color.fromARGB(255, 99, 49, 216),
                             borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(450),
@@ -45,14 +45,14 @@ class _CommunityState extends State<Community> {
                       child: Container(
                         height: 180,
                         width: 240,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             color: Color.fromARGB(255, 99, 49, 216),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(650),
                                 bottomLeft: Radius.circular(10))),
                       ),
                     ),
-                    Community1(),
+                    const Community1(),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Row(
@@ -61,8 +61,8 @@ class _CommunityState extends State<Community> {
                             width: MediaQuery.of(context).size.width,
                             child: Card(
                               elevation: 10,
-                              margin: EdgeInsets.only(
-                                  left: 10, right: 10, bottom: 8),
+                              margin: const EdgeInsets.only(
+                                  left: 15, right: 20, bottom: 8),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
@@ -73,8 +73,8 @@ class _CommunityState extends State<Community> {
                                         borderRadius:
                                             BorderRadius.circular(15)),
                                     hintText: "Type a message",
-                                    prefixIcon: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                    prefixIcon: const Padding(
+                                      padding: EdgeInsets.all(8.0),
                                       child: CircleAvatar(
                                         backgroundColor:
                                             Color.fromARGB(255, 129, 6, 160),
@@ -83,9 +83,9 @@ class _CommunityState extends State<Community> {
                                           color: Colors.white,
                                         ),
                                       ),
-                                    ),
-                                    contentPadding: EdgeInsets.all(5)),
-                                onTap: () {},
+                                    ),suffixIcon:IconButton(onPressed: (){}, icon: Icon(Icons.send)),
+                                    contentPadding: const EdgeInsets.all(5)),
+                                
                               ),
                             ),
                           ),

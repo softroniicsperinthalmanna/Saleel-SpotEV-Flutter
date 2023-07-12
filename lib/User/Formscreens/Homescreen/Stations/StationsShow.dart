@@ -22,7 +22,7 @@ class _StationsShowState extends State<StationsShow> {
         Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 70, top: 40),
+              padding: const EdgeInsets.only(left: 8.0, right: 70, top: 60),
               child: TextField(
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.search),
@@ -38,7 +38,7 @@ class _StationsShowState extends State<StationsShow> {
             Padding(
               padding: const EdgeInsets.only(
                 right: 15,
-                top: 45,
+                top: 65,
               ),
               child: Align(
                 alignment: AlignmentDirectional.topEnd,
@@ -692,7 +692,7 @@ class _StationsShowState extends State<StationsShow> {
           ],
         ),
         Container(
-          height: MediaQuery.of(context).size.height,
+          // height: MediaQuery.of(context).size.height,
           child: ListView.builder(
               controller: ScrollController(),
               shrinkWrap: true,
@@ -912,7 +912,7 @@ class _StationsShowState extends State<StationsShow> {
                   ),
                 );
               }),
-        ),
+        ),SizedBox(height: 20,),
       ]),
     ));
   }

@@ -307,6 +307,8 @@ class StationDetailPage extends StatelessWidget {
               initialChildSize: 0.52,
               minChildSize: 0.52,
               maxChildSize: 1,
+              snapSizes: [0.52,1],
+              snap: true,
               builder:
                   (BuildContext context, ScrollController scrollController) {
                 return Container(

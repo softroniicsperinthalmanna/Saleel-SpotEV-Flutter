@@ -66,7 +66,7 @@ class _ConfirmbookingState extends State<Confirmbooking> {
                     ),const SizedBox(height: 10,),
                     const Text(
                       "Pricing",
-                      style: TextStyle(fontSize: 20, color: Colors.redAccent),
+                      style: TextStyle(fontSize: 18, color: Colors.redAccent),
                     ),const SizedBox(height: 10,),
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 2),
@@ -74,11 +74,11 @@ class _ConfirmbookingState extends State<Confirmbooking> {
                         children: [
                           Text(
                             "45 mins ",
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 17),
                           ),
                           Text(
                             "₹80.00",
-                            style: TextStyle(fontSize: 18),),
+                            style: TextStyle(fontSize: 17),),
                         ],
                       ),
                     ),
@@ -88,10 +88,10 @@ class _ConfirmbookingState extends State<Confirmbooking> {
                         children: [
                           Text(
                             "Taxes",
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 17),
                           ),Text(
                             "₹15.20",
-                            style: TextStyle(fontSize: 18),),
+                            style: TextStyle(fontSize: 17),),
                         ],
                       ),
                     ),
@@ -151,7 +151,7 @@ class _ConfirmbookingState extends State<Confirmbooking> {
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) =>  Payment(),));
                         },
-                        child: const Text("Proceed to Pay ₹95.20"),
+                        child: const Text("Proceed to Pay  ₹95.20"),
                       ),
                     ),
                   ],
