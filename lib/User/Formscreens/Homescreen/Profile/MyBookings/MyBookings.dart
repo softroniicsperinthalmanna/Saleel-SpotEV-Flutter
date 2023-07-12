@@ -19,10 +19,10 @@ class _MyBookingsState extends State<MyBookings> {
         appBar: AppBar(
           centerTitle: true,
           // leading: Icon(Icons.arrow_back),
-          title: Text('My Bookings'),
+          title: const Text('My Bookings'),
           toolbarHeight: 80,
-          backgroundColor: Color(0xff5A5AD2),
-          shape: RoundedRectangleBorder(
+          backgroundColor: const Color(0xff5A5AD2),
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
             bottomRight: Radius.circular(20),
@@ -31,7 +31,7 @@ class _MyBookingsState extends State<MyBookings> {
         body: Column(
           children: [
             Container(
-              child: TabBar(
+              child: const TabBar(
                 labelColor: Colors.black,
                 labelStyle:
                     TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
@@ -48,7 +48,7 @@ class _MyBookingsState extends State<MyBookings> {
             ),
             Expanded(
                 child: Container(
-              child: TabBarView(children: [
+              child: const TabBarView(children: [
                 Tabbar_Mybooking(),
                 Tabbar_mybookings1(),
               ]),

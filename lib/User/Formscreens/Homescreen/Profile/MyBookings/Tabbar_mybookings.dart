@@ -23,7 +23,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                       width: 0.3,
                       color: Colors.indigo,
                     )),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10)),
                     color: Colors.white,
@@ -36,18 +36,18 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("02 May 2021"),
+                          const Text("02 May 2021"),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
-                                side: BorderSide(
+                                side: const BorderSide(
                                     width: 0,
-                                    color: const Color.fromARGB(
+                                    color: Color.fromARGB(
                                         255, 255, 59, 59))),
                             onPressed: () {
                               // Add your button's onPress functionality here
                             },
-                            child: Text(
+                            child: const Text(
                               'Cancel',
                               style: TextStyle(color: Colors.red),
                             ),
@@ -76,7 +76,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.location_on,
                                   color: Colors.indigoAccent,
                                 ),
@@ -86,15 +86,15 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
+                                      const Text(
                                         "YX Vestby Charging Station",
                                         style: TextStyle(fontSize: 12),
                                       ),
-                                      Text(
+                                      const Text(
                                         "TML Plant,Malappuram",
                                         style: TextStyle(fontSize: 12),
                                       ),
-                                      Text(
+                                      const Text(
                                         "Charger A | Charging Point 1",
                                         style: TextStyle(fontSize: 12),
                                       ),
@@ -104,14 +104,14 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               backgroundColor: Colors.white,
-                                              side: BorderSide(
+                                              side: const BorderSide(
                                                   width: 0,
                                                   color: Color.fromARGB(
                                                       255, 128, 59, 255))),
                                           onPressed: () {
                                             // Add your button's onPress functionality here
                                           },
-                                          child: Row(
+                                          child: const Row(
                                             children: [
                                               Icon(
                                                 Icons.near_me,
@@ -138,72 +138,80 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.white,
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           width: 0,
                                           color: Color.fromARGB(
                                               255, 59, 255, 101))),
                                   onPressed: () {
                                     showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                              ),
-                                              buttonPadding:
-                                                  EdgeInsets.only(right: 100),
-                                              title: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text("Are You Sure?"),
-                                                ],
-                                              ),
-                                              actions: [
-                                                ElevatedButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: Text("Back"),
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.indigo,
-                                                    shape:
-                                                        new RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          new BorderRadius
-                                                              .circular(10),
-                                                    ),
-                                                    side: BorderSide(
-                                                        width: 1,
-                                                        color: Colors.blue),
-                                                  ),
-                                                ),
-                                                ElevatedButton(
-                                                  onPressed: () {},
-                                                  child: Text("Ok"),
-                                                  style:
-                                                      ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.indigo,
-                                                    shape:
-                                                        new RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          new BorderRadius
-                                                              .circular(10),
-                                                    ),
-                                                    side: BorderSide(
-                                                        width: 1,
-                                                        color: Colors.blue),
-                                                  ),
-                                                )
-                                              ]);
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                      actionsAlignment: MainAxisAlignment.spaceEvenly,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      title: const Center(
+                          child: Column(
+                        children: [
+                          Text(
+                            "Completed",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Are You Sure?",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      )),
+                      actions: <Widget>[
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text(
+                              "Cancel",
+                              style: TextStyle(color: Colors.indigo),
+                            ),
+                            style: TextButton.styleFrom(
+                                elevation: 5,
+                                minimumSize: const Size(128, 46),
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6)),
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ))),
+                        ElevatedButton(
+                            onPressed: () {
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //   builder: (context) => const (),
+                              // ));
+                            },
+                            child: const Text(
+                              "Yes",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                            style: TextButton.styleFrom(
+                                elevation: 5,
+                                minimumSize: const Size(128, 46),
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6)),
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ))),
+                      ]);
                                         });
                                   }, // Add your button's onPress functionality here
 
-                                  child: Text(
+                                  child: const Text(
                                     'Completed',
                                     style: TextStyle(color: Colors.green),
                                   ),
@@ -212,8 +220,8 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
+                        const Padding(
+                          padding: EdgeInsets.only(
                             top: 10,
                           ),
                           child: Row(
@@ -223,7 +231,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                 color: Colors.indigoAccent,
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
+                                padding: EdgeInsets.only(left: 8.0),
                                 child: Text("DC Type 1"),
                               )
                             ],
@@ -237,7 +245,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                               Stack(
                                 alignment: AlignmentDirectional.center,
                                 children: [
-                                  Divider(),
+                                  const Divider(),
                                   Container(
                                     height: 30,
                                     width: 60,
@@ -246,7 +254,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                       border: Border.all(),
                                       color: Colors.white,
                                     ),
-                                    child: Center(
+                                    child: const Center(
                                         child: Text(
                                       "45 mins",
                                       style: TextStyle(fontSize: 12),
@@ -255,7 +263,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                   Positioned(
                                     left: 0,
                                     child: Container(
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.circle_sharp,
                                         color: Colors.blue,
                                         size: 10,
@@ -265,7 +273,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                   Positioned(
                                     right: 0,
                                     child: Container(
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.circle_sharp,
                                         color: Colors.green,
                                         size: 10,
@@ -274,10 +282,10 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
-                              Row(
+                              const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
@@ -314,7 +322,7 @@ class _Tabbar_MybookingState extends State<Tabbar_Mybooking> {
                   ),
                   width: double.infinity,
                   height: 50,
-                  child: Center(
+                  child: const Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [

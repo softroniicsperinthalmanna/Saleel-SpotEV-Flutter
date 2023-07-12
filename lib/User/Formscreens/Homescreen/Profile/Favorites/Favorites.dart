@@ -14,18 +14,18 @@ class _FavoritesState extends State<Favorites> {
         appBar: AppBar(
           centerTitle: true,
           // leading: Icon(Icons.arrow_back),
-          title: Text('FAVORITES'),
+          title: const Text('FAVORITES'),
           toolbarHeight: 80,
-          backgroundColor: Color(0xff5A5AD2),
-          shape: RoundedRectangleBorder(
+          backgroundColor: const Color(0xff5A5AD2),
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(20),
             bottomRight: Radius.circular(20),
           )),
         ),
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(25, 10, 0, 0),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(25, 10, 0, 0),
             child: Text(
               "Sort by",
               style: TextStyle(fontSize: 18),
@@ -41,12 +41,12 @@ class _FavoritesState extends State<Favorites> {
                   width: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Color(0xff5A5AD2),
+                    color: const Color(0xff5A5AD2),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.check,
                           color: Colors.white,
@@ -72,7 +72,7 @@ class _FavoritesState extends State<Favorites> {
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white,
                     ),
-                    child: Center(
+                    child: const Center(
                         child: Text(
                       "Newest",
                       style: TextStyle(
@@ -89,7 +89,7 @@ class _FavoritesState extends State<Favorites> {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
-                  child: Center(
+                  child: const Center(
                       child: Text(
                     "Oldest",
                     style: TextStyle(
@@ -102,11 +102,13 @@ class _FavoritesState extends State<Favorites> {
           ),
           Expanded(
             child: ListView.builder(
+              controller: ScrollController(),
+              shrinkWrap: true,
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                       alignment: Alignment.center,
-                      margin: EdgeInsets.fromLTRB(20, 15, 20, 0),
+                      margin: const EdgeInsets.fromLTRB(20, 15, 20, 0),
                       height: 90,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
@@ -119,23 +121,23 @@ class _FavoritesState extends State<Favorites> {
                                 Colors.grey.withOpacity(0.5), //color of shadow
                             spreadRadius: 5, //spread radius
                             blurRadius: 7, // blur radius
-                            offset: Offset(0, 2), // changes position of shadow
+                            offset: const Offset(0, 2), // changes position of shadow
                             //first paramerter of offset is left-right
                             //second parameter is top to down
                           ),
                           //you can set more BoxShadow() here
                         ],
                       ),
-                      child: ListTile(
+                      child: const ListTile(
                         trailing: Padding(
-                          padding: const EdgeInsets.only(top: 18.0),
+                          padding: EdgeInsets.only(top: 18.0),
                           child: Icon(
                             Icons.delete,
                             color: Colors.blueAccent,
                           ),
                         ),
                         leading: Padding(
-                          padding: const EdgeInsets.only(top: 18.0),
+                          padding: EdgeInsets.only(top: 18.0),
                           child: Icon(
                             Icons.favorite,
                             color: Colors.red,
@@ -153,9 +155,12 @@ class _FavoritesState extends State<Favorites> {
                             Text("672639")
                           ],
                         ),
-                      ));
+                      ),
+                      );
                 }),
-          )
-        ]));
+          ),
+        ],
+        ),
+        );
   }
 }
