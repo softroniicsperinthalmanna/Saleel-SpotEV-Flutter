@@ -23,6 +23,8 @@
   <title>
     SpotEv
   </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
@@ -475,140 +477,208 @@
     </div>
     </div>
     <div class="container-fluid py-4">
-    <div class="row mt-4">
-      <div class="col-lg-7 mb-lg-0 mb-4">
-        <div class="card z-index-2 h-100">
-          <div class="card-header pb-0 pt-3 bg-transparent">
-            <h6 class="text-capitalize">App Ratings</h6>
-            <p class="text-sm mb-0">
-              <i class="fa fa-arrow-up text-success"></i>
-              <span class="font-weight-bold">4% more</span> in 2021
-            </p>
-          </div>
-          <div class="card-body p-3">
-            <div class="chart">
-              <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card z-index-2 h-100">
+            <div class="card-header pb-0 pt-3 bg-transparent">
+              <h6 class="text-capitalize">App Ratings</h6>
+              <p class="text-sm mb-0">
+                <i class="fa fa-arrow-up text-success"></i>
+                <span class="font-weight-bold">4% more</span> in 2021
+              </p>
+            </div>
+            <div class="card-body p-3">
+              <div class="chart">
+                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="card card-carousel overflow-hidden h-100 p-0">
-          <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-            <div class="carousel-inner border-radius-lg h-100">
-              <div class="carousel-item h-100 active" style="background-image: url('../assets/img/carosal/ev\ station\ 1.jpg');
+        <div class="col-lg-5">
+          <div class="card card-carousel overflow-hidden h-100 p-0">
+            <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-inner border-radius-lg h-100">
+                <div class="carousel-item h-100 active" style="background-image: url('../assets/img/carosal/ev\ station\ 1.jpg');
       background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
 
+
+                  </div>
+                </div>
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 2.jpg');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
+                </div>
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 3.jfif');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 2.jpg');
-      background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-
-                </div>
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 3.jfif');
-      background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-
-                </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 4.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 4.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 5.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 5.jfif');
                             background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 6.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 6.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 7.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 7.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 8.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 8.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 9.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 9.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 11.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 11.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 12.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 12.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 13.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 13.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 14.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 14.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 15.jfif');
+                <div class="carousel-item h-100" style="background-image: url('../assets/img/carosal/ev\ station\ 15.jfif');
                 background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+
+                  </div>
 
                 </div>
-
               </div>
             </div>
+            <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
+      <div style="display:flex;flex-wrap: wrap; justify-content: space-around;
+    align-items: center;">
+        <canvas id="myChart1" style="max-width:500px"></canvas>
+
+        <canvas id="myChart" style=" max-width:300px;"></canvas>
+
+      </div>
+
+      <script>
+        const xValues = ["1 Star", "2 Star", "3 Star", "4 star", "5 star"];
+        const yValues = [55, 49, 44, 24, 15];
+        const barColors = [
+          "#ff0000",
+          "#ff4000",
+          "#bfff00",
+          "#80ff00",
+          "#00ff00"
+        ];
+
+        new Chart("myChart", {
+          type: "doughnut",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Ratings Overview"
+
+            }, layout: {
+              padding: {
+                top: 40, // Adjust the value as per your requirements
+              },
+            },
+          }
+        });
+
+        var xValues1 = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues1 = [55, 49, 44, 24, 15];
+        var barColors1 = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart1", {
+          type: "bar",
+          data: {
+            labels: xValues1,
+            datasets: [{
+              backgroundColor: barColors1,
+              data: yValues1
+            }]
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Reviews Overview"
+            }, layout: {
+              padding: {
+                top: 10, // Adjust the value as per your requirements
+              },
+            },
+          }
+        });
+      </script>
     </div>
-</div>
+
     </div>
 
     <footer class="footer pt-3  ">
@@ -802,4 +872,4 @@
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
-  </html>
+</html>
