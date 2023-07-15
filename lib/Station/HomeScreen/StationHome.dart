@@ -24,14 +24,104 @@ class _StationHomeState extends State<StationHome> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
-              children: [GestureDetector(onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen(),));
-              },
-                child: Card(child: Container( width: 100,height: 50,child: const Row(mainAxisAlignment: MainAxisAlignment.center,children: [Icon(Icons.logout,color: Colors.red,),SizedBox(width: 10,),Text('Logout')],),),)),
-                const SizedBox(height: 40),
-                GestureDetector(onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const StationDetailPageStationMystation(),));
+              children: [
+                GestureDetector(
+                    onTap: () {
+                     showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                      actionsAlignment: MainAxisAlignment.spaceEvenly,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      title: const Center(
+                          child: Column(
+                        children: [
+                          Text(
+                            "Logout",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Are You Sure?",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w400),
+                          ),
+                        ],
+                      )),
+                      actions: <Widget>[
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text(
+                              "Cancel",
+                              style: TextStyle(color: Colors.indigo),
+                            ),
+                            style: TextButton.styleFrom(
+                                elevation: 5,
+                                minimumSize: const Size(128, 46),
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6)),
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ))),
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ));
+                            },
+                            child: const Text(
+                              "Yes",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                            style: TextButton.styleFrom(
+                                elevation: 5,
+                                minimumSize: const Size(128, 46),
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6)),
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ))),
+                      ]);
                 },
+              );
+                    },
+                    child: Card(
+                      child: Container(
+                        width: 100,
+                        height: 50,
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.logout,
+                              color: Colors.red,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text('Logout')
+                          ],
+                        ),
+                      ),
+                    )),
+                const SizedBox(height: 40),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          const StationDetailPageStationMystation(),
+                    ));
+                  },
                   child: Container(
                     height: 120,
                     width: MediaQuery.of(context).size.width,
@@ -45,7 +135,6 @@ class _StationHomeState extends State<StationHome> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      
                       children: [
                         Container(
                           height: 118,
@@ -72,7 +161,8 @@ class _StationHomeState extends State<StationHome> {
                                   color: Colors.white,
                                   shadows: [
                                     Shadow(
-                                        color: Colors.black12, offset: Offset(0, 3))
+                                        color: Colors.black12,
+                                        offset: Offset(0, 3))
                                   ]),
                             ),
                           ),
@@ -80,16 +170,22 @@ class _StationHomeState extends State<StationHome> {
                       ],
                     ),
                   ),
-                ),const SizedBox(height: 20,),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
                 Column(
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,                      children: [
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Slots(),));
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const Slots(),
+                              ));
                             },
                             child: Card(
                               elevation: 5,
@@ -126,7 +222,11 @@ class _StationHomeState extends State<StationHome> {
                             ),
                           ),
                           GestureDetector(
-                      onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) =>const StationsListPage() ));},
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>
+                                      const StationsListPage()));
+                            },
                             child: Card(
                               elevation: 5,
                               shape: RoundedRectangleBorder(
@@ -143,7 +243,7 @@ class _StationHomeState extends State<StationHome> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                  Icon(
+                                    Icon(
                                       Icons.ev_station_outlined,
                                       color: Colors.white,
                                       size: 40,
@@ -165,46 +265,54 @@ class _StationHomeState extends State<StationHome> {
                       ),
                     ),
                     Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,                    children: [
-                          GestureDetector(
-                      onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => const StationBookings(),));},
-                            child: Card(
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const StationBookings(),
+                            ));
+                          },
+                          child: Card(
+                            elevation: 5,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Container(
+                              height: 150,
+                              width: 150,
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
+                                color: Colors.lightBlue,
                               ),
-                              child: Container(
-                                height: 150,
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.lightBlue,
-                                ),
-                                child: const Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.menu_book,
-                                      color: Colors.white,
-                                      size: 40,
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text('Bookings',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold)),
-                                  ],
-                                ),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.menu_book,
+                                    color: Colors.white,
+                                    size: 40,
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text('Bookings',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold)),
+                                ],
                               ),
                             ),
                           ),
+                        ),
                         GestureDetector(
-                                            onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ManageOffer(),));},
-      
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ManageOffer(),
+                            ));
+                          },
                           child: Card(
                             elevation: 5,
                             shape: RoundedRectangleBorder(
@@ -244,11 +352,14 @@ class _StationHomeState extends State<StationHome> {
                     const SizedBox(
                       height: 5,
                     ),
-                    Row(                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-      
-                      children: [GestureDetector(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) =>ChargingHistoryStation() ,));
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ChargingHistoryStation(),
+                            ));
                           },
                           child: Card(
                             shape: RoundedRectangleBorder(
@@ -285,7 +396,11 @@ class _StationHomeState extends State<StationHome> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ComplaintPage(),));},
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ComplaintPage(),
+                            ));
+                          },
                           child: Card(
                             elevation: 5,
                             shape: RoundedRectangleBorder(

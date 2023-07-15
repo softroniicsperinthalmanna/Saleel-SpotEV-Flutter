@@ -102,7 +102,7 @@ class _ChargingSummaryState extends State<ChargingSummary> {
                 ),
                 child: Container(
                   height: 125,
-                  width: double.infinity,
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -156,7 +156,7 @@ class _ChargingSummaryState extends State<ChargingSummary> {
                 ),
                 child: Container(
                   height: 270,
-                  width: double.infinity,
+                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
@@ -183,8 +183,9 @@ class _ChargingSummaryState extends State<ChargingSummary> {
                         padding: const EdgeInsets.all(10),
                         child: Container(
                             height: 50,
-                            width: double.infinity,
-                            child:TextFormField(
+                            width: MediaQuery.of(context).size.width,
+                            child:TextFormField( 
+                              keyboardType: TextInputType.multiline,
                             decoration: const InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(

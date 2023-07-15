@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 List tabwidgets = [
-  StationHome(),
- StationProfile(),
+  const StationHome(),
+ const StationProfile(),
 ];
 
 class _HomePageState extends State<HomePage> {
@@ -21,9 +21,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedLabelStyle: TextStyle(fontSize: 12),
+        selectedLabelStyle: const TextStyle(fontSize: 12),
         iconSize: 28,
-        unselectedIconTheme: IconThemeData(
+        unselectedIconTheme: const IconThemeData(
           color: Colors.grey,
         ),
         elevation: 5,
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         showUnselectedLabels: true,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,
-        selectedIconTheme: IconThemeData(color: Colors.blue),
+        selectedIconTheme: const IconThemeData(color: Colors.blue),
         currentIndex: currentIndex,
         onTap: (int index) {
           setState(() {

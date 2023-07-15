@@ -708,7 +708,7 @@ class _StationsShowState extends State<StationsShow> {
                     },
                     child: Stack(children: [
                       Container(
-                        height: 160,
+                        height: 140,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           color: Colors.white,

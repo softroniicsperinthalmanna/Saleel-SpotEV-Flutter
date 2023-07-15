@@ -177,14 +177,14 @@ class _StationProfileState extends State<StationProfile> {
                       Card(
                         elevation: 10,
                         color: Colors.black,
-                        child: TextFormField(
+                        child: TextFormField(obscureText:!_isPasswordVisible ,
                           decoration:  InputDecoration(
                             enabledBorder:
-                                OutlineInputBorder(borderSide: BorderSide.none),
+                                const OutlineInputBorder(borderSide: BorderSide.none),
                             filled: true,
                             fillColor: Colors.white,
                           
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.lock,
                             ), suffixIcon: IconButton(
           icon: Icon(
@@ -221,12 +221,12 @@ class _StationProfileState extends State<StationProfile> {
                             color: Colors.black,
                             child: TextFormField(obscureText: !_isPasswordVisiblee,
                               decoration:  InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                     borderSide: BorderSide.none),
                                 filled: true,
                                 fillColor: Colors.white,
                               
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   (Icons.lock),
                                 ), suffixIcon: IconButton(
           icon: Icon(

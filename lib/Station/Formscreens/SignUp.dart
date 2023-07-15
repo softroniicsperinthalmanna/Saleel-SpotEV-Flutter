@@ -196,18 +196,15 @@ class _SignUpState extends State<SignUp> {
                             prefixIcon: const Icon(
                               Icons.lock,
                             ),
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _isPasswordVisible
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  _isPasswordVisible = !_isPasswordVisible;
-                                });
-                              },
-                            ),
+                           suffixIcon: IconButton(
+          icon: Icon(
+            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _isPasswordVisible = !_isPasswordVisible;
+            });
+          },),
                           ),
                         ),
                       ),
@@ -245,8 +242,8 @@ class _SignUpState extends State<SignUp> {
                                 suffixIcon: IconButton(
                                   icon: Icon(
                                     _isPasswordVisiblee
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
+                                        ? Icons.visibility_off
+                                        : Icons.visibility
                                   ),
                                   onPressed: () {
                                     setState(() {
