@@ -47,7 +47,7 @@ class _SlotsState extends State<Slots> {
       appBar: AppBar(
         centerTitle: true,
         // leading: Icon(Icons.arrow_back),
-        title: Text(
+        title: const Text(
           'Slots',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -62,7 +62,7 @@ class _SlotsState extends State<Slots> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -72,11 +72,11 @@ class _SlotsState extends State<Slots> {
                 builder: (context, snapshot) {
                     if (snapshot.hasError) print(snapshot.error);
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(child: Text('waiting for connection....'));
-                      return Center(child: Text('waiting for connection....'));
+                      return const Center(child: Text('waiting for connection....'));
+                      return const Center(child: Text('waiting for connection....'));
                     }
                     if (!snapshot.hasData || snapshot.data.length == 0) {
-                      return Center(
+                      return const Center(
                         child: Text('No Data Found !!'),
                       );
                     }
@@ -97,18 +97,18 @@ class _SlotsState extends State<Slots> {
                           child: Container(
                             height: 80,
                             width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 border: Border(
                                     bottom: BorderSide(
                               color: Colors.grey,
                               width: 0.5,
                             ))),
                             child: ListTile(
-                              leading: Icon(
+                              leading: const Icon(
                                 Icons.ev_station_outlined,
                                 color: Colors.blueAccent,
                               ),
-                              trailing: Text(
+                              trailing: const Text(
                                 '0/1',
                                 style: TextStyle(color: Colors.green),
                               ),
@@ -120,7 +120,7 @@ class _SlotsState extends State<Slots> {
                               ),
                               subtitle: Row(
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Unit Price: ',
                                     style: TextStyle(color: Colors.red),
                                   ),
@@ -130,7 +130,7 @@ class _SlotsState extends State<Slots> {
                             ),
                           ),
                         );
-                      }):  Center(child: CircularProgressIndicator(),);
+                      }):  const Center(child: CircularProgressIndicator(),);
                 }
               ),
             ),

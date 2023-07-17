@@ -25,13 +25,13 @@ class Module extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Column(
               children: [
                 Container(
-                  child: Text(
+                  child: const Text(
                     "Join the electric",
                     style: TextStyle(
                       fontSize: 18,
@@ -48,7 +48,7 @@ class Module extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  child: Text(
+                  child: const Text(
                     "rEVOLUTION",
                     style: TextStyle(
                       fontSize: 18,
@@ -64,13 +64,13 @@ class Module extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 Column(
                   children: [
                     Container(
-                      child: Text(
+                      child: const Text(
                         "MAKE VEHICLE CHARGING EASY",
                         style: TextStyle(
                           fontSize: 20,
@@ -86,7 +86,7 @@ class Module extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 100,
                     ),
                     Column(
@@ -94,13 +94,13 @@ class Module extends StatelessWidget {
                         Container(
                           child: ElevatedButton(
                             style: ButtonStyle(
-                                backgroundColor: MaterialStatePropertyAll(
+                                backgroundColor: const MaterialStatePropertyAll(
                                   Color.fromARGB(255, 99, 49, 216),
                                 ),
-                                minimumSize: MaterialStatePropertyAll(
+                                minimumSize: const MaterialStatePropertyAll(
                                   Size(250, 70),
                                 ),
-                                textStyle: MaterialStatePropertyAll(
+                                textStyle: const MaterialStatePropertyAll(
                                   TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
@@ -113,12 +113,12 @@ class Module extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Login()));
+                                      builder: (context) => const Login()));
                             },
-                            child: Text("USER"),
+                            child: const Text("USER"),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                         Padding(
@@ -126,13 +126,13 @@ class Module extends StatelessWidget {
                           child: Container(
                             child: ElevatedButton(
                               style: ButtonStyle(
-                                  backgroundColor: MaterialStatePropertyAll(
+                                  backgroundColor: const MaterialStatePropertyAll(
                                     Color.fromARGB(255, 99, 49, 216),
                                   ),
-                                  minimumSize: MaterialStatePropertyAll(
+                                  minimumSize: const MaterialStatePropertyAll(
                                     Size(250, 70),
                                   ),
-                                  textStyle: MaterialStatePropertyAll(
+                                  textStyle: const MaterialStatePropertyAll(
                                     TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -142,9 +142,9 @@ class Module extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10)))),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen(),));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginScreen(),));
                               },
-                              child: Text("STATION"),
+                              child: const Text("STATION"),
                             ),
                           ),
                         ),

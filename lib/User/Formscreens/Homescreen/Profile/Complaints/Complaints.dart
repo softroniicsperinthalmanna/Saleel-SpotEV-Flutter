@@ -17,14 +17,14 @@ class _ComplaintsState extends State<Complaints> {
         //leading: Icon(Icons.arrow_back),
         centerTitle: true,
         elevation: 3,
-        backgroundColor: Color.fromARGB(255, 99, 49, 216),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color.fromARGB(255, 99, 49, 216),
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
         )),
         toolbarHeight: 70,
-        title: Text(
+        title: const Text(
           "Complaints",
           style: TextStyle(fontSize: 18),
         ),
@@ -35,8 +35,8 @@ class _ComplaintsState extends State<Complaints> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 10.0, top: 15),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 10.0, top: 15),
                 child: Text("Station Name", style: TextStyle(fontSize: 20)),
               ),
               Container(
@@ -48,8 +48,8 @@ class _ComplaintsState extends State<Complaints> {
                   padding: const EdgeInsets.only(left: 10.0),
                   child: DropdownButtonFormField<String>(
                     value: _selectedStation,
-                    decoration: InputDecoration(border: InputBorder.none),
-                    style: TextStyle(color: Colors.black, fontSize: 18),
+                    decoration: const InputDecoration(border: InputBorder.none),
+                    style: const TextStyle(color: Colors.black, fontSize: 18),
                     items: <String>[
                       'YXVestby',
                       'Chargeby', // Ensure there's only one item with this value
@@ -64,7 +64,7 @@ class _ComplaintsState extends State<Complaints> {
                         child: Text(value),
                       );
                     }).toList(),
-                    hint: Text(
+                    hint: const Text(
                       "Please Select a Station",
                       style: TextStyle(
                         color: Colors.black,
@@ -79,28 +79,28 @@ class _ComplaintsState extends State<Complaints> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30.0, bottom: 5),
+              const Padding(
+                padding: EdgeInsets.only(top: 30.0, bottom: 5),
                 child: Text("Complaint Type", style: TextStyle(fontSize: 18)),
               ),
               Row(
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text("Charger faulty"),
+                    child: const Text("Charger faulty"),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 99, 49, 216),
+                      backgroundColor: const Color.fromARGB(255, 99, 49, 216),
                       shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(10),
                       ),
-                      side: BorderSide(width: 1, color: Colors.blue),
+                      side: const BorderSide(width: 1, color: Colors.blue),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 18.0),
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Slow Charging",
                         style: TextStyle(
                           color: Color.fromARGB(255, 99, 49, 216),
@@ -111,7 +111,7 @@ class _ComplaintsState extends State<Complaints> {
                         shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10),
                         ),
-                        side: BorderSide(width: 1, color: Colors.blue),
+                        side: const BorderSide(width: 1, color: Colors.blue),
                       ),
                     ),
                   ),
@@ -121,7 +121,7 @@ class _ComplaintsState extends State<Complaints> {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Network Issue",
                       style: TextStyle(
                         color: Color.fromARGB(255, 99, 49, 216),
@@ -132,14 +132,14 @@ class _ComplaintsState extends State<Complaints> {
                       shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(10),
                       ),
-                      side: BorderSide(width: 1, color: Colors.blue),
+                      side: const BorderSide(width: 1, color: Colors.blue),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 18.0),
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Voltage fluctuations",
                         style: TextStyle(
                           color: Color.fromARGB(255, 99, 49, 216),
@@ -150,7 +150,7 @@ class _ComplaintsState extends State<Complaints> {
                         shape: new RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10),
                         ),
-                        side: BorderSide(width: 1, color: Colors.blue),
+                        side: const BorderSide(width: 1, color: Colors.blue),
                       ),
                     ),
                   ),
@@ -167,8 +167,8 @@ class _ComplaintsState extends State<Complaints> {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: DropdownButtonFormField<String>(
                       value: _selectedComplaintType,
-                      decoration: InputDecoration(border: InputBorder.none),
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      decoration: const InputDecoration(border: InputBorder.none),
+                      style: const TextStyle(color: Colors.black, fontSize: 18),
                       items: <String>[
                         'Inconvenient locations',
                         'Lack of compatibility',
@@ -182,7 +182,7 @@ class _ComplaintsState extends State<Complaints> {
                           child: Text(value),
                         );
                       }).toList(),
-                      hint: Text(
+                      hint: const Text(
                         "More Complaints",
                         style: TextStyle(
                           color: Colors.black,
@@ -209,7 +209,7 @@ class _ComplaintsState extends State<Complaints> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintMaxLines: 2,
                           border: InputBorder.none,
                           hintText:
@@ -219,7 +219,7 @@ class _ComplaintsState extends State<Complaints> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 70,
               ),
               Container(
@@ -227,16 +227,16 @@ class _ComplaintsState extends State<Complaints> {
                 height: 45,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
+                      backgroundColor: const MaterialStatePropertyAll(
                         Color.fromARGB(255, 99, 49, 216),
                       ),
-                      textStyle: MaterialStatePropertyAll(
+                      textStyle: const MaterialStatePropertyAll(
                         TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)))),
                   onPressed: () {},
-                  child: Text("Raise a Complaint"),
+                  child: const Text("Raise a Complaint"),
                 ),
               )
             ],

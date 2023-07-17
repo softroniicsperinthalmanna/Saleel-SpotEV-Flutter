@@ -32,10 +32,10 @@ class _ProfileState extends State<Profile> {
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Complaints(),
+                    builder: (context) => const Complaints(),
                   ));
                 },
-                child: ListTile(
+                child: const ListTile(
                   leading: FaIcon(
                     FontAwesomeIcons.book,
                     color: Color.fromARGB(255, 99, 49, 216),
@@ -54,16 +54,16 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.5,
               ),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Community(),
+                    builder: (context) => const Community(),
                   ));
                 },
-                child: ListTile(
+                child: const ListTile(
                   leading: Icon(
                     Icons.people_sharp,
                     size: 25,
@@ -94,7 +94,7 @@ class _ProfileState extends State<Profile> {
         elevation: 0,
         toolbarHeight: 140,
         flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 99, 49, 216),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
@@ -106,7 +106,7 @@ class _ProfileState extends State<Profile> {
           children: [
             Row(
               children: [
-                Column(
+                const Column(
                   children: [
                     Image(image: AssetImage("Images/ProfiePic.png")),
                     Text(
@@ -120,30 +120,30 @@ class _ProfileState extends State<Profile> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "apple@gmail.com",
                         style: TextStyle(fontSize: 14),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 2.0, bottom: 2),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 2.0, bottom: 2),
                         child: Text(
                           "987654321",
                           style: TextStyle(fontSize: 14),
                         ),
                       ),
                       ElevatedButton.icon(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.edit,
                             color: Colors.green,
                             size: 15.0,
                           ),
-                          label: Text(
+                          label: const Text(
                             'Edit Profile',
                             style: TextStyle(color: Colors.black),
                           ),
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => EditProfile(),
+                              builder: (context) => const EditProfile(),
                             ));
                           },
                           style: ElevatedButton.styleFrom(
@@ -161,9 +161,9 @@ class _ProfileState extends State<Profile> {
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
@@ -172,7 +172,7 @@ class _ProfileState extends State<Profile> {
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
                 boxShadow: [
-                  BoxShadow(
+                  const BoxShadow(
                     color: Color.fromARGB(123, 0, 0, 0),
                     blurRadius: 0.5,
                     spreadRadius: 0,
@@ -183,22 +183,22 @@ class _ProfileState extends State<Profile> {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ManageEV(),
+                    builder: (context) => const ManageEV(),
                   ));
                 },
                 child: Container(
-                    child: Center(
+                    child: const Center(
                         child: Row(
                       children: [
                         Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
+                            padding: EdgeInsets.only(left: 20.0),
                             child: FaIcon(
                               FontAwesomeIcons.carRear,
                               size: 20,
                               color: Color.fromARGB(255, 99, 49, 216),
                             )),
                         Padding(
-                          padding: const EdgeInsets.only(left: 48.0),
+                          padding: EdgeInsets.only(left: 48.0),
                           child: Text(
                             "ManageEV",
                             style: TextStyle(
@@ -213,13 +213,13 @@ class _ProfileState extends State<Profile> {
                     height: 50),
               ) // child widget, replace with your own
               ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => MyBookings(),
+                builder: (context) => const MyBookings(),
               ));
             },
             child: Container(
@@ -228,7 +228,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -237,18 +237,18 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 child: Container(
-                    child: Center(
+                    child: const Center(
                       child: Row(
                         children: [
                           Padding(
-                              padding: const EdgeInsets.only(left: 18.0),
+                              padding: EdgeInsets.only(left: 18.0),
                               child: FaIcon(
                                 FontAwesomeIcons.calendarCheck,
                                 size: 23,
                                 color: Color.fromARGB(255, 99, 49, 216),
                               )),
                           Padding(
-                            padding: const EdgeInsets.only(left: 48.0),
+                            padding: EdgeInsets.only(left: 48.0),
                             child: Text(
                               "My Bookings",
                               style: TextStyle(
@@ -264,13 +264,13 @@ class _ProfileState extends State<Profile> {
                     height: 50) // child widget, replace with your own
                 ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ChargingHistory(),
+                builder: (context) => const ChargingHistory(),
               ));
             },
             child: Container(
@@ -279,7 +279,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -288,10 +288,10 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 child: Container(
-                    child: Row(
+                    child: const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
+                          padding: EdgeInsets.only(left: 18.0),
                           child: Icon(
                             Icons.history,
                             size: 28,
@@ -299,7 +299,7 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 48.0),
+                          padding: EdgeInsets.only(left: 48.0),
                           child: Text(
                             "History",
                             style: TextStyle(
@@ -313,13 +313,13 @@ class _ProfileState extends State<Profile> {
                     width: 100,
                     height: 40)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => WAllet(),
+                builder: (context) => const WAllet(),
               ));
             },
             child: Container(
@@ -328,7 +328,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -337,10 +337,10 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 child: Container(
-                  child: Row(
+                  child: const Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 18.0),
+                        padding: EdgeInsets.only(left: 18.0),
                         child: Icon(
                           Icons.wallet,
                           size: 30,
@@ -348,7 +348,7 @@ class _ProfileState extends State<Profile> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 48.0),
+                        padding: EdgeInsets.only(left: 48.0),
                         child: Text(
                           "Wallet",
                           style: TextStyle(
@@ -364,13 +364,13 @@ class _ProfileState extends State<Profile> {
                 ) // child widget, replace with your own
                 ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => Trip(),
+                builder: (context) => const Trip(),
               ));
             },
             child: Container(
@@ -379,7 +379,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -388,10 +388,10 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 child: Container(
-                    child: Row(
+                    child: const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
+                          padding: EdgeInsets.only(left: 18.0),
                           child: Icon(
                             Icons.trip_origin,
                             size: 30,
@@ -399,7 +399,7 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 48.0),
+                          padding: EdgeInsets.only(left: 48.0),
                           child: Text(
                             "Trips",
                             style: TextStyle(
@@ -414,13 +414,13 @@ class _ProfileState extends State<Profile> {
                     height: 50) // child widget, replace with your own
                 ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => Favorites(),
+                builder: (context) => const Favorites(),
               ));
             },
             child: Container(
@@ -429,7 +429,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -438,10 +438,10 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 child: Container(
-                    child: Row(
+                    child: const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
+                          padding: EdgeInsets.only(left: 18.0),
                           child: Icon(
                             Icons.favorite_border_outlined,
                             size: 30,
@@ -449,7 +449,7 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 48.0),
+                          padding: EdgeInsets.only(left: 48.0),
                           child: Text(
                             "Favorites",
                             style: TextStyle(
@@ -464,7 +464,7 @@ class _ProfileState extends State<Profile> {
                     height: 50) // child widget, replace with your own
                 ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           GestureDetector(
@@ -476,10 +476,10 @@ class _ProfileState extends State<Profile> {
                       actionsAlignment: MainAxisAlignment.spaceEvenly,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
-                      title: Center(
+                      title: const Center(
                           child: Column(
                         children: [
-                          const Text(
+                          Text(
                             "Logout",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
@@ -499,37 +499,37 @@ class _ProfileState extends State<Profile> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: Text(
+                            child: const Text(
                               "Cancel",
                               style: TextStyle(color: Colors.indigo),
                             ),
                             style: TextButton.styleFrom(
                                 elevation: 5,
-                                minimumSize: Size(128, 46),
+                                minimumSize: const Size(128, 46),
                                 backgroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(6)),
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
                                 ))),
                         ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Login(),
+                                builder: (context) => const Login(),
                               ));
                             },
-                            child: Text(
+                            child: const Text(
                               "Yes",
                               style: TextStyle(color: Colors.red),
                             ),
                             style: TextButton.styleFrom(
                                 elevation: 5,
-                                minimumSize: Size(128, 46),
+                                minimumSize: const Size(128, 46),
                                 backgroundColor: Colors.white,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(6)),
-                                textStyle: TextStyle(
+                                textStyle: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
                                 ))),
@@ -543,7 +543,7 @@ class _ProfileState extends State<Profile> {
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -552,10 +552,10 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 child: Container(
-                    child: Row(
+                    child: const Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
+                          padding: EdgeInsets.only(left: 18.0),
                           child: Icon(
                             Icons.logout,
                             color: Colors.red,
@@ -563,7 +563,7 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 48.0),
+                          padding: EdgeInsets.only(left: 48.0),
                           child: Text(
                             "Logout",
                             style: TextStyle(

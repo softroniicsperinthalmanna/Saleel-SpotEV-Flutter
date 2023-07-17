@@ -6,6 +6,7 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
+  String? selectedOption;
 
 class _HomeState extends State<Home> {
   double _curentValue = 50;
@@ -666,7 +667,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     const SizedBox(
                                       height: 5,
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -689,15 +690,14 @@ class _HomeState extends State<Home> {
           // Positioned(
           //   top: 130,
           //   left: 15,
-          //   child: Container(
-          //       height: 100,
-          //       width: 180,
-          //       color: Colors.red,
-          //       child:DropdownButton(items: [ ], onChanged: (val){
-
-          //       })
-          //       ),
-          // ),
+          //   child: Container(color: Colors.white,
+            
+                 
+                  
+             
+          //  ), ),
+          
+          
           // insert dropdown add vehicle
 
           const Align(
