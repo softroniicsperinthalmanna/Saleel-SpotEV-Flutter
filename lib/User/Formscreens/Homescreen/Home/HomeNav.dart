@@ -6,7 +6,7 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
-  String? selectedOption;
+  
 
 class _HomeState extends State<Home> {
   double _curentValue = 50;

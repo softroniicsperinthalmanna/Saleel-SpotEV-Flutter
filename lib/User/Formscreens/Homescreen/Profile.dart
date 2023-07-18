@@ -171,8 +171,8 @@ class _ProfileState extends State<Profile> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 color: Colors.white,
-                boxShadow: [
-                  const BoxShadow(
+                boxShadow: const [
+                  BoxShadow(
                     color: Color.fromARGB(123, 0, 0, 0),
                     blurRadius: 0.5,
                     spreadRadius: 0,
@@ -227,8 +227,8 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -278,8 +278,8 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -327,8 +327,8 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -378,8 +378,8 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -428,8 +428,8 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,
@@ -542,8 +542,8 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
                   color: Colors.white,
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Color.fromARGB(123, 0, 0, 0),
                       blurRadius: 0.5,
                       spreadRadius: 0,

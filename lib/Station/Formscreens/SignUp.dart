@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spotev/Station/Formscreens/Login.dart';
+import 'package:spotev/Station/Formscreens/OTPverification.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -279,10 +280,10 @@ class _SignUpState extends State<SignUp> {
                                               borderRadius:
                                                   BorderRadius.circular(10)))),
                                   onPressed: () {
-                                    // Navigator.of(context)
-                                    //     .push(MaterialPageRoute(
-                                    //   builder: (context) => OTP(),
-                                    // ));
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) => const OTPverificationStation(),
+                                    ));
                                   },
                                   child: const Text(
                                     "Register",
@@ -305,7 +306,7 @@ class _SignUpState extends State<SignUp> {
                                         onPressed: () {
                                           Navigator.of(context)
                                               .push(MaterialPageRoute(
-                                            builder: (context) => LoginScreen(),
+                                            builder: (context) => const LoginScreen(),
                                           ));
                                         },
                                         child: const Text(
