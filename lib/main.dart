@@ -81,17 +81,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "SpotEV",
         debugShowCheckedModeBanner: false,
-        home:Module()
-        // AnimatedSplashScreen(
-        //   splash: Image.asset(
-        //     "Images/logo.png",
-        //     fit: BoxFit.cover,
-        //   ),
-        //   nextScreen: IndroScreen(),
-        //   splashTransition: SplashTransition.rotationTransition,
-        //   duration: 5000,
-        //   splashIconSize: 80,
-        // )
+        home:
+        AnimatedSplashScreen(
+          splash: Image.asset(
+            "Images/logo.png",
+            fit: BoxFit.cover,
+          ),
+          nextScreen: IndroScreen(),
+          splashTransition: SplashTransition.rotationTransition,
+          duration: 5000,
+          splashIconSize: 80,
+        )
         );
   }
 }
